@@ -22,8 +22,8 @@ function OnlineTranslate(query ,to ){
         var req= http.get(url,function(res){
             res.setEncoding('utf8');
             res.on('data', (chunk) => {
-                var x=JSON.parse(chunk)['trans_result'][0]['dst']
-                resolve([query,x])
+                var x=JSON.parse(chunk)['trans_result']
+                resolve(x)
             });
         })
         req.on('error', function(err){
@@ -35,6 +35,8 @@ function OnlineTranslate(query ,to ){
 enres.map((x)=>{
 OnlineTranslate(x.match(onlyWordreg)[0])
 .then((x)=>{
-    console.log(`${x[0]} => ${x[1]}`);
+    x.forEach(function(e) {   
+    console.log(`${e['src']} => ${e['dst']}`);
+    });
 })
 })
