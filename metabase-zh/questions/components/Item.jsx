@@ -72,7 +72,7 @@ const Item = ({
                     <ModalWithTrigger
                         full
                         triggerElement={
-                            <Tooltip tooltip="Move to a collection">
+                            <Tooltip tooltip="移到集合里">
                                 <Icon
                                     className="text-light-blue cursor-pointer text-brand-hover transition-color mx2"
                                     name="move"
@@ -86,7 +86,7 @@ const Item = ({
                             initialCollectionId={collection && collection.id}
                         />
                     </ModalWithTrigger>
-                    <Tooltip tooltip={archived ? "Unarchive" : "Archive"}>
+                    <Tooltip tooltip={archived ? "未打包" : "打包"}>
                         <Icon
                             className="text-light-blue cursor-pointer text-brand-hover transition-color"
                             name={ archived ? "unarchive" : "archive"}
@@ -145,7 +145,7 @@ const ItemBody = pure(({ entity, id, name, description, labels, favorite, collec
             <Labels labels={labels} />
         </div>
         <div className={cx({ 'text-slate': description }, { 'text-light-blue': !description })}>
-            {description ? description : "No description yet"}
+            {description ? description : "暂无描述"}
         </div>
     </div>
 );
@@ -161,7 +161,7 @@ ItemBody.propTypes = {
 const ItemCreated = pure(({ created, by }) =>
     (created || by) ?
         <div className={S.itemSubtitle}>
-            {"Created" + (created ? ` ${created}` : ``) + (by ? ` by ${by}` : ``)}
+            {"创建于" + (created ? ` ${created}` : ``) + (by ? ` 由 ${by}` : ``)}
         </div>
     :
         null

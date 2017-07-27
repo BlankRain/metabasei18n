@@ -31,8 +31,8 @@ export default class PulseEditName extends Component {
         let { pulse } = this.props;
         return (
             <div className="py1">
-                <h2>Name your pulse</h2>
-                <p className="mt1 h4 text-bold text-grey-3">Give your pulse a name to help others understand what it's about.</p>
+                <h2>给你的pulse命名</h2>
+                <p className="mt1 h4 text-bold text-grey-3">给你的pulse一个名字,大家好懂你这个是干嘛的。</p>
                 <div className="my3">
                     <input
                         ref="name"
@@ -41,7 +41,7 @@ export default class PulseEditName extends Component {
                         value={pulse.name || ""}
                         onChange={this.setName}
                         onBlur={this.validate}
-                        placeholder="Important metrics"
+                        placeholder="导入 metrics"
                         autoFocus
                     />
                 </div>

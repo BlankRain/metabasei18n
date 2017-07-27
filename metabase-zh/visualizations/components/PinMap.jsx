@@ -131,7 +131,7 @@ export default class PinMap extends Component {
                 <div className="absolute top right m1 z2 flex flex-column hover-child">
                     { isEditing || !isDashboard ?
                         <div className={cx("PinMapUpdateButton Button Button--small mb1", { "PinMapUpdateButton--disabled": disableUpdateButton })} onClick={this.updateSettings}>
-                            Save as default view
+                            保存为默认视图
                         </div>
                     : null }
                     { !isDashboard &&
@@ -145,7 +145,7 @@ export default class PinMap extends Component {
                                 }
                             }}
                         >
-                            { !this.state.filtering ? "Draw box to filter" : "Cancel filter" }
+                            { !this.state.filtering ? "Draw box to filter" : "取消过滤" }
                         </div>
                     }
                 </div>

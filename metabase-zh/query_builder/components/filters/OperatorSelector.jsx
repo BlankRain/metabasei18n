@@ -76,7 +76,7 @@ export default class OperatorSelector extends Component {
                 { !expanded && expandedOperators.length > 0 ?
                     <div className="text-grey-3 text-purple-hover transition-color cursor-pointer" onClick={this.expandOperators}>
                         <Icon className="px1" name="chevrondown" size={14} />
-                        More Options
+                        更多选项
                     </div>
                 : null }
             </div>

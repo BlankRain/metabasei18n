@@ -27,7 +27,7 @@ const Sidebar = ({
                     className="py4"
                     crumbs={breadcrumbs}
                     inSidebar={true}
-                    placeholder="Data Reference"
+                    placeholder="数据引用"
                 />
             </div>
             {Object.values(sections)

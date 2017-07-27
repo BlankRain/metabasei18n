@@ -67,7 +67,7 @@ export default class Activity extends Component {
 
     userName(user, currentUser) {
         if (user && currentUser && user.id === currentUser.id) {
-            return "You";
+            return "你";
         } else if (user) {
             return user.first_name;
         } else {
@@ -80,7 +80,7 @@ export default class Activity extends Component {
         // this is a base to start with
         const description = {
             userName: this.userName(item.user, user),
-            subject: "did some super awesome stuff thats hard to describe",
+            subject: "做了些难以描述的超棒的事情",
             subjectRefLink: null,
             subjectRefName: null,
             timeSince: item.timestamp.fromNow()
@@ -90,25 +90,25 @@ export default class Activity extends Component {
             case "card-create":
             case "card-update":
                 if(item.table) {
-                    description.summary = (<span>saved a question about <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Database -> "+item.topic} className="link text-dark">{item.table.display_name}</Link></span>);
+                    description.summary = (<span>保存了个提问,是关于 <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Database -> "+item.topic} className="link text-dark">{item.table.display_name}</Link></span>);
                 } else {
-                    description.summary = "saved a question";
+                    description.summary = "保存了个提问";
                 }
                 break;
             case "card-delete":
-                description.summary = "deleted a question";
+                description.summary = "移除个提问";
                 break;
             case "dashboard-create":
-                description.summary = "created a dashboard";
+                description.summary = "创建了 dashboard";
                 break;
             case "dashboard-delete":
-                description.summary = "deleted a dashboard";
+                description.summary = "移除了 dashboard";
                 break;
             case "dashboard-add-cards":
                 if(item.model_exists) {
-                    description.summary = (<span>added a question to the dashboard - <Link to={Urls.dashboard(item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Dashboard -> "+item.topic} className="link text-dark">{item.details.name}</Link></span>);
+                    description.summary = (<span>添加提问到dashboard - <Link to={Urls.dashboard(item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Dashboard -> "+item.topic} className="link text-dark">{item.details.name}</Link></span>);
                 } else {
-                    description.summary = (<span>added a question to the dashboard - <span className="text-dark">{item.details.name}</span></span>);
+                    description.summary = (<span>添加提问到dashboard - <span className="text-dark">{item.details.name}</span></span>);
                 }
                 break;
             case "dashboard-remove-cards":
@@ -124,61 +124,61 @@ export default class Activity extends Component {
                 //       possible for a database to be deleted and we'd lose any way of knowing what it's name was :(
                 const oldName = (item.database && 'name' in item.database) ? item.database.name : "Unknown";
                 if(item.details.name) {
-                    description.summary = (<span>received the latest data from <span className="text-dark">{item.details.name}</span></span>);
+                    description.summary = (<span> 收到最新数据：<span className="text-dark">{item.details.name}</span></span>);
                 } else {
-                    description.summary = (<span>received the latest data from <span className="text-dark">{oldName}</span></span>);
+                    description.summary = (<span> 收到最新数据 <span className="text-dark">{oldName}</span></span>);
                 }
                 break;
             case "install":
-                description.userName = "Hello World!";
-                description.summary = "Metabase is up and running.";
+                description.userName = "雷吼啊!";
+                description.summary = "Metabase 已经启动.";
                 break;
             case "metric-create":
                 if(item.model_exists) {
-                    description.summary = (<span>added the metric <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Metric -> "+item.topic} className="link text-dark">{item.details.name}</Link> to the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> table</span>);
+                    description.summary = (<span>添加 metric <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Metric -> "+item.topic} className="link text-dark">{item.details.name}</Link> to the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> 表</span>);
                 } else {
-                    description.summary = (<span>added the metric <span className="text-dark">{item.details.name}</span></span>);
+                    description.summary = (<span>添加 metric <span className="text-dark">{item.details.name}</span></span>);
                 }
                 break;
             case "metric-update":
                 if(item.model_exists) {
-                    description.summary = (<span>made changes to the metric <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Metric -> "+item.topic} className="link text-dark">{item.details.name}</Link> in the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> table</span>);
+                    description.summary = (<span>修改 metric <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Metric -> "+item.topic} className="link text-dark">{item.details.name}</Link> in the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> 表</span>);
                 } else {
-                    description.summary = (<span>made changes to the metric <span className="text-dark">{item.details.name}</span></span>);
+                    description.summary = (<span>修改 metric <span className="text-dark">{item.details.name}</span></span>);
                 }
                 break;
             case "metric-delete":
-                description.summary = "removed the metric "+item.details.name;
+                description.summary = "移除 metric "+item.details.name;
                 break;
             case "pulse-create":
-                description.summary = "created a pulse";
+                description.summary = "创建了一个 pulse";
                 break;
             case "pulse-delete":
-                description.summary = "deleted a pulse";
+                description.summary = "删除了一个 pulse";
                 break;
             case "segment-create":
                 if(item.model_exists) {
                     description.summary = (
                         <span>
-                            added the filter <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, null, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Segment -> "+item.topic} className="link text-dark">{item.details.name}</Link> to the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> table
+                            添加过滤器 <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, null, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Segment -> "+item.topic} className="link text-dark">{item.details.name}</Link> to the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> table
                         </span>
                     );
                 } else {
-                    description.summary = (<span>added the filter <span className="text-dark">{item.details.name}</span></span>);
+                    description.summary = (<span>已添加过滤器 <span className="text-dark">{item.details.name}</span></span>);
                 }
                 break;
             case "segment-update":
                 if(item.model_exists) {
-                    description.summary = (<span>made changes to the filter <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, null, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Segment -> "+item.topic} className="link text-dark">{item.details.name}</Link> in the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> table</span>);
+                    description.summary = (<span>编辑过滤器 <Link to={Urls.tableRowsQuery(item.database_id, item.table_id, null, item.model_id)} data-metabase-event={"Activity Feed;Header Clicked;Segment -> "+item.topic} className="link text-dark">{item.details.name}</Link> in the <Link to={Urls.tableRowsQuery(item.database_id, item.table_id)} data-metabase-event={"Activity Feed;Header Clicked;Table -> "+item.topic} className="link text-dark">{item.table.display_name}</Link> table</span>);
                 } else {
-                    description.summary = (<span>made changes to the filter <span className="text-dark">{item.details.name}</span></span>);
+                    description.summary = (<span>编辑过滤器 <span className="text-dark">{item.details.name}</span></span>);
                 }
                 break;
             case "segment-delete":
-                description.summary = "removed the filter "+item.details.name;
+                description.summary = "移除过滤器 "+item.details.name;
                 break;
             case "user-joined":
-                description.summary = "joined!";
+                description.summary = "已加入!";
                 break;
         }
 
@@ -270,8 +270,8 @@ export default class Activity extends Component {
                         { activity.length === 0 ?
                             <div className="flex flex-column layout-centered mt4">
                                 <span className="QuestionCircle">!</span>
-                                <div className="text-normal mt3 mb1">Hmmm, looks like nothing has happened yet.</div>
-                                <div className="text-normal text-grey-2">Save a question and get this baby going!</div>
+                                <div className="text-normal mt3 mb1">Hmmm, 好像什么也没发生.</div>
+                                <div className="text-normal text-grey-2">保存提问,然它跑起来!</div>
                             </div>
                         :
                             <ul className="pb4 relative">

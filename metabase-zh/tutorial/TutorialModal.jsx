@@ -20,7 +20,7 @@ export default class TutorialModal extends Component {
                     {this.props.children}
                 </div>
                 <div className="flex">
-                    { showBackButton && <a className="text-grey-4 cursor-pointer" onClick={this.props.onBack}>back</a> }
+                    { showBackButton && <a className="text-grey-4 cursor-pointer" onClick={this.props.onBack}>返回</a> }
                     { showStepCount && <span className="text-grey-4 flex-align-right">{modalStepIndex + 1} of {modalStepCount}</span> }
                 </div>
             </div>

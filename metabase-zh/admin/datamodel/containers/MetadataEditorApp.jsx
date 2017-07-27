@@ -95,7 +95,7 @@ export default class MetadataEditor extends Component {
         } else {
             content = (
                 <div style={{paddingTop: "10rem"}} className="full text-centered">
-                    <AdminEmptyText message="Select any table to see its schema and add or edit metadata." />
+                    <AdminEmptyText message="选择任何表 查看它的schema,并且可以添加修改元数据." />
                 </div>
             );
         }

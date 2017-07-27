@@ -110,7 +110,7 @@ export default class TableList extends Component {
         return (
             <div style={style} className="full">
                 <ReferenceHeader 
-                    name={`Tables in ${database.name}`}
+                    name={` ${database.name} 中的表`}
                     type="tables"
                     headerIcon="database"
                 />

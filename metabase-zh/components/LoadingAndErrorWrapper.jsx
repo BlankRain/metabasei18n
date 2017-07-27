@@ -34,7 +34,7 @@ export default class LoadingAndErrorWrapper extends Component {
             error.data && (error.data.message ? error.data.message : error.data) ||
             error.statusText ||
             error.message ||
-            "An error occured"
+            "遇到错误"
         );
     }
 
@@ -69,7 +69,7 @@ export default class LoadingAndErrorWrapper extends Component {
                         showSpinner &&
                         <div className={contentClassName}>
                             <LoadingSpinner />
-                            <h2 className="text-normal text-grey-2 mt1">Loading...</h2>
+                            <h2 className="text-normal text-grey-2 mt1">正在加载...</h2>
                         </div>
 
                 :

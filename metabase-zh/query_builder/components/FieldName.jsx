@@ -49,10 +49,10 @@ export default class FieldName extends Component {
             else if (Query.isLocalField(field) && Query.isFieldLiteral(field[1])) {
                 parts.push(<span key="field">{this.displayNameForFieldLiteral(tableMetadata, field[1])}</span>);
             } else {
-                parts.push(<span key="field">Unknown Field</span>);
+                parts.push(<span key="field">未知字段</span>);
             }
         } else {
-            parts.push(<span key="field" className={"text-grey-2"}>field</span>)
+            parts.push(<span key="field" className={"text-grey-2"}>字段</span>)
         }
 
         return (

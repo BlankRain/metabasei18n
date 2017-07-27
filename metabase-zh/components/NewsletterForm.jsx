@@ -56,26 +56,26 @@ export default class NewsletterForm extends Component {
                 <div style={this.styles.label} className="absolute text-centered left right">
                     <div className="px3 bg-white h5 text-bold text-grey-4 text-uppercase inline-block">
                       <Icon className="mr1 float-left" name="mail" size={16} />
-                      <span className="inline-block" style={{marginTop: 1}}>Metabase Newsletter</span>
+                      <span className="inline-block" style={{marginTop: 1}}>Metabase 新闻</span>
                     </div>
                 </div>
 
                 <div className="MB-Newsletter sm-float-right">
                     <div>
                         <div style={{color: "#878E95"}} className="text-grey-4 text-strong h3 pb3">
-                            Get infrequent emails about new releases and feature updates.
+                            邮件订阅更新及新特性.
                         </div>
 
                         <form onSubmit={this.subscribeUser.bind(this)} noValidate>
                             <div>
                                 { !submitted ?
                                     <div className="">
-                                        <input ref="email" style={this.styles.input} className="AdminInput bordered rounded h3 inline-block" type="email" defaultValue={initialEmail} placeholder="Email address" />
+                                        <input ref="email" style={this.styles.input} className="AdminInput bordered rounded h3 inline-block" type="email" defaultValue={initialEmail} placeholder="邮箱地址" />
                                         <input className="Button float-right inline-block ml1" type="submit" value="Subscribe" name="subscribe" />
                                     </div>
                                 :
                                     <div className="text-success text-centered text-bold h3 p1">
-                                        <Icon className="mr2" name="check" size={16} />You're subscribed.  Thanks for using Metabase!
+                                        <Icon className="mr2" name="check" size={16} />你已订阅,感谢使用Metabase!
                                     </div>
                                 }
                             </div>

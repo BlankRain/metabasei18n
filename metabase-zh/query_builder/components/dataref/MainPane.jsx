@@ -9,8 +9,8 @@ import cx from "classnames";
 
 const MainPane = ({ databases, show }) =>
     <div>
-        <h1>Data Reference</h1>
-        <p>Learn more about your data structure to ask more useful questions.</p>
+        <h1>数据参考</h1>
+        <p>了解你的数据结构,这样可以提出更多有用的问题.</p>
         <ul>
             {databases && databases.filter(db => db.tables && db.tables.length > 0).map(database =>
                 <li key={database.id}>

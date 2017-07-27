@@ -147,15 +147,15 @@ export default class FieldPane extends Component {
 
             // current field must be a valid breakout option for this table AND cannot already be in the breakout clause of our query
             if (validBreakout && !_.some(query.breakouts(), this.isBreakoutWithCurrentField)) {
-                useForCurrentQuestion.push(<UseForButton title={"Group by " + name} onClick={this.groupBy} />);
+                useForCurrentQuestion.push(<UseForButton title={"分组后" + name} onClick={this.groupBy} />);
             }
         }
 
         if (isSummable(field)) {
-            usefulQuestions.push(<QueryButton icon="number" text={"Sum of all values of " + fieldName} onClick={this.setQuerySum} />);
+            usefulQuestions.push(<QueryButton icon="number" text={"所有值的汇总 " + fieldName} onClick={this.setQuerySum} />);
         }
-        usefulQuestions.push(<QueryButton icon="table" text={"All distinct values of " + fieldName} onClick={this.setQueryDistinct} />);
-        let queryCountGroupedByText = "Number of " + inflection.pluralize(tableName) + " grouped by " + fieldName;
+        usefulQuestions.push(<QueryButton icon="table" text={"所有唯一值 " + fieldName} onClick={this.setQueryDistinct} />);
+        let queryCountGroupedByText = "个数" + inflection.pluralize(tableName) + " 按分组" + fieldName;
         if (validBreakout) {
             usefulQuestions.push(<QueryButton icon="bar" text={queryCountGroupedByText} onClick={this.setQueryCountGroupedBy.bind(null, "bar")} />);
             usefulQuestions.push(<QueryButton icon="pie" text={queryCountGroupedByText} onClick={this.setQueryCountGroupedBy.bind(null, "pie")} />);

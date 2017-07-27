@@ -34,7 +34,7 @@ class DashboardListItem extends Component {
         const {id, name, created_at, archived, favorite} = dashboard
 
         const archivalButton =
-            <Tooltip tooltip={archived ? "Unarchive" : "Archive"}>
+            <Tooltip tooltip={archived ? "未打包" : "打包"}>
                 <Icon
                     className="flex cursor-pointer text-light-blue text-brand-hover ml2 archival-button"
                     name={archived ? "unarchive" : "archive"}

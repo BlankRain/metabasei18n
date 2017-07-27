@@ -31,17 +31,17 @@ export default class ObjectRetireModal extends Component {
         const { valid } = this.state;
         return (
             <ModalContent
-                title={"Retire This " + capitalize(objectType)}
+                title={"恢复 这个 " + capitalize(objectType)}
                 onClose={this.props.onClose}
             >
                 <form className="flex flex-column flex-full">
                     <div className="Form-inputs pb4">
-                        <p>Saved questions and other things that depend on this {objectType} will continue to work, but this {objectType} will no longer be selectable from the query builder.</p>
-                        <p>If you're sure you want to retire this {objectType}, please write a quick explanation of why it's being retired:</p>
+                        <p>保存的问题或其他依赖于此 {objectType} 仍然可以工作, 但是， {objectType} 将无法在查询构建器里选择.</p>
+                        <p>如果你确定要恢复 {objectType}, 请简要说明一下原因:</p>
                         <textarea
                             ref="revision_message"
                             className="input full"
-                            placeholder={"This will show up in the activity feed and in an email that will be sent to anyone on your team who created something that uses this " + objectType + "."}
+                            placeholder={"这个将会显示在活动记录里 and 并且会发份邮件给您队伍中使用到 " + objectType + " 的人员."}
                             onChange={(e) => this.setState({ valid: !!e.target.value })}
                         />
                     </div>
@@ -50,10 +50,10 @@ export default class ObjectRetireModal extends Component {
                         <ActionButton
                             actionFn={this.handleSubmit.bind(this)}
                             className={cx("Button", { "Button--primary": valid, "disabled": !valid })}
-                            normalText="Retire"
-                            activeText="Retiring…"
-                            failedText="Failed"
-                            successText="Success"
+                            normalText="恢复"
+                            activeText="正则恢复..."
+                            failedText="失败了"
+                            successText="成功啦"
                         />
                         <a className="Button Button--borderless" onClick={this.props.onClose}>
                             Cancel

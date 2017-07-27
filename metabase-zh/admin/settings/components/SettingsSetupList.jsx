@@ -82,8 +82,8 @@ export default class SettingsSetupList extends Component {
 
         return (
             <div className="px2">
-              <h2>Getting set up</h2>
-              <p className="mt1">A few things you can do to get the most out of Metabase.</p>
+              <h2>启动设置</h2>
+              <p className="mt1">简单的配置几步就可以使用Metabase了.</p>
               <LoadingAndErrorWrapper loading={!this.state.tasks} error={this.state.error} >
               { () =>
                   <div style={{maxWidth: 468}}>

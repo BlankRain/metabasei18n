@@ -23,23 +23,23 @@ const MetricSidebar = ({
                     crumbs={[["Metrics","/reference/metrics"],
                              [metric.name]]}
                     inSidebar={true}
-                    placeholder="Data Reference"
+                    placeholder="数据参考"
                 />
             </div>
                 <SidebarItem key={`/reference/metrics/${metric.id}`} 
                              href={`/reference/metrics/${metric.id}`} 
                              icon="document" 
-                             name="Details" />
+                             name="详情" />
                 <SidebarItem key={`/reference/metrics/${metric.id}/questions`} 
                              href={`/reference/metrics/${metric.id}/questions`} 
                              icon="all" 
-                             name={`Questions about ${metric.name}`} />
+                             name={` ${metric.name}有关的提问`} />
              { user && user.is_superuser &&
 
                 <SidebarItem key={`/reference/metrics/${metric.id}/revisions`}
                              href={`/reference/metrics/${metric.id}/revisions`}
                              icon="history" 
-                             name={`Revision history for ${metric.name}`} />
+                             name={`${metric.name}修订历史`} />
              }
         </ul>
     </div>

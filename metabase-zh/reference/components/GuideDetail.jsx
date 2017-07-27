@@ -52,7 +52,7 @@ const GuideDetail = ({
     const linkHoverClass = `${typeToLinkClass[type]}-hover`
     const bgClass = typeToBgClass[type]
     const hasLearnMore = type === 'metric' || type === 'segment' || type === 'table';
-    const interestingOrImportant = type === 'dashboard' ? 'important' : 'interesting';
+    const interestingOrImportant = type === 'dashboard' ? '重要' : '有趣';
 
     return <div className="relative mt2 pb3">
         <div className="flex align-center">
@@ -73,31 +73,31 @@ const GuideDetail = ({
             </ContextHeading>
 
             <ContextContent empty={!points_of_interest}>
-                {points_of_interest || `Nothing ${interestingOrImportant} yet`}
+                {points_of_interest || `还没有 ${interestingOrImportant} `}
             </ContextContent>
 
             <div className="mt2">
                 <ContextHeading>
-                    {`Things to be aware of about this ${type}`}
+                    {`应该是这种 ${type}`}
                 </ContextHeading>
 
                 <ContextContent empty={!caveats}>
-                    {caveats || 'Nothing to be aware of yet'}
+                    {caveats || '还不了解任何东西'}
                 </ContextContent>
             </div>
 
             { has(exploreLinks) && [
                 <div className="mt2">
-                    <ContextHeading key="detailLabel">Explore this metric</ContextHeading>
+                    <ContextHeading key="detailLabel">探索这个 metric</ContextHeading>
                     <div key="detailLinks">
-                        <h4 className="inline-block mr2 link text-bold">View this metric</h4>
+                        <h4 className="inline-block mr2 link text-bold">查看这个metric</h4>
                         { exploreLinks.map(link =>
                             <Link
                                 className="inline-block text-bold text-brand mr2 link"
                                 key={link.url}
                                 to={link.url}
                             >
-                                {`By ${link.name}`}
+                                {`由 ${link.name}`}
                             </Link>
                         )}
                     </div>
@@ -108,7 +108,7 @@ const GuideDetail = ({
                     className={cx('block mt3 no-decoration text-underline-hover text-bold', linkClass)}
                     to={learnMoreLink}
                 >
-                    Learn more
+                    了解更多
                 </Link>
             }
         </div>

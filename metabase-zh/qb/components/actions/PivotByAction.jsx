@@ -50,7 +50,7 @@ export default (name: string, icon: string, fieldFilter: FieldFilter) =>
                 title: clicked
                     ? name
                     : <span>
-                          Break out by
+                          打破
                           {" "}
                           <span className="text-dark">
                               {name.toLowerCase()}

@@ -120,7 +120,7 @@ export default class SaveQuestionModal extends Component {
         if (error) {
             var errorMessage;
             if (error.status === 500) {
-                errorMessage = "Server error encountered";
+                errorMessage = "服务端错误";
             }
 
             if (error.data && error.data.message) {
@@ -142,7 +142,7 @@ export default class SaveQuestionModal extends Component {
         if (!this.props.card.id && this.props.originalCard) {
             saveOrUpdate = (
                 <FormField
-                    displayName="Replace or save as new?"
+                    displayName="替换还是新建?"
                     fieldName="saveType"
                     errors={this.state.errors}
                 >
@@ -150,8 +150,8 @@ export default class SaveQuestionModal extends Component {
                         value={this.state.details.saveType}
                         onChange={(value) => this.onChange("saveType", value)}
                         options={[
-                            { name: `Replace original question, "${this.props.originalCard.name}"`, value: "overwrite" },
-                            { name: "Save as new question", value: "create" },
+                            { name: `替换原问题, "${this.props.originalCard.name}"`, value: "overwrite" },
+                            { name: "新建提问", value: "create" },
                         ]}
                         isVertical
                     />
@@ -159,7 +159,7 @@ export default class SaveQuestionModal extends Component {
             );
         }
 
-        let title = this.props.addToDashboard ? "First, save your question" : "Save question";
+        let title = this.props.addToDashboard ? "首先,保存你的提问" : "保存提问";
 
         return (
             <ModalContent
@@ -186,27 +186,27 @@ export default class SaveQuestionModal extends Component {
                         { details.saveType === "create" &&
                             <div key="saveQuestionModalFields" className="saveQuestionModalFields">
                                 <FormField
-                                    displayName="Name"
+                                    displayName="名称"
                                     fieldName="name"
                                     errors={this.state.errors}
                                 >
                                     <input
                                         className="Form-input full"
-                                        name="name" placeholder="What is the name of your card?"
+                                        name="name" placeholder="怎么称呼你的卡片?"
                                         value={this.state.details.name}
                                         onChange={(e) => this.onChange("name", e.target.value)}
                                         autoFocus
                                     />
                                 </FormField>
                                 <FormField
-                                    displayName="Description"
+                                    displayName="描述"
                                     fieldName="description"
                                     errors={this.state.errors}
                                 >
                                     <textarea
                                         className="Form-input full"
                                         name="description"
-                                        placeholder="It's optional but oh, so helpful"
+                                        placeholder="可选项,但是很有用"
                                         value={this.state.details.description}
                                         onChange={(e) => this.onChange("description", e.target.value)}
                                     />
@@ -214,7 +214,7 @@ export default class SaveQuestionModal extends Component {
                                 <CollectionList writable>
                                 { (collections) => collections.length > 0 &&
                                     <FormField
-                                        displayName="Which collection should this go in?"
+                                        displayName="哪个集合呢?"
                                         fieldName="collection_id"
                                         errors={this.state.errors}
                                     >

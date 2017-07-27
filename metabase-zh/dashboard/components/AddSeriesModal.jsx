@@ -208,7 +208,7 @@ export default class AddSeriesModal extends Component {
         return (
             <div className="spread flex">
                 <div className="flex flex-column flex-full">
-                    <div className="flex-no-shrink h3 pl4 pt4 pb1 text-bold">Edit data</div>
+                    <div className="flex-no-shrink h3 pl4 pt4 pb1 text-bold">编辑数据</div>
                     <div className="flex-full mx1 relative">
                         <Visualization
                             className="spread"
@@ -221,22 +221,22 @@ export default class AddSeriesModal extends Component {
                         { this.state.state &&
                             <div className="spred flex layout-centered" style={{ backgroundColor: "rgba(255,255,255,0.80)" }}>
                                 { this.state.state === "loading" ?
-                                    <div className="h3 rounded bordered p3 bg-white shadowed">Applying Question</div>
+                                    <div className="h3 rounded bordered p3 bg-white shadowed">应用提问</div>
                                 : this.state.state === "incompatible" ?
-                                    <div className="h3 rounded bordered p3 bg-error border-error text-white">That question isn't compatible</div>
+                                    <div className="h3 rounded bordered p3 bg-error border-error text-white">这个提问不兼容</div>
                                 : null }
                             </div>
                         }
                     </div>
                     <div className="flex-no-shrink pl4 pb4 pt1">
-                        <button className="Button Button--primary" onClick={this.onDone}>Done</button>
-                        <button data-metabase-event={"Dashboard;Edit Series Modal;cancel"} className="Button Button--borderless" onClick={this.props.onClose}>Cancel</button>
+                        <button className="Button Button--primary" onClick={this.onDone}>完成</button>
+                        <button data-metabase-event={"Dashboard;Edit Series Modal;cancel"} className="Button Button--borderless" onClick={this.props.onClose}>取消</button>
                     </div>
                 </div>
                 <div className="border-left flex flex-column" style={{width: 370, backgroundColor: "#F8FAFA", borderColor: "#DBE1DF" }}>
                     <div className="flex-no-shrink border-bottom flex flex-row align-center" style={{ borderColor: "#DBE1DF" }}>
                         <Icon className="ml2" name="search" size={16} />
-                        <input className="h4 input full pl1" style={{ border: "none", backgroundColor: "transparent" }} type="search" placeholder="Search for a question" onFocus={this.onSearchFocus} onChange={this.onSearchChange}/>
+                        <input className="h4 input full pl1" style={{ border: "none", backgroundColor: "transparent" }} type="search" placeholder="搜索提问" onFocus={this.onSearchFocus} onChange={this.onSearchChange}/>
                     </div>
                     <LoadingAndErrorWrapper className="flex flex-full" loading={!filteredCards} error={error} noBackground>
                     { () =>
@@ -250,7 +250,7 @@ export default class AddSeriesModal extends Component {
                                     {card.name}
                                 </span>
                                 { card.dataset_query.type !== "query" &&
-                                    <Tooltip tooltip="We're not sure if this question is compatible">
+                                    <Tooltip tooltip="我们不确定这个提问是否兼容">
                                         <Icon className="px1 flex-align-right text-grey-2 text-grey-4-hover cursor-pointer flex-no-shrink" name="warning" size={20} />
                                     </Tooltip>
                                 }

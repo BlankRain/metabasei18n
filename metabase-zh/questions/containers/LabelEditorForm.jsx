@@ -18,7 +18,7 @@ import cx from "classnames";
             errors.name = true;
         }
         if (!values.icon) {
-            errors.icon = "Icon is required";
+            errors.icon = "Icon 是必须的";
         }
         return errors;
     }
@@ -43,7 +43,7 @@ export default class LabelEditorForm extends Component {
                     <LabelIconPicker {...icon} />
                     <div className="full">
                         <div className="flex">
-                          <input className={cx(S.nameInput, "input", { [S.invalid]: nameInvalid })} type="text" placeholder="Name" {...name}/>
+                          <input className={cx(S.nameInput, "input", { [S.invalid]: nameInvalid })} type="text" placeholder="名称" {...name}/>
                           <button className={cx("Button", "ml1", { "disabled": invalid, "Button--primary": !invalid })} type="submit">{submitButtonText}</button>
                         </div>
                         { nameInvalid && errorMessage && <div className={S.errorMessage}>{errorMessage}</div> }

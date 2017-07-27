@@ -15,8 +15,8 @@ type State = {
 
 const STEPS = [
     {
-        title: 'Ask questions and explore',
-        text: 'Click on charts or tables to explore, or ask a new question using the easy interface or the powerful SQL editor.',
+        title: '提问并且浏览',
+        text: '点击图或者表来浏览, 或者使用简单接口或SQL编辑器创建新的提问.',
         image: (
             <RetinaImage
                 className="absolute full"
@@ -26,8 +26,8 @@ const STEPS = [
         )
     },
     {
-        title: 'Make your own charts',
-        text: 'Create line charts, scatter plots, maps, and more.',
+        title: '制作你自己的图',
+        text: '创建线型图，饼图，地图或其他.',
         image: (
             <RetinaImage
                 className="absolute ml-auto mr-auto inline-block left right"
@@ -37,8 +37,8 @@ const STEPS = [
         )
     },
     {
-        title: 'Share what you find',
-        text: 'Create powerful and flexible dashboards, and send regular updates via email or Slack.',
+        title: '分享你的发现',
+        text: '创建强大的看板,通过邮箱或slack分享它.',
         image: (
             <RetinaImage
                 className="absolute ml-auto mr-auto inline-block left right"

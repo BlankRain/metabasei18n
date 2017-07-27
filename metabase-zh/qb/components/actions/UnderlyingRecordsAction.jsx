@@ -20,13 +20,13 @@ export default ({ question }: ClickActionProps): ClickAction[] => {
             name: "underlying-records",
             title: (
                 <span>
-                    View the underlying
+                    查看这个underlying
                     {" "}
                     <span className="text-dark">
                         {query.table().display_name}
                     </span>
                     {" "}
-                    records
+                    记录
                 </span>
             ),
             icon: "table2",

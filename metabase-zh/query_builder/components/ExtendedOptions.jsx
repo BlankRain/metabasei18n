@@ -101,7 +101,7 @@ export default class ExtendedOptions extends Component {
 
             if (query.canAddSort()) {
                 addSortButton = (
-                    <AddClauseButton text="Pick a field to sort by" onClick={() => {
+                    <AddClauseButton text="选取一个用来排序的字段" onClick={() => {
                         // $FlowFixMe: shouldn't be adding a sort with null field
                         query.addSort([null, "ascending"]).update(setDatasetQuery)
                     }} />
@@ -112,7 +112,7 @@ export default class ExtendedOptions extends Component {
         if ((sortList && sortList.length > 0) || addSortButton) {
             return (
                 <div className="pb3">
-                    <div className="pb1 h6 text-uppercase text-grey-3 text-bold">Sort</div>
+                    <div className="pb1 h6 text-uppercase text-grey-3 text-bold">排序</div>
                     {sortList}
                     {addSortButton}
                 </div>
@@ -168,7 +168,7 @@ export default class ExtendedOptions extends Component {
 
                     { features.limit &&
                         <div>
-                            <div className="mb1 h6 text-uppercase text-grey-3 text-bold">Row limit</div>
+                            <div className="mb1 h6 text-uppercase text-grey-3 text-bold">行限制</div>
                             <LimitWidget limit={query.limit()} onChange={this.setLimit} />
                         </div>
                     }

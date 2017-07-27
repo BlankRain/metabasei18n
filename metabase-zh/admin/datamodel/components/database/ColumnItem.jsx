@@ -67,7 +67,7 @@ export default class Column extends Component {
             targetSelect = (
                 <Select
                     className="TableEditor-field-target block"
-                    placeholder="Select a target"
+                    placeholder="请选择目标"
                     value={this.props.field.fk_target_field_id && _.find(this.props.idfields, (field) => field.id === this.props.field.fk_target_field_id)}
                     options={this.props.idfields}
                     optionNameFn={(field) => field.table.schema && field.table.schema !== "public" ? titleize(humanize(field.table.schema))+"."+field.displayName : field.displayName}
@@ -92,7 +92,7 @@ export default class Column extends Component {
                             <div className="flex-full px1">
                                 <Select
                                     className="TableEditor-field-visibility block"
-                                    placeholder="Select a field visibility"
+                                    placeholder="选择字段可见性"
                                     value={_.find(MetabaseCore.field_visibility_types, (type) => type.id === this.props.field.visibility_type)}
                                     options={MetabaseCore.field_visibility_types}
                                     onChange={this.onVisibilityChange}
@@ -101,7 +101,7 @@ export default class Column extends Component {
                             <div className="flex-full px1">
                                 <Select
                                     className="TableEditor-field-special-type block"
-                                    placeholder="Select a special type"
+                                    placeholder="选择个特殊类型"
                                     value={_.find(MetabaseCore.field_special_types, (type) => type.id === this.props.field.special_type)}
                                     options={specialTypes}
                                     onChange={this.onSpecialTypeChange}
@@ -112,7 +112,7 @@ export default class Column extends Component {
                     </div>
                 </div>
                 <div className="MetadataTable-title flex flex-column flex-full bordered rounded mt1 mr1">
-                    <Input className="AdminInput TableEditor-field-description" type="text" value={this.props.field.description || ""} onBlurChange={this.onDescriptionChange} placeholder="No column description yet" />
+                    <Input className="AdminInput TableEditor-field-description" type="text" value={this.props.field.description || ""} onBlurChange={this.onDescriptionChange} placeholder="还没字段描述" />
                 </div>
             </li>
         )

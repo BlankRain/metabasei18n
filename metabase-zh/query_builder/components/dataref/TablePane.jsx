@@ -61,7 +61,7 @@ export default class TablePane extends Component {
         if (table) {
             var queryButton;
             if (table.rows != null) {
-                var text = `See the raw data for ${table.display_name}`
+                var text = `查看${table.display_name} 的raw数据`
                 queryButton = (<QueryButton className="border-bottom border-top mb3" icon="table" text={text} onClick={this.setQueryAllRows} />);
             }
             var panes = {
@@ -108,7 +108,7 @@ export default class TablePane extends Component {
             } else
 
             var descriptionClasses = cx({ "text-grey-3": !table.description });
-            var description = (<p className={descriptionClasses}>{table.description || "No description set."}</p>);
+            var description = (<p className={descriptionClasses}>{table.description || "暂无描述"}</p>);
 
             return (
                 <div>

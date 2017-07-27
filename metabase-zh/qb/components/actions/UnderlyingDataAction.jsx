@@ -10,7 +10,7 @@ export default ({ question }: ClickActionProps): ClickAction[] => {
         return [
             {
                 name: "underlying-data",
-                title: "View this as a table",
+                title: "作为一个表来查看",
                 icon: "table",
                 question: () => question.toUnderlyingData()
             }

@@ -88,12 +88,12 @@ export default class PublicLinksListing extends Component {
                 <table className="ContentTable">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>名称</th>
                             { getPublicUrl &&
-                                <th>Public Link</th>
+                                <th>公开链接</th>
                             }
                             { revoke &&
-                                <th>Revoke Link</th>
+                                <th>收回链接</th>
                             }
                         </tr>
                     </thead>
@@ -125,8 +125,8 @@ export default class PublicLinksListing extends Component {
                                 { revoke &&
                                     <td className="flex layout-centered">
                                         <Confirm
-                                            title="Disable this link?"
-                                            content="They won't work any more, and can't be restored, but you can create new links."
+                                            title="关闭该链接?"
+                                            content="这个链接不再起作用,也不可恢复,但是你可以创建新的链接"
                                             action={() => {
                                                 this.revoke(link)
                                                 this.trackEvent('Revoked link')
@@ -156,7 +156,7 @@ export const PublicLinksDashboardListing = () =>
         type='Public Dashboard Listing'
         getUrl={({ id }) => Urls.dashboard(id)}
         getPublicUrl={({ public_uuid }) => Urls.publicDashboard(public_uuid)}
-        noLinksMessage="No dashboards have been publicly shared yet."
+        noLinksMessage="还未有公开分享的仪表盘."
     />;
 
 export const PublicLinksQuestionListing = () =>
@@ -166,7 +166,7 @@ export const PublicLinksQuestionListing = () =>
         type='Public Card Listing'
         getUrl={({ id }) => Urls.question(id)}
         getPublicUrl={({ public_uuid }) => Urls.publicCard(public_uuid)}
-        noLinksMessage="No questions have been publicly shared yet."
+        noLinksMessage="还未有公开分享的问题."
     />;
 
 export const EmbeddedDashboardListing = () =>
@@ -174,7 +174,7 @@ export const EmbeddedDashboardListing = () =>
         load={DashboardApi.listEmbeddable}
         getUrl={({ id }) => Urls.dashboard(id)}
         type='Embedded Dashboard Listing'
-        noLinksMessage="No dashboards have been embedded yet."
+        noLinksMessage="未有集成的仪表盘."
     />;
 
 export const EmbeddedQuestionListing = () =>
@@ -182,5 +182,5 @@ export const EmbeddedQuestionListing = () =>
         load={CardApi.listEmbeddable}
         getUrl={({ id }) => Urls.question(id)}
         type='Embedded Card Listing'
-        noLinksMessage="No questions have been embedded yet."
+        noLinksMessage="还未有集成的问题."
     />;

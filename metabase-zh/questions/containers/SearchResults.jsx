@@ -29,7 +29,7 @@ class SearchResults extends Component {
                 <div className="flex align-center mb3">
                     <HeaderWithBack name={totalCount != null ?
                         `${totalCount} ${inflect("result", totalCount)}` :
-                        "Search results"}
+                        "搜索结果"}
                     />
                     <div className="ml-auto flex align-center">
                         <ExpandingSearchField
@@ -43,7 +43,7 @@ class SearchResults extends Component {
                     entityType="cards"
                     entityQuery={this.props.location.query}
                     showSearchWidget={false}
-                    defaultEmptyState="No matching questions found"
+                    defaultEmptyState="查无结果"
                 />
             </div>
         );

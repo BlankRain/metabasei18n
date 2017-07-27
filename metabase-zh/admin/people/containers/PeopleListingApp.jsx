@@ -182,9 +182,9 @@ export default class PeopleListingApp extends Component {
 
     renderAddPersonModal(modalDetails) {
         return (
-            <Modal title="Add Person" onClose={this.onCloseModal}>
+            <Modal title="添加人员" onClose={this.onCloseModal}>
                 <EditUserForm
-                    buttonText="Add Person"
+                    buttonText="添加人员"
                     submitFn={this.onAddPerson.bind(this)}
                     groups={this.props.groups}
                 />
@@ -196,7 +196,7 @@ export default class PeopleListingApp extends Component {
         let { user } = modalDetails;
 
         return (
-            <Modal full form title="Edit Details" onClose={this.onCloseModal}>
+            <Modal full form title="编辑详情" onClose={this.onCloseModal}>
                 <EditUserForm
                     user={user}
                     submitFn={this.onEditDetails.bind(this)}
@@ -210,21 +210,21 @@ export default class PeopleListingApp extends Component {
 
         return (
             <Modal small
-                title={user.first_name+" has been added"}
+                title={user.first_name+" 已添加"}
                 footer={[
-                    <Button onClick={() => this.props.showModal({type: MODAL_ADD_PERSON})}>Add another person</Button>,
-                    <Button primary onClick={this.onCloseModal}>Done</Button>
+                    <Button onClick={() => this.props.showModal({type: MODAL_ADD_PERSON})}>添加另外一个人</Button>,
+                    <Button primary onClick={this.onCloseModal}>完成</Button>
                 ]}
                 onClose={this.onCloseModal}
             >
                 <div className="px4 pb4">
-                    <div className="pb4">We couldn’t send them an email invitation,
-                    so make sure to tell them to log in using <span className="text-bold">{user.email} </span>
-                    and this password we’ve generated for them:</div>
+                    <div className="pb4">我们不能给他发送邀请邮件,
+                    请确保他们使用如下邮件登录 ： <span className="text-bold">{user.email} </span>
+                    这个是我们给他生成的密码 :</div>
 
                     <PasswordReveal password={user.password} />
 
-                    <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pt4 text-centered">If you want to be able to send email invites, just go to the <Link to="/admin/settings/email" className="link text-bold">Email Settings</Link> page.</div>
+                    <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pt4 text-centered">如果你想开启邮件邀请,请去 <Link to="/admin/settings/email" className="link text-bold">邮箱设置</Link> 页面修改.</div>
                 </div>
             </Modal>
         );
@@ -235,14 +235,14 @@ export default class PeopleListingApp extends Component {
 
         return (
             <Modal small
-                title={user.first_name+" has been added"}
+                title={user.first_name+" 已添加"}
                 footer={[
-                    <Button onClick={() => this.props.showModal({type: MODAL_ADD_PERSON})}>Add another person</Button>,
+                    <Button onClick={() => this.props.showModal({type: MODAL_ADD_PERSON})}>添加另外一个人</Button>,
                     <Button primary onClick={this.onCloseModal}>Done</Button>
                 ]}
                 onClose={this.onCloseModal}
             >
-                <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pb4">We’ve sent an invite to <span className="text-bold">{user.email}</span> with instructions to set their password.</div>
+                <div style={{paddingLeft: "5em", paddingRight: "5em"}} className="pb4">我们以及发送了邀请给 <span className="text-bold">{user.email}</span> ,其中介绍了如何设置密码.</div>
             </Modal>
         );
     }
@@ -254,11 +254,11 @@ export default class PeopleListingApp extends Component {
             <Modal small form
                 title={"We've Re-sent "+user.first_name+"'s Invite"}
                 footer={[
-                    <Button primary onClick={this.onCloseModal}>Okay</Button>
+                    <Button primary onClick={this.onCloseModal}>好的</Button>
                 ]}
                 onClose={this.onCloseModal}
             >
-                <div>Any previous email invites they have will no longer work.</div>
+                <div>之前的邮件邀请将失效.</div>
             </Modal>
         );
     }
@@ -271,12 +271,12 @@ export default class PeopleListingApp extends Component {
                 title={"Remove "+user.common_name}
                 footer={[
                     <Button onClick={this.onCloseModal}>Cancel</Button>,
-                    <Button warning onClick={() => this.onRemoveUserConfirm(user)}>Remove</Button>
+                    <Button warning onClick={() => this.onRemoveUserConfirm(user)}>移除</Button>
                 ]}
                 onClose={this.onCloseModal}
             >
                 <div className="px4 pb4">
-                    Are you sure you want to do this? {user.first_name} won't be able to log in anymore.  This can't be undone.
+                    你确定要这样搞? {user.first_name} 再也不能登录系统了，这个是不可恢复的.
                 </div>
             </Modal>
         );
@@ -287,15 +287,15 @@ export default class PeopleListingApp extends Component {
 
         return (
             <Modal small
-                title={"Reset "+user.first_name+"'s Password"}
+                title={"重置 "+user.first_name+"的密码"}
                 footer={[
-                    <Button onClick={this.onCloseModal}>Cancel</Button>,
-                    <Button warning onClick={() => this.onPasswordResetConfirm(user)}>Reset</Button>
+                    <Button onClick={this.onCloseModal}>取消</Button>,
+                    <Button warning onClick={() => this.onPasswordResetConfirm(user)}>重置</Button>
                 ]}
                 onClose={this.onCloseModal}
             >
                 <div className="px4 pb4">
-                    Are you sure you want to do this?
+                    你确定?
                 </div>
             </Modal>
         );
@@ -306,12 +306,12 @@ export default class PeopleListingApp extends Component {
 
         return (
             <Modal small
-                title={user.first_name+"'s Password Has Been Reset"}
+                title={user.first_name+"的密码已经重置了"}
                 footer={<button className="Button Button--primary mr2" onClick={this.onCloseModal}>Done</button>}
                 onClose={this.onCloseModal}
             >
                 <div className="px4 pb4">
-                    <span className="pb3 block">Here’s a temporary password they can use to log in and then change their password.</span>
+                    <span className="pb3 block">这是临时密码,用户可用其登录,然后再设置新的密码.</span>
 
                     <PasswordReveal password={password} />
                 </div>
@@ -325,11 +325,11 @@ export default class PeopleListingApp extends Component {
         return (
             <Modal
                 small
-                title={user.first_name+"'s Password Has Been Reset"}
+                title={user.first_name+"的密码已重置"}
                 footer={<Button primary onClick={this.onCloseModal}>Done</Button>}
                 onClose={this.onCloseModal}
             >
-                <div className="px4 pb4">We've sent them an email with instructions for creating a new password.</div>
+                <div className="px4 pb4">我们已经发了邮件给你,里面会告诉你如何设置新密码.</div>
             </Modal>
         );
     }
@@ -361,19 +361,19 @@ export default class PeopleListingApp extends Component {
             <LoadingAndErrorWrapper loading={!users} error={error}>
             {() =>
                 <AdminPaneLayout
-                    title="People"
-                    buttonText="Add person"
+                    title="人员"
+                    buttonText="添加人员"
                     buttonAction={() => this.props.showModal({type: MODAL_ADD_PERSON})}
                 >
                     <section className="pb4">
                         <table className="ContentTable">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
+                                    <th>名称</th>
                                     <th></th>
-                                    <th>Email</th>
-                                    <th>Groups</th>
-                                    <th>Last Login</th>
+                                    <th>邮箱</th>
+                                    <th>组</th>
+                                    <th>上次登陆</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -383,11 +383,11 @@ export default class PeopleListingApp extends Component {
                                     <td><span className="text-white inline-block"><UserAvatar background={(user.is_superuser) ? "bg-purple" : "bg-brand"} user={user} /></span> <span className="ml2 text-bold">{user.common_name}</span></td>
                                     <td>
                                       {user.google_auth ?
-                                        <Tooltip tooltip="Signed up via Google">
+                                        <Tooltip tooltip="Google登陆">
                                             <Icon name='google' />
                                         </Tooltip> : null}
                                       {user.ldap_auth ?
-                                        <Tooltip tooltip="Signed up via LDAP">
+                                        <Tooltip tooltip="LDAP登陆">
                                             <Icon name='ldap' />
                                         </Tooltip> : null }
                                     </td>
@@ -400,7 +400,7 @@ export default class PeopleListingApp extends Component {
                                             deleteMembership={this.props.deleteMembership}
                                         />
                                     </td>
-                                    <td>{ user.last_login ? user.last_login.fromNow() : "Never" }</td>
+                                    <td>{ user.last_login ? user.last_login.fromNow() : "从未" }</td>
                                     <td className="text-right">
                                         <UserActionsSelect user={user} showModal={this.props.showModal} resendInvite={this.props.resendInvite} isActiveUser={this.props.user.id === user.id} />
                                     </td>

@@ -16,12 +16,12 @@ const formConfig = {
     validate: (values) => {
         const errors = {};
         if (!values.name) {
-            errors.name = "Name is required";
+            errors.name = "名称是必须的！";
         } else if (values.name.length > 100) {
-            errors.name = "Name must be 100 characters or less";
+            errors.name = "名称少于100字";
         }
         if (!values.color) {
-            errors.color = "Color is required";
+            errors.color = "颜色是必须的！";
         }
         return errors;
     },
@@ -37,7 +37,7 @@ export const getFormTitle = ({ id, name }) =>
     id.value ? name.value : "New collection"
 
 export const getActionText = ({ id }) =>
-    id.value ? "Update": "Create"
+    id.value ? "更新": "新建"
 
 
 export const CollectionEditorFormActions = ({ handleSubmit, invalid, onClose, fields}) =>
@@ -70,23 +70,23 @@ export class CollectionEditorForm extends Component {
             >
                 <div className="NewForm ml-auto mr-auto mt4 pt2" style={{ width: 540 }}>
                     <FormField
-                        displayName="Name"
+                        displayName="名称"
                         {...fields.name}
                     >
                         <Input
                             className="Form-input full"
-                            placeholder="My new fantastic collection"
+                            placeholder="我新建的酷炫集合"
                             autoFocus
                             {...fields.name}
                         />
                     </FormField>
                     <FormField
-                        displayName="Description"
+                        displayName="描述"
                         {...fields.description}
                     >
                         <textarea
                             className="Form-input full"
-                            placeholder="It's optional but oh, so helpful"
+                            placeholder="可选项,但是很有用哦"
                             {...fields.description}
                         />
                     </FormField>

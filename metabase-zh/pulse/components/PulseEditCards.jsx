@@ -52,21 +52,21 @@ export default class PulseEditCards extends Component {
         if (cardPreview) {
             if (cardPreview.pulse_card_type === "bar" && cardPreview.row_count > 10) {
                 warnings.push({
-                    head: "Heads up",
-                    body: "This is a large table and we'll have to crop it to use it in a pulse. The max size that can be displayed is 2 columns and 10 rows."
+                    head: "注意啦",
+                    body: "这是一张大表,在pulse中使用它的化,我们得修整一下它.所以,最大显示为两列十行."
                 });
             }
             if (cardPreview.pulse_card_type == null) {
                 warnings.push({
-                    head: "Heads up",
-                    body: "We are unable to display this card in a pulse"
+                    head: "注意啦",
+                    body: "这张卡片在pulse中没法显示"
                 });
             }
         }
         if (showSoftLimitWarning) {
             warnings.push({
-                head: "Looks like this pulse is getting big",
-                body: "We recommend keeping pulses small and focused to help keep them digestable and useful to the whole team."
+                head: "好像pulse太大",
+                body: "我们建议建立小的可调试的pulse."
             });
         }
         return warnings;
@@ -99,8 +99,8 @@ export default class PulseEditCards extends Component {
 
         return (
             <div className="py1">
-                <h2>Pick your data</h2>
-                <p className="mt1 h4 text-bold text-grey-3">Pick up to five questions you'd like to send in this pulse</p>
+                <h2>选取你的数据</h2>
+                <p className="mt1 h4 text-bold text-grey-3">请为这个pulse选取五个你关心的问题</p>
                 <ol className="my3">
                     {cards && pulseCards.map((card, index) =>
                         <li key={index} className="my1">

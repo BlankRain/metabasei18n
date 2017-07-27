@@ -18,18 +18,18 @@ const EXPORT_FORMATS = ["csv", "xlsx", "json"];
 const QueryDownloadWidget = ({ className, card, result, uuid, token }) =>
     <PopoverWithTrigger
         triggerElement={
-            <Tooltip tooltip="Download">
-                <Icon title="Download this data" name="downarrow" size={16} />
+            <Tooltip tooltip="下载">
+                <Icon title="下载这个数据" name="downarrow" size={16} />
             </Tooltip>
         }
         triggerClasses={cx(className, "text-brand-hover")}
     >
         <div className="p2" style={{ maxWidth: 320 }}>
-            <h4>Download</h4>
+            <h4>下载</h4>
             { result.data.rows_truncated != null &&
                 <FieldSet className="my2 text-gold border-gold" legend="Warning">
-                    <div className="my1">Your answer has a large number of rows so it could take awhile to download.</div>
-                    <div>The maximum download size is 1 million rows.</div>
+                    <div className="my1">你的答案数据量太大,可能得稍等一会儿才能下载下来.</div>
+                    <div>最大的下载行数是1 million行.</div>
                 </FieldSet>
             }
             <div className="flex flex-row mt2">

@@ -51,10 +51,10 @@ export default ({ question, clicked }: ClickActionProps): ClickAction[] => {
                 section: "filter",
                 title: (
                     <span>
-                        View this
+                        查看这个
                         {" "}
                         {singularize(stripId(column.display_name))}
-                        's
+                        的
                         {" "}
                         {pluralize(query.table().display_name)}
                     </span>

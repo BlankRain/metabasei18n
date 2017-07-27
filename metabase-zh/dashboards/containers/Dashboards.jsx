@@ -42,19 +42,19 @@ const SECTION_ID_FAVORITES = 'fav';
 const SECTIONS: ListFilterWidgetItem[] = [
     {
         id: SECTION_ID_ALL,
-        name: 'All dashboards',
+        name: '所有dashboards',
         icon: 'dashboard',
         // empty: 'No questions have been saved yet.',
     },
     {
         id: SECTION_ID_FAVORITES,
-        name: 'Favorites',
+        name: '最喜欢的',
         icon: 'star',
         // empty: 'You haven\'t favorited any questions yet.',
     },
     {
         id: SECTION_ID_MINE,
-        name: 'Saved by me',
+        name: '我保存的',
         icon: 'mine',
         // empty:  'You haven\'t saved any questions yet.'
     },
@@ -172,7 +172,7 @@ export class Dashboards extends Component {
                 { noDashboardsCreated ?
                     <div className="mt2 flex-full flex align-center justify-center">
                         <EmptyState
-                            message={<span>Put the charts and graphs you look at <br/>frequently in a single, handy place.</span>}
+                            message={<span>把你经常看到图和卡片 <br/>放到一个单独的地方.</span>}
                             image="/app/img/dashboard_illustration"
                             action="Create a dashboard"
                             onActionClick={this.showCreateDashboard}
@@ -199,9 +199,9 @@ export class Dashboards extends Component {
                                 <EmptyState
                                     message={
                                         <div className="mt4">
-                                            <h3 className="text-grey-5">No results found</h3>
-                                            <p className="text-grey-4">Try adjusting your filter to find what you’re
-                                                looking for.</p>
+                                            <h3 className="text-grey-5">查无结果</h3>
+                                            <p className="text-grey-4">试着调整一下你的过滤器,或许能找到你要找的.
+                                                </p>
                                         </div>
                                     }
                                     image="/app/img/empty_dashboard"

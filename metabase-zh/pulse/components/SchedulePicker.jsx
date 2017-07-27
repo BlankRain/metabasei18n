@@ -52,7 +52,7 @@ export default class SchedulePicker extends Component {
 
         return (
             <span className="mt1">
-                <span className="h4 text-bold mx1">on the</span>
+                <span className="h4 text-bold mx1">在</span>
                 <Select
                     value={_.find(MONTH_DAY_OPTIONS, (o) => o.value === c.schedule_frame)}
                     options={MONTH_DAY_OPTIONS}
@@ -100,7 +100,7 @@ export default class SchedulePicker extends Component {
         let timezone = Settings.get("timezone_short");
         return (
             <div className="mt1">
-                <span className="h4 text-bold mr1">at</span>
+                <span className="h4 text-bold mr1">于</span>
                 <Select
                     className="mr1 bg-white"
                     value={_.find(HOUR_OPTIONS, (o) => o.value === hour)}
@@ -118,7 +118,7 @@ export default class SchedulePicker extends Component {
                     className="bg-white"
                 />
                 <div className="mt2 h4 text-bold text-grey-3 border-top pt2">
-                    {CHANNEL_NOUN_PLURAL[cs && cs.type] || "Messages"} will be sent at {hour === 0 ? 12 : hour}:00 {amPm ? "PM" : "AM"} {timezone}, your Metabase timezone.
+                    {CHANNEL_NOUN_PLURAL[cs && cs.type] || "消息"} 将会在 {hour === 0 ? 12 : hour}:00 {amPm ? "PM" : "AM"} {timezone}发送,以你的时区为准.
                 </div>
             </div>
         );
@@ -128,7 +128,7 @@ export default class SchedulePicker extends Component {
         let { channel, channelSpec } = this.props;
         return (
             <div className="mt1">
-                <span className="h4 text-bold mr1">Sent</span>
+                <span className="h4 text-bold mr1">发送</span>
                 <Select
                     className="h4 text-bold bg-white"
                     value={channel.schedule_type}

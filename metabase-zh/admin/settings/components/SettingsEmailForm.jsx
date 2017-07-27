@@ -72,9 +72,9 @@ export default class SettingsEmailForm extends Component {
 
         switch (validationType) {
             case "email":
-                return !MetabaseUtils.validEmail(value) ? (validationMessage || "That's not a valid email address") : null;
+                return !MetabaseUtils.validEmail(value) ? (validationMessage || "不是一个有效的邮箱地址") : null;
             case "integer":
-                return isNaN(parseInt(value)) ? (validationMessage || "That's not a valid integer") : null;
+                return isNaN(parseInt(value)) ? (validationMessage || "不是一个有效的数字") : null;
         }
     }
 
@@ -117,7 +117,7 @@ export default class SettingsEmailForm extends Component {
         if (error.data && error.data.message) {
             formErrors.message = error.data.message;
         } else {
-            formErrors.message = "Looks like we ran into some problems";
+            formErrors.message = "我们好像遇到了一些麻烦.";
         }
 
         if (error.data && error.data.errors) {
@@ -202,15 +202,15 @@ export default class SettingsEmailForm extends Component {
         });
 
         let sendTestButtonStates = {
-            default: "Send test email",
-            working: "Sending...",
-            success: "Sent!"
+            default: "发送测试邮件",
+            working: "正在发送...",
+            success: "已发送!"
         };
 
         let saveSettingsButtonStates = {
-            default: "Save changes",
-            working: "Saving...",
-            success: "Changes saved!"
+            default: "保存修改",
+            working: "正在保存...",
+            success: "已保存修改!"
         };
 
         let disabled = (!valid || submitting !== "default" || sendingEmail !== "default"),

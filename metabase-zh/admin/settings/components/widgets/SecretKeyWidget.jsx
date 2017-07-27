@@ -29,14 +29,14 @@ export default class SecretKeyWidget extends Component {
                 <SettingInput {...this.props} />
                 { setting.value ?
                     <Confirm
-                        title="Generate a new key?"
-                        ontent="This will cause existing embeds to stop working until they are updated with the new key."
+                        title="生成一个新key?"
+                        ontent="已集成的将会停止工作直到用新生成的key更新."
                         action={this._generateToken}
                     >
-                        <Button className="ml1" primary medium>Regenerate Key</Button>
+                        <Button className="ml1" primary medium>重新生成Key</Button>
                     </Confirm>
                 :
-                    <Button className="ml1" primary medium onClick={this._generateToken}>Generate Key</Button>
+                    <Button className="ml1" primary medium onClick={this._generateToken}>生成Key</Button>
                 }
             </div>
         );

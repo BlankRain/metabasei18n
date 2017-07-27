@@ -103,10 +103,9 @@ export default class PasswordResetApp extends Component {
                                     <LogoIcon className="Logo my4 sm-my0" width={66} height={85} />
                                 </div>
                                 <div className="Grid-cell bordered rounded shadowed">
-                                    <h3 className="Login-header Form-offset mt4">Whoops, that's an expired link</h3>
+                                    <h3 className="Login-header Form-offset mt4">呃呃呃,链接过期啦.</h3>
                                     <p className="Form-offset mb4 mr4">
-                                        For security reasons, password reset links expire after a little while. If you still need
-                                        to reset your password, you can <Link to="/auth/forgot_password" className="link">request a new reset email</Link>.
+                                        安全起见,重置链接一小会儿就会过期. 如果你依然需要重置密码 <Link to="/auth/forgot_password" className="link">重新发送重置邮件</Link>.
                                     </p>
                                 </div>
                             </div>
@@ -126,27 +125,27 @@ export default class PasswordResetApp extends Component {
                           { !resetSuccess ?
                           <div className="Grid-cell">
                               <form className="ForgotForm Login-wrapper bg-white Form-new bordered rounded shadowed" name="form" onSubmit={(e) => this.formSubmitted(e)} noValidate>
-                                  <h3 className="Login-header Form-offset">New password</h3>
+                                  <h3 className="Login-header Form-offset">新密码</h3>
 
-                                  <p className="Form-offset text-grey-3 mb4">To keep your data secure, passwords {passwordComplexity}</p>
+                                  <p className="Form-offset text-grey-3 mb4">为保证数据安全,密码应如: {passwordComplexity}</p>
 
                                   <FormMessage formError={resetError && resetError.data.message ? resetError : null} ></FormMessage>
 
                                   <FormField key="password" fieldName="password" formError={resetError}>
-                                      <FormLabel title={"Create a new password"}  fieldName={"password"} formError={resetError} />
-                                      <input className="Form-input Form-offset full" name="password" placeholder="Make sure its secure like the instructions above" type="password" onChange={(e) => this.onChange("password", e.target.value)} autoFocus />
+                                      <FormLabel title={"创建新密码"}  fieldName={"password"} formError={resetError} />
+                                      <input className="Form-input Form-offset full" name="password" placeholder="确保如上介绍般安全" type="password" onChange={(e) => this.onChange("password", e.target.value)} autoFocus />
                                       <span className="Form-charm"></span>
                                   </FormField>
 
                                   <FormField key="password2" fieldName="password2" formError={resetError}>
-                                      <FormLabel title={"Confirm new password"}  fieldName={"password2"} formError={resetError} />
-                                      <input className="Form-input Form-offset full" name="password2" placeholder="Make sure it matches the one you just entered" type="password" onChange={(e) => this.onChange("password2", e.target.value)} />
+                                      <FormLabel title={"确认新密码"}  fieldName={"password2"} formError={resetError} />
+                                      <input className="Form-input Form-offset full" name="password2" placeholder="确保和新输入的一致" type="password" onChange={(e) => this.onChange("password2", e.target.value)} />
                                       <span className="Form-charm"></span>
                                   </FormField>
 
                                   <div className="Form-actions">
                                       <button className={cx("Button", {"Button--primary": this.state.valid})} disabled={!this.state.valid}>
-                                          Save new password
+                                          保存密码
                                       </button>
                                   </div>
                               </form>
@@ -157,12 +156,12 @@ export default class PasswordResetApp extends Component {
                                   <div className="SuccessMark">
                                       <Icon name="check" />
                                   </div>
-                                  <p>Your password has been reset.</p>
+                                  <p>你的密码已重置.</p>
                                   <p>
                                       { newUserJoining ?
-                                      <Link to="/?new" className="Button Button--primary">Sign in with your new password</Link>
+                                      <Link to="/?new" className="Button Button--primary">使用新密码登陆</Link>
                                       :
-                                      <Link to="/" className="Button Button--primary">Sign in with your new password</Link>
+                                      <Link to="/" className="Button Button--primary">使用新密码登陆</Link>
                                       }
                                   </p>
                               </div>

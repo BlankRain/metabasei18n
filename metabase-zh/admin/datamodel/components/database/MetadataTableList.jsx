@@ -62,13 +62,13 @@ export default class MetadataTableList extends Component {
         }
 
         if (queryableTables.length > 0) {
-            queryableTablesHeader = <li className="AdminList-section">{queryableTables.length} Queryable {inflect("Table", queryableTables.length)}</li>;
+            queryableTablesHeader = <li className="AdminList-section">{queryableTables.length} 可查询 {inflect("Table", queryableTables.length)}</li>;
         }
         if (hiddenTables.length > 0) {
-            hiddenTablesHeader = <li className="AdminList-section">{hiddenTables.length} Hidden {inflect("Table", hiddenTables.length)}</li>;
+            hiddenTablesHeader = <li className="AdminList-section">{hiddenTables.length} 已隐藏 {inflect("Table", hiddenTables.length)}</li>;
         }
         if (queryableTables.length === 0 && hiddenTables.length === 0) {
-            queryableTablesHeader = <li className="AdminList-section">0 Tables</li>;
+            queryableTablesHeader = <li className="AdminList-section">0 张表</li>;
         }
 
         return (
@@ -78,7 +78,7 @@ export default class MetadataTableList extends Component {
                     <input
                         className="AdminInput pl4 border-bottom"
                         type="text"
-                        placeholder="Find a table"
+                        placeholder="搜索一张表"
                         value={this.state.searchText}
                         onChange={this.updateSearchText}
                     />

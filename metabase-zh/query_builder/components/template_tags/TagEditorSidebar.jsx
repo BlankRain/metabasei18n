@@ -65,7 +65,7 @@ export default class TagEditorSidebar extends Component {
             <div className="DataReference-container p3 full-height scroll-y">
                 <div className="DataReference-header flex align-center mb2">
                     <h2 className="text-default">
-                        Variables
+                        变量
                     </h2>
                     <a className="flex-align-right text-default text-brand-hover no-decoration" onClick={() => this.props.onClose()}>
                         <Icon name="close" size={18} />
@@ -73,8 +73,8 @@ export default class TagEditorSidebar extends Component {
                 </div>
                 <div className="DataReference-content">
                     <div className="Button-group Button-group--brand text-uppercase mb2">
-                        <a className={cx("Button Button--small", { "Button--active": section === "settings" , "disabled": tags.length === 0 })} onClick={() => this.setSection("settings")}>Settings</a>
-                        <a className={cx("Button Button--small", { "Button--active": section === "help" })} onClick={() => this.setSection("help")}>Help</a>
+                        <a className={cx("Button Button--small", { "Button--active": section === "settings" , "disabled": tags.length === 0 })} onClick={() => this.setSection("settings")}>设置</a>
+                        <a className={cx("Button Button--small", { "Button--active": section === "help" })} onClick={() => this.setSection("help")}>帮助</a>
                     </div>
                     { section === "settings" ?
                         <SettingsPane tags={tags} onUpdate={this.props.updateTemplateTag} databaseFields={this.props.databaseFields}/>

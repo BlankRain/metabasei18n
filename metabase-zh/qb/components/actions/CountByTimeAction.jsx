@@ -26,7 +26,7 @@ export default ({ question }: ClickActionProps): ClickAction[] => {
         {
             name: "count-by-time",
             section: "sum",
-            title: <span>Count of rows by time</span>,
+            title: <span>通过时间统计行数</span>,
             icon: "line",
             question: () =>
                 question

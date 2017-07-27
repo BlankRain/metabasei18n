@@ -53,8 +53,8 @@ export default class PermissionsApp extends Component {
                 {this.props.children}
                 <Modal isOpen={this.state.nextLocation}>
                     <ConfirmContent
-                        title="You have unsaved changes"
-                        message="Do you want to leave this page and discard your changes?"
+                        title="你有未保存的修改"
+                        message="你是否想离开页面,放弃修改?"
                         onClose={() => {
                             this.setState({ nextLocation: null });
                         }}

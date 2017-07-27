@@ -216,8 +216,8 @@ export default class Tutorial extends Component {
                     >
                         <div className="text-centered">
                             <h2>​Whoops!</h2>
-                            <p className="my2">Sorry, it looks like something went wrong. Please try restarting the tutorial in a minute.</p>
-                            <button className="Button Button--primary" onClick={this.close}>Okay</button>
+                            <p className="my2">抱歉,好像出啥问题了，过会儿再试试吧.</p>
+                            <button className="Button Button--primary" onClick={this.close}>好的</button>
                         </div>
                     </TutorialModal>
                 </Modal>

@@ -17,21 +17,20 @@ export default class CreatedDatabaseModal extends Component {
         const { onClose, onDone, databaseId } = this.props;
         return (
             <ModalContent
-                title="Your database has been added!"
+                title="您的数据库已添加!"
                 onClose={onClose}
             >
                 <div className="Form-inputs mb4">
                     <p>
-                        We're analyzing its schema now to make some educated guesses about its
-                        metadata. <Link to={"/admin/datamodel/database/"+databaseId}>View this
-                        database</Link> in the Data Model section to see what we've found and to
-                        make edits, or <Link to={Urls.question(null, `?db=${databaseId}`)}>ask a question</Link> about
-                        this database.
+                        我们正在对它的Schema进行分析,对它的元数据进行些合理的推测.
+                         <Link to={"/admin/datamodel/database/"+databaseId}>点击查看</Link> 数据模型部分,就能发现我们的成果,
+                        你可以对它进行编辑, 或者 <Link to={Urls.question(null, `?db=${databaseId}`)}>提个问题</Link> ,针对这个数据库你关心的部分啦.
+                        
                     </p>
                 </div>
 
                 <div className="Form-actions flex layout-centered">
-                    <button className="Button Button--primary px3" onClick={onDone}>Done</button>
+                    <button className="Button Button--primary px3" onClick={onDone}>完成</button>
                 </div>
             </ModalContent>
         );

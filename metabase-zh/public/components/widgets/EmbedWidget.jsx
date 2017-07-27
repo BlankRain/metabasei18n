@@ -46,7 +46,7 @@ export default class EmbedWidget extends Component {
                 ref={m => this._modal = m}
                 full
                 triggerElement={
-                    <Tooltip tooltip={`Sharing and embedding`}>
+                    <Tooltip tooltip={`共享与集成`}>
                         <Icon name="share" onClick={() => MetabaseAnalytics.trackEvent("Sharing / Embedding", resourceType, "Sharing Link Clicked") } />
                     </Tooltip>
                 }

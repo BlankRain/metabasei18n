@@ -44,7 +44,7 @@ export default class EmbedCodePane extends Component {
                     <div key="application">
                     <p>To embed this {resourceType} in your application:</p>
                         <CodeSample
-                            title="Insert this code snippet in your server code to generate the signed embedding URL "
+                            title="在服务端插入代码段,以生成集成URL "
                             options={getSignTokenOptions({ siteUrl, secretKey, resourceType, resourceId: resource.id, params, displayOptions })}
                             onChangeOption={(option) => {
                                 if (option && option.embedOption && this._embedSample && this._embedSample.setOption) {
@@ -55,21 +55,21 @@ export default class EmbedCodePane extends Component {
                         <CodeSample
                             className="mt2"
                             ref={embedSample => this._embedSample = embedSample}
-                            title="Then insert this code snippet in your HTML template or single page app."
+                            title="把代码段插入到你的HTML模板文件或单页系统中."
                             options={getSignedEmbedOptions({ iframeUrl })}
                         />
                     </div>
                 :
                     <div key="public">
                         <CodeSample
-                            title="Embed code snippet for your HTML or Frontend Application"
+                            title="集成代码段,为你的前端项目或网页项目"
                             options={getPublicEmbedOptions({ iframeUrl })}
                         />
                     </div>
                 }
 
                 <div className="text-centered my2">
-                    <h4>More <ExternalLink href="https://github.com/metabase/embedding_reference_apps">examples on GitHub</ExternalLink></h4>
+                    <h4>更多<ExternalLink href="https://github.com/metabase/embedding_reference_apps">示例在 GitHub</ExternalLink></h4>
                 </div>
             </div>
         );

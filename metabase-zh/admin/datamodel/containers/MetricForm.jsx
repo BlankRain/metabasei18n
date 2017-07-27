@@ -25,19 +25,19 @@ import Table from "metabase-lib/lib/metadata/Table";
     validate: (values) => {
         const errors = {};
         if (!values.name) {
-            errors.name = "Name is required";
+            errors.name = "名称是必须的";
         }
         if (!values.description) {
-            errors.description = "Description is required";
+            errors.description = "描述是必须的";
         }
         if (values.id != null) {
             if (!values.revision_message) {
-                errors.revision_message = "Revision message is required";
+                errors.revision_message = "修订消息是必须的";
             }
         }
         let aggregations = values.definition && Query.getAggregations(values.definition);
         if (!aggregations || aggregations.length === 0) {
-            errors.definition = "Aggregation is required";
+            errors.definition = "Aggregation是必须的";
         }
         return errors;
     }
@@ -74,10 +74,10 @@ export default class MetricForm extends Component {
                 <form className="full" onSubmit={handleSubmit}>
                     <div className="wrapper py4">
                         <FormLabel
-                            title={(metric && metric.id != null ? "Edit" : "Create") + " Your Metric"}
+                            title={(metric && metric.id != null ? "编辑" : "创建") + " 您的 Metric"}
                             description={metric && metric.id != null ?
-                                "Make changes to your metric and leave an explanatory note." :
-                                "You can create saved metrics to add a named metric option to this table. Saved metrics include the aggregation type, the aggregated field, and optionally any filter you add. As an example, you might use this to create something like the official way of calculating \"Average Price\" for an Orders table."
+                                "修改你的metric,并请留下一个说明性的文字记录." :
+                                "你可以创建并保存metrics,这样就可以给这张表添加一个已知的metric项. 保存后的metrics 包括 aggregation类型, aggregated字段, 或者任何过滤条件. 比如说,你可以把它作为一种正式计算订单平均价格的方法."
                             }
                         >
                         <PartialQueryBuilder
@@ -97,36 +97,36 @@ export default class MetricForm extends Component {
                                 })
                             }
                             tableMetadata={tableMetadata}
-                            previewSummary={previewSummary == null ? "" : "Result: " + formatValue(previewSummary)}
+                            previewSummary={previewSummary == null ? "" : "结果: " + formatValue(previewSummary)}
                             updatePreviewSummary={this.updatePreviewSummary.bind(this)}
                             {...definition}
                         />
                         </FormLabel>
                         <div style={{ maxWidth: "575px" }}>
                             <FormLabel
-                                title="Name Your Metric"
-                                description="Give your metric a name to help others find it."
+                                title="给你的Metric起个名字"
+                                description="好的metric名字可以让别人更容易找到它."
                             >
                                 <FormInput
                                     field={name}
-                                    placeholder="Something descriptive but not too long"
+                                    placeholder="简短的描述一下"
                                 />
                             </FormLabel>
                             <FormLabel
-                                title="Describe Your Metric"
-                                description="Give your metric a description to help others understand what it's about."
+                                title="描述你的 Metric"
+                                description="给你的Metric添加个描述,这样好让大家懂它是做什么的."
                             >
                                 <FormTextArea
                                     field={description}
-                                    placeholder="This is a good place to be more specific about less obvious metric rules"
+                                    placeholder="这里是个好地方,去更具体的解释那些不是很明显的metric规则"
                                 />
                             </FormLabel>
                             { id.value != null &&
                                 <FieldSet legend="Reason For Changes">
-                                    <FormLabel description="Leave a note to explain what changes you made and why they were required.">
+                                    <FormLabel description="简要说明一下你做了什么改变以及改变的原因.">
                                         <FormTextArea
                                             field={revision_message}
-                                            placeholder="This will show up in the revision history for this metric to help everyone remember why things changed"
+                                            placeholder="这个将会在修订记录里展示,这样大家就可以知道为什么做这样的改变"
                                         />
                                     </FormLabel>
                                     <div className="flex align-center">

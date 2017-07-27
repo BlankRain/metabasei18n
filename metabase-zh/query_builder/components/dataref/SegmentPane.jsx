@@ -120,7 +120,7 @@ export default class SegmentPane extends Component {
                 usefulQuestions={usefulQuestions}
                 extra={metadata &&
                 <div>
-                    <p className="text-bold">Segment Definition</p>
+                    <p className="text-bold">Segment定义</p>
                     <QueryDefinition object={segment} tableMetadata={metadata.tables[segment.table_id]} />
                 </div>
                 }

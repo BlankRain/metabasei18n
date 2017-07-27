@@ -99,7 +99,7 @@ export default class TagEditorParam extends Component {
                 <h3 className="pb2">{tag.name}</h3>
 
                 <div className="pb1">
-                    <h5 className="pb1 text-normal">Filter label</h5>
+                    <h5 className="pb1 text-normal">过滤标签</h5>
                     <input
                         type="text"
                         value={tag.display_name}
@@ -109,7 +109,7 @@ export default class TagEditorParam extends Component {
                 </div>
 
                 <div className="pb1">
-                    <h5 className="pb1 text-normal">Variable type</h5>
+                    <h5 className="pb1 text-normal">变量类型</h5>
                     <Select
                         className="border-med bg-white block"
                         value={tag.type}
@@ -117,16 +117,16 @@ export default class TagEditorParam extends Component {
                         isInitiallyOpen={!tag.type}
                         placeholder="Select…"
                     >
-                        <Option value="text">Text</Option>
-                        <Option value="number">Number</Option>
-                        <Option value="date">Date</Option>
-                        <Option value="dimension">Field Filter</Option>
+                        <Option value="text">文本</Option>
+                        <Option value="number">数字</Option>
+                        <Option value="date">日期</Option>
+                        <Option value="dimension">字段过滤</Option>
                     </Select>
                 </div>
 
                 { tag.type === "dimension" &&
                     <div className="pb1">
-                        <h5 className="pb1 text-normal">Field</h5>
+                        <h5 className="pb1 text-normal">字段</h5>
                         <Select
                             className="border-med bg-white block"
                             value={Array.isArray(tag.dimension) ? tag.dimension[1] : null}
@@ -157,7 +157,7 @@ export default class TagEditorParam extends Component {
                             value={tag.widget_type}
                             onChange={(e) => this.setParameterAttribute("widget_type", e.target.value)}
                             isInitiallyOpen={!tag.widget_type}
-                            placeholder="Select…"
+                            placeholder="选择…"
                         >
                             {[{ name: "None", type: undefined }].concat(widgetOptions).map(widgetOption =>
                                 <Option key={widgetOption.type} value={widgetOption.type}>
@@ -170,14 +170,14 @@ export default class TagEditorParam extends Component {
 
                 { tag.type !== "dimension" &&
                     <div className="flex align-center pb1">
-                        <h5 className="text-normal mr1">Required?</h5>
+                        <h5 className="text-normal mr1">必须的?</h5>
                         <Toggle value={tag.required} onChange={(value) => this.setRequired(value)} />
                     </div>
                 }
 
                 { ((tag.type !== "dimension" && tag.required) || (tag.type === "dimension" || tag.widget_type)) &&
                     <div className="pb1">
-                        <h5 className="pb1 text-normal">Default value</h5>
+                        <h5 className="pb1 text-normal">默认值</h5>
                         <ParameterValueWidget
                             parameter={{
                                 type: tag.widget_type || (tag.type === "date" ? "date/single" : null)

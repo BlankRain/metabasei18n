@@ -27,7 +27,7 @@ export default ({ question, clicked }: ClickActionProps): ClickAction[] => {
         {
             name: "underlying-records",
             section: "records",
-            title: "View " +
+            title: "查看" +
                 inflect("these", count, "this", "these") +
                 " " +
                 inflect(query.table().display_name, count),

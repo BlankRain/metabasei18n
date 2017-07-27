@@ -24,9 +24,9 @@ import {
 import * as metadataActions from "metabase/redux/metadata";
 
 const emptyStateData = {
-    title: "Metabase is no fun without any data",
-    adminMessage: "Your databases will appear here once you connect one",
-    message: "Databases will appear here once your admins have added some",
+    title: "Metabase 没数据不好玩",
+    adminMessage: "你一但连接后,你的数据库就出现了.",
+    message: "你的管理员添加了的数据库会在这里展示.",
     image: "app/assets/img/databases-list",
     adminAction: "Connect a database",
     adminLink: "/admin/databases/create"
@@ -63,7 +63,7 @@ export default class DatabaseList extends Component {
         return (
             <div style={style} className="full">
                 <ReferenceHeader 
-                    name="Databases and tables"
+                    name="数据库和表"
                 />
                 <LoadingAndErrorWrapper loading={!loadingError && loading} error={loadingError}>
                 { () => Object.keys(entities).length > 0 ?

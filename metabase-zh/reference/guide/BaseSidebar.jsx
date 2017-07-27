@@ -19,14 +19,14 @@ const BaseSidebar = ({
                 className="py4"
                 crumbs={[["Data Reference"]]}
                 inSidebar={true}
-                placeholder="Data Reference"
+                placeholder="数据参考"
             />
         </div>
         <ol>
             <SidebarItem key="/reference/guide" 
                          href="/reference/guide" 
                          icon="reference" 
-                         name="Start here" />
+                         name="从这里开始" />
             <SidebarItem key="/reference/metrics" 
                          href="/reference/metrics" 
                          icon="ruler" 
@@ -38,7 +38,7 @@ const BaseSidebar = ({
             <SidebarItem key="/reference/databases" 
                          href="/reference/databases" 
                          icon="database" 
-                         name="Databases and tables" />
+                         name="数据库和表" />
         </ol>
     </div>
 

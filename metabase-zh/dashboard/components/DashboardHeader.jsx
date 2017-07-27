@@ -166,10 +166,10 @@ export default class DashboardHeader extends Component {
                 key="save"
                 actionFn={() => this.onSave()}
                 className="Button Button--small Button--primary"
-                normalText="Save"
-                activeText="Saving…"
-                failedText="Save failed"
-                successText="Saved"
+                normalText="保存"
+                activeText="正在保存…"
+                failedText="保存失败"
+                successText="已保存"
             />
         ];
     }
@@ -241,8 +241,8 @@ export default class DashboardHeader extends Component {
 
         if (!isFullscreen && !isEditing && canEdit) {
             buttons.push(
-                <Tooltip tooltip="Edit dashboard">
-                    <a data-metabase-event="Dashboard;Edit" key="edit" title="Edit Dashboard Layout" className="text-brand-hover cursor-pointer" onClick={() => this.onEdit()}>
+                <Tooltip tooltip="编辑dashboard">
+                    <a data-metabase-event="Dashboard;Edit" key="edit" title="编辑 Dashboard 布局" className="text-brand-hover cursor-pointer" onClick={() => this.onEdit()}>
                         <Icon name="pencil" size={16} />
                     </a>
                 </Tooltip>
@@ -256,8 +256,8 @@ export default class DashboardHeader extends Component {
                     key="add"
                     ref="addQuestionModal"
                     triggerElement={
-                        <Tooltip tooltip="Add a question">
-                            <span data-metabase-event="Dashboard;Add Card Modal" title="Add a question to this dashboard">
+                        <Tooltip tooltip="添加个提问">
+                            <span data-metabase-event="Dashboard;Add Card Modal" title="添加个提问到这个dashboard">
                                 <Icon className={cx("text-brand-hover cursor-pointer", { "Icon--pulse": isEmpty })} name="add" size={16} />
                             </span>
                         </Tooltip>
@@ -300,11 +300,11 @@ export default class DashboardHeader extends Component {
                 isEditing={this.props.isEditing}
                 isEditingInfo={this.props.isEditing}
                 headerButtons={this.getHeaderButtons()}
-                editingTitle="You are editing a dashboard"
+                editingTitle="你正在编辑dashboard"
                 editingButtons={this.getEditingButtons()}
                 setItemAttributeFn={this.props.setDashboardAttribute}
                 headerModalMessage={this.props.isEditingParameter ?
-                    "Select the field that should be filtered for each card" : null}
+                    "给每张卡片选择要过滤的字段" : null}
                 onHeaderModalDone={() => this.props.setEditingParameter(null)}
             >
             </Header>

@@ -24,11 +24,11 @@ const VisualizationResult = ({question, isObjectDetail, lastRunDatasetQuery, nav
         // successful query but there were 0 rows returned with the result
         return <VisualizationErrorMessage
                   type='noRows'
-                  title='No results!'
-                  message='This may be the answer you’re looking for. If not, chances are your filters are too specific. Try removing or changing your filters to see more data.'
+                  title='查无结果!'
+                  message='可能这就是你要的答案. 如果不是,你的过滤条件太特殊了,建议你修改一下再试试..'
                   action={
                     <button className="Button" onClick={() => window.history.back() }>
-                        Back to last run
+                        返回运行上一个
                     </button>
                   }
               />

@@ -33,11 +33,11 @@ const PermissionsConfirm = ({ diff }) =>
                     { (database.grantedTables || database.revokedTables) &&
                         <div>
                             <GroupName group={group} />
-                            {" will be "}
-                            {database.grantedTables && <TableAccessChange verb="given access to" color="text-success" tables={database.grantedTables} /> }
-                            {database.grantedTables && database.revokedTables && " and "}
-                            {database.revokedTables && <TableAccessChange verb="denied access to" color="text-warning" tables={database.revokedTables} /> }
-                            {" in "}
+                            {" 将会 "}
+                            {database.grantedTables && <TableAccessChange verb=" 拥有访问权" color="text-success" tables={database.grantedTables} /> }
+                            {database.grantedTables && database.revokedTables && " 并且 "}
+                            {database.revokedTables && <TableAccessChange verb=" 拒绝访问" color="text-warning" tables={database.revokedTables} /> }
+                            {" 在 "}
                             <DatabaseName database={database} />
                             {"."}
                         </div>
@@ -46,16 +46,16 @@ const PermissionsConfirm = ({ diff }) =>
                         <div>
                             <GroupName group={group} />
                             { database.native === "none" ?
-                                " will no longer able to "
+                                " 将不再可以 "
                             :
-                                " will now be able to "
+                                " 现可以"
                             }
                             { database.native === "read" ?
-                                <span className="text-gold">read</span>
+                                <span className="text-gold">读</span>
                             : database.native === "write" ?
-                                <span className="text-success">write</span>
+                                <span className="text-success">写</span>
                             :
-                                <span>read or write</span>
+                                <span>读或写</span>
                             }
                             {" native queries for "}
                             <DatabaseName database={database} />

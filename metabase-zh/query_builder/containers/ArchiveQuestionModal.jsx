@@ -43,13 +43,13 @@ class ArchiveQuestionModal extends Component {
                         </span>
                     </Tooltip>
                 }
-                title="Archive this question?"
+                title="打包这个提问?"
                 footer={[
-                    <Button key='cancel' onClick={this.onClose}>Cancel</Button>,
-                    <Button key='archive' warning onClick={this.onArchive}>Archive</Button>
+                    <Button key='cancel' onClick={this.onClose}>取消</Button>,
+                    <Button key='archive' warning onClick={this.onArchive}>打包</Button>
                 ]}
             >
-                <div className="px4 pb4">This question will be removed from any dashboards or pulses using it.</div>
+                <div className="px4 pb4">这个提问将会从正在使用它的dashboards或者 pulses中移除.</div>
             </ModalWithTrigger>
         )
     }

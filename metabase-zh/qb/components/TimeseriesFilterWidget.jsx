@@ -103,16 +103,16 @@ export default class TimeseriesFilterWidget extends Component {
                 currentFilter
             ).join(" - ");
             if (currentFilter[0] === ">") {
-                currentDescription = "After " + currentDescription;
+                currentDescription = "在之后 " + currentDescription;
             } else if (currentFilter[0] === "<") {
-                currentDescription = "Before " + currentDescription;
+                currentDescription = "在之前 " + currentDescription;
             } else if (currentFilter[0] === "IS_NULL") {
-                currentDescription = "Is Empty";
+                currentDescription = "为空";
             } else if (currentFilter[0] === "NOT_NULL") {
-                currentDescription = "Not Empty";
+                currentDescription = "不为空";
             }
         } else {
-            currentDescription = "All Time";
+            currentDescription = "所有时间";
         }
 
         return (
@@ -161,7 +161,7 @@ export default class TimeseriesFilterWidget extends Component {
                             }
                         }}
                     >
-                        Apply
+                        应用
                     </Button>
                 </div>
             </PopoverWithTrigger>

@@ -15,9 +15,9 @@ const LabelPicker = ({ labels, count, item, setLabeled }) =>
     <div className={S.picker}>
         <div className={S.heading}>
         { count > 1 ?
-            "Apply labels to " + count + " questions"
+            "应用标签到 " + count + " 个提问"
         :
-            "Label as"
+            "标签:"
         }
         </div>
         <ul className={S.options}>
@@ -49,8 +49,8 @@ const LabelPicker = ({ labels, count, item, setLabeled }) =>
             }) }
         </ul>
         <div className={S.footer}>
-            <Link className="link" to="/labels">Add and edit labels</Link>
-            <Tooltip tooltip="In an upcoming release, Labels will be removed in favor of Collections.">
+            <Link className="link" to="/labels">添加编辑标签</Link>
+            <Tooltip tooltip="未来发布版本,标签将会从集合里移除.">
                 <Icon name="warning2" className="text-error float-right" />
             </Tooltip>
         </div>

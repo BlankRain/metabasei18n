@@ -37,9 +37,9 @@ type Props = {
 export const TimeseriesModeFooter = (props: Props) => {
     return (
         <div className="flex layout-centered">
-            <span className="mr1">View</span>
+            <span className="mr1">查看</span>
             <TimeseriesFilterWidget {...props} card={props.lastRunCard} />
-            <span className="mx1">by</span>
+            <span className="mx1">通过</span>
             <TimeseriesGroupingWidget {...props} card={props.lastRunCard} />
         </div>
     );

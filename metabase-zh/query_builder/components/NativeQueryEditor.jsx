@@ -270,7 +270,7 @@ export default class NativeQueryEditor extends Component {
             if (databases.length > 1 && (database == null || _.any(databases, (db) => db.id === database.id))) {
                 dataSelectors.push(
                     <div key="db_selector" className="GuiBuilder-section GuiBuilder-data flex align-center">
-                        <span className="GuiBuilder-section-label Query-label">Database</span>
+                        <span className="GuiBuilder-section-label Query-label">数据库</span>
                         <DataSelector
                             databases={databases}
                             datasetQuery={query.datasetQuery()}
@@ -289,7 +289,7 @@ export default class NativeQueryEditor extends Component {
 
                 dataSelectors.push(
                     <div key="table_selector" className="GuiBuilder-section GuiBuilder-data flex align-center">
-                        <span className="GuiBuilder-section-label Query-label">Table</span>
+                        <span className="GuiBuilder-section-label Query-label">表</span>
                         <DataSelector
                             ref="dataSection"
                             includeTables={true}
@@ -314,11 +314,11 @@ export default class NativeQueryEditor extends Component {
         let editorClasses, toggleEditorText, toggleEditorIcon;
         if (this.state.showEditor) {
             editorClasses = "";
-            toggleEditorText = query.hasWritePermission() ? "Hide Editor" : "Hide Query";
+            toggleEditorText = query.hasWritePermission() ? "隐藏编辑器" : "隐藏查询";
             toggleEditorIcon = "contract";
         } else {
             editorClasses = "hide";
-            toggleEditorText = query.hasWritePermission() ? "Open Editor" : "Show Query";
+            toggleEditorText = query.hasWritePermission() ? "显示编辑器" : "显示查询";
             toggleEditorIcon = "expand";
         }
 

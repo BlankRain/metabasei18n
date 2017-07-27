@@ -27,7 +27,7 @@ import ReferenceHeader from "../components/ReferenceHeader.jsx";
 
 
 const emptyStateData =  {
-    message: "There are no revisions for this metric"
+    message: "该 metric 暂无修订"
 }
 
 const mapStateToProps = (state, props) => {
@@ -83,7 +83,7 @@ export default class MetricRevisions extends Component {
         return (
             <div style={style} className="full">
                 <ReferenceHeader 
-                    name={`Revision history for ${this.props.metric.name}`}
+                    name={` ${this.props.metric.name}的修订历史`}
                     headerIcon="ruler"
                 />
                 <LoadingAndErrorWrapper loading={!loadingError && loading} error={loadingError}>

@@ -111,7 +111,7 @@ export default class DateAllOptionsWidget extends Component {
                     className={cx("Button Button--purple full", {"disabled": !this.isValid()})}
                     onClick={this.commitAndClose}
                 >
-                    Update filter
+                    更新过滤器
                 </button>
             </div>
         </div>)

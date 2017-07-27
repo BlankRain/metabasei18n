@@ -117,7 +117,7 @@ export default class SelectPicker extends Component {
                       <ListSearchField
                           onChange={this.updateSearchText}
                           searchText={this.state.searchText}
-                          placeholder="Find a value"
+                          placeholder="查找一个值"
                           autoFocus={true}
                       />
                   </div>

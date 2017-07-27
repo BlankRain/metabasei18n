@@ -161,11 +161,11 @@ export default class DatabaseDetailsForm extends Component {
                             <Toggle value={on} onChange={(val) => this.onChange("tunnel-enabled", val)}/>
                         </div>
                         <div className="px2">
-                            <h3>Use an SSH-tunnel for database connections</h3>
+                            <h3>使用SSH-tunnel 数据库连接</h3>
                             <div style={{maxWidth: "40rem"}} className="pt1">
-                                 Some database installations can only be accessed by connecting through an SSH bastion host.
-                                 This option also provides an extra layer of security when a VPN is not available.
-                                 Enabling this is usually slower than a direct connection.
+                                 有些数据库只提供ssh连接.
+                                 VPN不可用时,这个提供了额外的安全层.
+                                 这个通常比直连要慢.
                             </div>
                         </div>
                     </div>
@@ -183,10 +183,10 @@ export default class DatabaseDetailsForm extends Component {
                             <Toggle value={on} onChange={(val) => this.onChange("is_full_sync", val)}/>
                         </div>
                         <div className="px2">
-                            <h3>Enable in-depth database analysis</h3>
+                            <h3>启用深度数据分析</h3>
                             <div style={{maxWidth: "40rem"}} className="pt1">
-                                This allows us to present you with better metadata for your tables and is required for some features of Metabase.
-                                We recommend leaving this on unless your database is large and you're concerned about performance.
+                                这个允许我们更好的展示你的表的元数据.Metabase的某些功能可能会用的这些东西.
+                                建议你开启,除非你的数据库很大,并且你关心性能.
                             </div>
                         </div>
                     </div>
@@ -201,8 +201,8 @@ export default class DatabaseDetailsForm extends Component {
                 credentialsURLLink = (
                     <div className="flex align-center Form-offset">
                         <div className="Grid-cell--top">
-                            <a href={credentialsURL} target='_blank'>Click here</a> to generate a Client ID and Client Secret for your project.
-                            Choose "Other" as the application type. Name it whatever you'd like.
+                            <a href={credentialsURL} target='_blank'>点击这里</a> 给你的项目生成客户ID和客户端密钥.
+                            选择"其他"作为应用类型,然后随便起个名字.
                         </div>
                     </div>);
             // }
@@ -223,9 +223,9 @@ export default class DatabaseDetailsForm extends Component {
                 authURLLink = (
                     <div className="flex align-center Form-offset">
                         <div className="Grid-cell--top">
-                            <a href={authURL} target='_blank'>Click here</a> to get an auth code
+                            <a href={authURL} target='_blank'>Click here</a> 获取一个认证码
                             { engine === "bigquery" &&
-                                <span> (or <a href={AUTH_URL_PREFIXES["bigquery_with_drive"] + clientID} target='_blank'>with Google Drive permissions</a>)</span>
+                                <span> (or <a href={AUTH_URL_PREFIXES["bigquery_with_drive"] + clientID} target='_blank'>with Google Drive 权限</a>)</span>
                             }
                         </div>
                     </div>);
@@ -256,8 +256,8 @@ export default class DatabaseDetailsForm extends Component {
         let fields = [
             {
                 name: 'name',
-                'display-name': 'Name',
-                placeholder: "How would you like to refer to this database?",
+                'display-name': '名称',
+                placeholder: "你想怎样引用这个数据库?",
                 required: true
             },
             ...engines[engine]['details-fields'],

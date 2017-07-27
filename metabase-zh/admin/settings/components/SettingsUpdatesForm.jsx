@@ -73,19 +73,19 @@ export default class SettingsUpdatesForm extends Component {
         if (!versionInfo || MetabaseUtils.compareVersions(currentVersion, versionInfo.latest.version) >= 0) {
             return (
                 <div className="p2 bg-brand bordered rounded border-brand text-white text-bold">
-                    You're running Metabase {this.removeVersionPrefixIfNeeded(currentVersion)} which is the latest and greatest!
+                    你正在运行最新最棒{this.removeVersionPrefixIfNeeded(currentVersion)} 版的Metabase!
                 </div>
             );
         } else {
             return (
                 <div>
                     <div className="p2 bg-green bordered rounded border-green flex flex-row align-center justify-between">
-                        <span className="text-white text-bold">Metabase {this.removeVersionPrefixIfNeeded(versionInfo.latest.version)} is available.  You're running {this.removeVersionPrefixIfNeeded(currentVersion)}</span>
-                        <a data-metabase-event={"Updates Settings; Update link clicked; "+versionInfo.latest.version} className="Button Button--white Button--medium borderless" href="http://www.metabase.com/start" target="_blank">Update</a>
+                        <span className="text-white text-bold">Metabase {this.removeVersionPrefixIfNeeded(versionInfo.latest.version)} 已可用.  你正在运行 {this.removeVersionPrefixIfNeeded(currentVersion)}</span>
+                        <a data-metabase-event={"Updates Settings; Update link clicked; "+versionInfo.latest.version} className="Button Button--white Button--medium borderless" href="http://www.metabase.com/start" target="_blank">更新</a>
                     </div>
 
                     <div className="text-grey-3">
-                        <h3 className="py3 text-uppercase">What's Changed:</h3>
+                        <h3 className="py3 text-uppercase">更新记录:</h3>
 
                         {this.renderVersion(versionInfo.latest)}
 

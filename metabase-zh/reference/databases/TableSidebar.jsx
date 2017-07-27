@@ -23,22 +23,22 @@ const TableSidebar = ({
                          [database.name, `/reference/databases/${database.id}`],
                          [table.name]]}
                 inSidebar={true}
-                placeholder="Data Reference"
+                placeholder="数据参考"
             />
         </div>
         <ol>
             <SidebarItem key={`/reference/databases/${database.id}/tables/${table.id}`} 
                          href={`/reference/databases/${database.id}/tables/${table.id}`} 
                          icon="document" 
-                         name="Details" />
+                         name="详情" />
             <SidebarItem key={`/reference/databases/${database.id}/tables/${table.id}/fields`} 
                          href={`/reference/databases/${database.id}/tables/${table.id}/fields`} 
                          icon="fields" 
-                         name="Fields in this table" />
+                         name="这张表的字段" />
             <SidebarItem key={`/reference/databases/${database.id}/tables/${table.id}/questions`} 
                          href={`/reference/databases/${database.id}/tables/${table.id}/questions`} 
                          icon="all" 
-                         name="Questions about this table" />
+                         name="这张表的提问" />
         </ol>
     </div>
 

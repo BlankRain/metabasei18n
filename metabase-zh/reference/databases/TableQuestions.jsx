@@ -34,7 +34,7 @@ import * as metadataActions from "metabase/redux/metadata";
 
 const emptyStateData = (table) =>  {
     return {
-        message: "Questions about this table will appear here as they're added",
+        message: "关于这张表的提问,在添加后都会显示",
         icon: "all",
         action: "Ask a question",
         link: getQuestionUrl({
@@ -78,7 +78,7 @@ export default class TableQuestions extends Component {
         return (
             <div style={style} className="full">
                 <ReferenceHeader 
-                    name={`Questions about ${this.props.table.display_name}`}
+                    name={`有关 ${this.props.table.display_name}的提问`}
                     type="questions"
                     headerIcon="table2"
                 />
@@ -94,7 +94,7 @@ export default class TableQuestions extends Component {
                                                     id={entity.id}
                                                     index={index}
                                                     name={entity.display_name || entity.name}
-                                                    description={ `Created ${moment(entity.created_at).fromNow()} by ${entity.creator.common_name}` }
+                                                    description={ `创建于 ${moment(entity.created_at).fromNow()} 由 ${entity.creator.common_name}` }
                                                     url={ Urls.question(entity.id) }
                                                     icon={ visualizations.get(entity.display).iconName }
                                                 />

@@ -40,15 +40,15 @@ class VisualizationError extends Component {
           if (duration > 15*1000) {
               return <VisualizationErrorMessage
                         type="timeout"
-                        title="Your question took too long"
-                        message="We didn't get an answer back from your database in time, so we had to stop. You can try again in a minute, or if the problem persists, you can email an admin to let them know."
+                        title="你的问题看起来太长了"
+                        message="没能及时获取答案,我们就停止了它. 你可以一会儿再试一下,如果依然有问题,给你的管理员发邮件反馈吧."
                         action={<EmailAdmin />}
                     />
           } else {
               return <VisualizationErrorMessage
                         type="serverError"
-                        title="We're experiencing server issues"
-                        message="Try refreshing the page after waiting a minute or two. If the problem persists we'd recommend you contact an admin."
+                        title="服务端出问题了"
+                        message="一两分钟后重刷一下网页.如果问题依旧,请联系你的管理员."
                         action={<EmailAdmin />}
                     />
           }
@@ -69,13 +69,13 @@ class VisualizationError extends Component {
               <div className="QueryError2 flex full justify-center">
                   <div className="QueryError-image QueryError-image--queryError mr4" />
                   <div className="QueryError2-details">
-                      <h1 className="text-bold">There was a problem with your question</h1>
-                      <p className="QueryError-messageText">Most of the time this is caused by an invalid selection or bad input value.  Double check your inputs and retry your query.</p>
+                      <h1 className="text-bold">你的提问出了一点问题</h1>
+                      <p className="QueryError-messageText">大多数情况是因为不合法的输入导致的. 再次检查你的输入,再试一次你的查询.</p>
                       <div className="pt2">
-                          <a onClick={() => this.setState({ showError: true })} className="link cursor-pointer">Show error details</a>
+                          <a onClick={() => this.setState({ showError: true })} className="link cursor-pointer">查看错误详情</a>
                       </div>
                       <div style={{ display: this.state.showError? 'inherit': 'none'}} className="pt3 text-left">
-                          <h2>Here's the full error message</h2>
+                          <h2>这里是全部的错误信息</h2>
                           <div style={{fontFamily: "monospace"}} className="QueryError2-detailBody bordered rounded bg-grey-0 text-bold p2 mt1">{error}</div>
                       </div>
                   </div>

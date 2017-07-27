@@ -143,7 +143,7 @@ export default class SpecificDatePicker extends Component {
                                     className="mr1"
                                     name='clock'
                                 />
-                                Add a time
+                                添加个时间
                             </div>
                             :
                             <HoursMinutes

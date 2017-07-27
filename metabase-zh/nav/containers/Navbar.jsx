@@ -40,18 +40,18 @@ const BUTTON_PADDING_STYLES = {
     }
 };
 
-const AdminNavItem = ({ name, path, currentPath }) =>
+const AdminNavItem = ({ name, path, currentPath ,title }) =>
     <li>
         <Link
             to={path}
             data-metabase-event={`NavBar;${name}`}
             className={cx("NavItem py1 px2 no-decoration", {"is--selected": currentPath.startsWith(path) })}
         >
-            {name}
+            {title}
         </Link>
     </li>
 
-const MainNavLink = ({ to, name, eventName }) =>
+const MainNavLink = ({ to, name, eventName ,title}) =>
     <Link
         to={to}
         data-metabase-event={`NavBar;${eventName}`}
@@ -59,7 +59,7 @@ const MainNavLink = ({ to, name, eventName }) =>
         className={"NavItem cursor-pointer text-white text-bold no-decoration flex align-center px2 transition-background"}
         activeClassName="NavItem--selected"
     >
-        {name}
+        {title}
     </Link>
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -89,11 +89,11 @@ export default class Navbar extends Component {
                     </div>
 
                     <ul className="sm-ml4 flex flex-full text-strong">
-                        <AdminNavItem name="Settings"    path="/admin/settings"     currentPath={this.props.path} />
-                        <AdminNavItem name="People"      path="/admin/people"       currentPath={this.props.path} />
-                        <AdminNavItem name="Data Model"  path="/admin/datamodel"    currentPath={this.props.path} />
-                        <AdminNavItem name="Databases"   path="/admin/databases"    currentPath={this.props.path} />
-                        <AdminNavItem name="Permissions" path="/admin/permissions"  currentPath={this.props.path} />
+                        <AdminNavItem name="Settings"  title="设置"  path="/admin/settings"     currentPath={this.props.path} />
+                        <AdminNavItem name="People"    title="人员"  path="/admin/people"       currentPath={this.props.path} />
+                        <AdminNavItem name="Data Model" title="数据模型" path="/admin/datamodel"    currentPath={this.props.path} />
+                        <AdminNavItem name="Databases"  title="数据库" path="/admin/databases"    currentPath={this.props.path} />
+                        <AdminNavItem name="Permissions" title="权限" path="/admin/permissions"  currentPath={this.props.path} />
                     </ul>
 
                     <ProfileLink {...this.props} />
@@ -126,20 +126,20 @@ export default class Navbar extends Component {
                         </Link>
                     </li>
                     <li className="pl3 hide xs-show">
-                        <MainNavLink to="/dashboards" name="Dashboards" eventName="Dashboards" />
+                        <MainNavLink to="/dashboards" name="Dashboards" title="仪表盘" eventName="Dashboards" />
                     </li>
                     <li className="pl1 hide xs-show">
-                        <MainNavLink to="/questions" name="Questions" eventName="Questions" />
+                        <MainNavLink to="/questions" name="Questions" title="提问" eventName="Questions" />
                     </li>
                     <li className="pl1 hide sm-show">
-                        <MainNavLink to="/pulse" name="Pulses" eventName="Pulses" />
+                        <MainNavLink to="/pulse" name="Pulses" title="Pulses" eventName="Pulses" />
                     </li>
                     <li className="pl1 hide sm-show">
-                        <MainNavLink to="/reference/guide" name="Data Reference" eventName="DataReference" />
+                        <MainNavLink to="/reference/guide" name="Data Reference" title="数据参考" eventName="DataReference" />
                     </li>
                     <li className="pl3 hide sm-show">
                         <Link to={Urls.question()} data-metabase-event={"Navbar;New Question"} style={BUTTON_PADDING_STYLES.newQuestion} className="NavNewQuestion rounded inline-block bg-white text-brand text-bold cursor-pointer px2 no-decoration transition-all">
-                            New <span>Question</span>
+                            新建 <span>提问</span>
                         </Link>
                     </li>
                     <li className="flex-align-right transition-background">

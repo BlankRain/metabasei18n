@@ -187,7 +187,7 @@ const AddSeriesButton = ({ series, onAddSeries }) =>
                 <Icon name={getSeriesIconName(series)} size={HEADER_ICON_SIZE} />
             </span>
             <span className="flex-no-shrink text-bold">
-                { series.length > 1 ? "Edit" : "Add" }
+                { series.length > 1 ? "编辑" : "添加" }
             </span>
         </span>
     </a>

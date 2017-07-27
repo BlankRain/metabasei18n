@@ -112,23 +112,23 @@ export default class SettingsSingleSignOnForm extends Component {
                         ]}
                         className="mb2"
                     />
-                    <h2>Sign in with Google</h2>
+                    <h2>Google登录</h2>
                     <p className="text-grey-4">
-                        Allows users with existing Metabase accounts to login with a Google account that matches their email address in addition to their Metabase username and password.
+                       允许已有的用户使用其谷歌邮箱用户名密码登陆.
                     </p>
                     <p className="text-grey-4">
-                        To allow users to sign in with Google you'll need to give Metabase a Google Developers console application client ID. It only takes a few steps and instructions on how to create a key can be found <a className="link" href="https://developers.google.com/identity/sign-in/web/devconsole-project" target="_blank">here.</a>
+                        允许用户使用谷歌登录,你需要提供一个谷歌开发者的应用客户端ID.  <a className="link" href="https://developers.google.com/identity/sign-in/web/devconsole-project" target="_blank">这里.</a> 有简单的介绍,如何创建这个Key.
                     </p>
                     <Input
                         className="SettingsInput AdminInput bordered rounded h3"
                         type="text"
                         value={this.state.clientIDValue}
-                        placeholder="Your Google client ID"
+                        placeholder="你的谷歌客户端ID"
                         onChange={(event) => this.updateClientID(event.target.value)}
                     />
                     <div className="py3">
                         <div className="flex align-center">
-                            <p className="text-grey-4">Allow users to sign up on their own if their Google account email address is from:</p>
+                            <p className="text-grey-4">允许登陆,只要这些用户的邮箱地址是来自:</p>
                         </div>
                         <div className="mt1 bordered rounded inline-block">
                             <div className="inline-block px2 h2">@</div>
@@ -145,7 +145,7 @@ export default class SettingsSingleSignOnForm extends Component {
                     <button className={cx("Button mr2", {"Button--primary": hasChanges})}
                             disabled={!hasChanges}
                             onClick={this.saveChanges}>
-                        {this.state.recentlySaved ? "Changes saved!" : "Save Changes"}
+                        {this.state.recentlySaved ? "已保存!" : "保存修改"}
                     </button>
                 </div>
             </form>

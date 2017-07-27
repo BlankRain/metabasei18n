@@ -51,14 +51,14 @@ export default class DatabaseList extends Component {
             <div className="wrapper">
                 <section className="PageHeader px2 clearfix">
                     <Link to="/admin/databases/create" className="Button Button--primary float-right">Add database</Link>
-                    <h2 className="PageTitle">Databases</h2>
+                    <h2 className="PageTitle">数据库</h2>
                 </section>
                 <section>
                     <table className="ContentTable">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Engine</th>
+                                <th>名称</th>
+                                <th>引擎</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -80,7 +80,7 @@ export default class DatabaseList extends Component {
                                                 {engines && engines[database.engine] ? engines[database.engine]['driver-name'] : database.engine}
                                             </td>
                                             { isDeleting
-                                                ? (<td className="text-right">Deleting...</td>)
+                                                ? (<td className="text-right">正在删除...</td>)
                                                 : (
                                                     <td className="Table-actions">
                                                         <ModalWithTrigger
@@ -103,7 +103,7 @@ export default class DatabaseList extends Component {
                                 <tr>
                                     <td colSpan={4}>
                                         <LoadingSpinner />
-                                        <h3>Loading ...</h3>
+                                        <h3>正在加载 ...</h3>
                                     </td>
                                 </tr>
                             }

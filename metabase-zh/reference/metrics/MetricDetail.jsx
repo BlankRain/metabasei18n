@@ -154,7 +154,7 @@ export default class MetricDetail extends Component {
                     type="metric"
                     headerIcon="ruler"
                     headerLink={getQuestionUrl({ dbId: table && table.db_id, tableId: entity.table_id, metricId: entity.id})}
-                    name="Details"
+                    name="详情"
                     user={user}
                     isEditing={isEditing}
                     hasSingleSchema={false}
@@ -170,9 +170,9 @@ export default class MetricDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="description"
-                                    name="Description"
+                                    name="描述"
                                     description={entity.description}
-                                    placeholder="No description yet"
+                                    placeholder="暂无描述"
                                     isEditing={isEditing}
                                     field={description}
                                 />
@@ -180,9 +180,9 @@ export default class MetricDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="points_of_interest"
-                                    name="Why this Metric is interesting"
+                                    name="为什么这个metric有趣?"
                                     description={entity.points_of_interest}
-                                    placeholder="Nothing interesting yet"
+                                    placeholder="一个有趣的都没有."
                                     isEditing={isEditing}
                                     field={points_of_interest}
                                     />
@@ -190,9 +190,9 @@ export default class MetricDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="caveats"
-                                    name="Things to be aware of about this Metric"
+                                    name="关于这个Metric应该知道的事"
                                     description={entity.caveats}
-                                    placeholder="Nothing to be aware of yet"
+                                    placeholder="什么也不需要知道"
                                     isEditing={isEditing}
                                     field={caveats}
                                 />
@@ -200,9 +200,9 @@ export default class MetricDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="how_is_this_calculated"
-                                    name="How this Metric is calculated"
+                                    name="这个Metric 是怎么计算的"
                                     description={entity.how_is_this_calculated}
-                                    placeholder="Nothing on how it's calculated yet"
+                                    placeholder="关于计算方法,啥也没有"
                                     isEditing={isEditing}
                                     field={how_is_this_calculated}
                                 />
@@ -246,8 +246,8 @@ export default class MetricDetail extends Component {
                                         databaseId={table && table.db_id}
                                         metric={entity}
                                         title={ guide && guide.metric_important_fields[entity.id] ?
-                                            "Other fields you can group this metric by" :
-                                            "Fields you can group this metric by"
+                                            "其他你可以用来分组metric的字段 " :
+                                            "你可以用来分组这个metric的字段"
                                         }
                                         onChangeLocation={onChangeLocation}
                                     />

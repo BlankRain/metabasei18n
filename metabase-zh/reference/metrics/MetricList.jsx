@@ -25,11 +25,11 @@ import * as metadataActions from "metabase/redux/metadata";
 
 
 const emptyStateData = {
-    title: "Metrics are the official numbers that your team cares about",
-    adminMessage: "Defining common metrics for your team makes it even easier to ask questions",
-    message: "Metrics will appear here once your admins have created some",
+    title: "Metrics 是你的团队关心的官方数据",
+    adminMessage: "定义通用的Metrircs ,会方便提问",
+    message: "你的管理员创建后,metircs就会在这里展示",
     image: "app/assets/img/metrics-list",
-    adminAction: "Learn how to create metrics",
+    adminAction: "学习如何创建metrics",
     adminLink: "http://www.metabase.com/docs/latest/administration-guide/06-segments-and-metrics.html"
 }
 

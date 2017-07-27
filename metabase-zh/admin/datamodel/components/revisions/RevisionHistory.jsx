@@ -32,7 +32,7 @@ export default class RevisionHistory extends Component {
                         [this.props.objectType + " History"]
                     ]}/>
                     <div className="wrapper py4" style={{maxWidth: 950}}>
-                        <h2 className="mb4">Revision History for "{object.name}"</h2>
+                        <h2 className="mb4">恢复历史 ： "{object.name}"</h2>
                         <ol>
                         {revisions.map(revision =>
                             <Revision

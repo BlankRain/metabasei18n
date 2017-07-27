@@ -256,28 +256,26 @@ export default class ReferenceGettingStartedGuide extends Component {
                     <div className="wrapper wrapper--trim">
                         <div className="mt4 py2">
                             <h1 className="my3 text-dark">
-                                Help new Metabase users find their way around.
+                                帮助新Metabase 用户找到他们自己的使用方式.
                             </h1>
                             <p className="text-paragraph text-measure">
-                                The Getting Started guide highlights the dashboard,
-                                metrics, segments, and tables that matter most,
-                                and informs your users of important things they
-                                should know before digging into the data.
+                                新手指南高亮了dashboard，metrics,segments 还有表,这些都是比较重要的东西.
+                                且假设你的用户在探索数据之前以及对这些概念有所认识和了解.
                             </p>
                         </div>
 
                         <GuideEditSection
                             isCollapsed={most_important_dashboard.id.value === undefined}
                             isDisabled={!dashboards || Object.keys(dashboards).length === 0}
-                            collapsedTitle="Is there an important dashboard for your team?"
+                            collapsedTitle="你的团队有比较重要的dashboard吗?"
                             collapsedIcon="dashboard"
-                            linkMessage="Create a dashboard now"
+                            linkMessage="现在新建一个dashboard"
                             action={showDashboardModal}
                             expand={() => most_important_dashboard.id.onChange(null)}
                         >
                             <div>
                                 <SectionHeader>
-                                    What is your most important dashboard?
+                                    你最重要的dashboard是哪个?
                                 </SectionHeader>
                                 <GuideDetailEditor
                                     type="dashboard"
@@ -296,15 +294,15 @@ export default class ReferenceGettingStartedGuide extends Component {
                         <GuideEditSection
                             isCollapsed={important_metrics.length === 0}
                             isDisabled={!metrics || Object.keys(metrics).length === 0}
-                            collapsedTitle="Do you have any commonly referenced metrics?"
+                            collapsedTitle="你有较通用参考的metrics吗?"
                             collapsedIcon="ruler"
-                            linkMessage="Learn how to define a metric"
+                            linkMessage="学习如何定义一个metric"
                             link="http://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html#creating-a-metric"
                             expand={() => important_metrics.addField({id: null, caveats: null, points_of_interest: null, important_fields: null})}
                         >
                             <div className="my2">
                                 <SectionHeader>
-                                    What are your 3-5 most commonly referenced metrics?
+                                    你最常用的3-5个metrics是什么?
                                 </SectionHeader>
                                 <div>
                                     { important_metrics.map((metricField, index, metricFields) =>
@@ -339,7 +337,7 @@ export default class ReferenceGettingStartedGuide extends Component {
                                             type="button"
                                             onClick={() => important_metrics.addField({id: null, caveats: null, points_of_interest: null})}
                                         >
-                                            Add another metric
+                                            添加其他metric
                                         </button>
                                 }
                             </div>
@@ -349,16 +347,15 @@ export default class ReferenceGettingStartedGuide extends Component {
                             isCollapsed={important_segments_and_tables.length === 0}
                             isDisabled={(!segments || Object.keys(segments).length === 0) && (!tables || Object.keys(tables).length === 0)}
                             showLink={!segments || Object.keys(segments).length === 0}
-                            collapsedTitle="Do you have any commonly referenced segments or tables?"
+                            collapsedTitle="你有常用的segments 或表吗?"
                             collapsedIcon="table2"
-                            linkMessage="Learn how to create a segment"
+                            linkMessage="学习如何新建 segment"
                             link="http://www.metabase.com/docs/latest/administration-guide/07-segments-and-metrics.html#creating-a-segment"
                             expand={() => important_segments_and_tables.addField({id: null, type: null, caveats: null, points_of_interest: null})}
                         >
                             <div>
                                 <h2 className="text-measure text-dark">
-                                    What are 3-5 commonly referenced segments or tables
-                                    that would be useful for this audience?
+                                    常用的3-5个segments或表里,哪些是有用的?
                                 </h2>
                                 <div className="mb2">
                                     { important_segments_and_tables.map((segmentOrTableField, index, segmentOrTableFields) =>
@@ -391,7 +388,7 @@ export default class ReferenceGettingStartedGuide extends Component {
                                             type="button"
                                             onClick={() => important_segments_and_tables.addField({id: null, type: null, caveats: null, points_of_interest: null})}
                                         >
-                                            Add another segment or table
+                                            添加其他 segment 或 表
                                         </button>
                                 }
                             </div>
@@ -406,14 +403,11 @@ export default class ReferenceGettingStartedGuide extends Component {
                         >
                             <div className="text-measure">
                                 <SectionHeader>
-                                    What should a user of this data know before they start
-                                    accessing it?
+                                    用户访问数据前,应该了解什么?
                                 </SectionHeader>
                                 <textarea
                                     className={S.guideDetailEditorTextarea}
-                                    placeholder="E.g., expectations around data privacy and use,
-                                        common pitfalls or misunderstandings, information about
-                                        data warehouse performance, legal notices, etc."
+                                    placeholder="比如:数据是用来做什么的,通用的一些概念或误解的地方, 数据仓库的性能信息,法律注意事项等."
                                     {...things_to_know}
                                 />
                             </div>
@@ -422,7 +416,7 @@ export default class ReferenceGettingStartedGuide extends Component {
                         <GuideEditSection
                             isCollapsed={contact.name.value === null && contact.email.value === null}
                             isDisabled={false}
-                            collapsedTitle="Is there someone your users could contact for help if they're confused about this guide?"
+                            collapsedTitle="如果有人对此文档感到困惑,你们有技术支持吗?"
                             collapsedIcon="mail"
                             expand={() => {
                                 contact.name.onChange('');
@@ -431,11 +425,11 @@ export default class ReferenceGettingStartedGuide extends Component {
                         >
                             <div>
                                 <SectionHeader>
-                                    Who should users contact for help if they're confused about this data?
+                                    用户应该联系谁，当他对文档感到困惑的时候?
                                 </SectionHeader>
                                 <div className="flex">
                                     <div className="flex-full">
-                                        <h3 className="mb1">Name</h3>
+                                        <h3 className="mb1">姓名</h3>
                                         <input
                                             className="input text-paragraph"
                                             placeholder="Julie McHelpfulson"
@@ -444,7 +438,7 @@ export default class ReferenceGettingStartedGuide extends Component {
                                         />
                                     </div>
                                     <div className="flex-full">
-                                        <h3 className="mb1">Email address</h3>
+                                        <h3 className="mb1">邮件地址</h3>
                                         <input
                                             className="input text-paragraph"
                                             placeholder="julie.mchelpfulson@acme.com"
@@ -465,15 +459,15 @@ export default class ReferenceGettingStartedGuide extends Component {
                         <div className="wrapper wrapper--trim">
                             { (!guide || isGuideEmpty(guide)) && user && user.is_superuser && (
                                 <AdminInstructions>
-                                    <h2 className="py2">Help your team get started with your data.</h2>
+                                    <h2 className="py2">帮助启动你的团队.</h2>
                                     <GuideText>
-                                        Show your team what’s most important by choosing your top dashboard, metrics, and segments.
+                                        通过展示top dashboard, metrics, 和 segments,告诉你的团队哪些是重要的东西.
                                     </GuideText>
                                     <button
                                         className="Button Button--primary"
                                         onClick={startEditing}
                                     >
-                                        Get started
+                                        一键启动
                                     </button>
                                 </AdminInstructions>
                             )}
@@ -481,7 +475,7 @@ export default class ReferenceGettingStartedGuide extends Component {
                             { guide.most_important_dashboard !== null && [
                                 <div className="my2">
                                     <SectionHeader key={'dashboardTitle'}>
-                                        Our most important dashboard
+                                        我们最重要的dashboard
                                     </SectionHeader>
                                     <GuideDetail
                                         key={'dashboardDetail'}
@@ -494,7 +488,7 @@ export default class ReferenceGettingStartedGuide extends Component {
                             { Object.keys(metrics).length > 0  && (
                                     <div className="my4 pt4">
                                         <SectionHeader trim={guide.important_metrics.length === 0}>
-                                            { guide.important_metrics && guide.important_metrics.length > 0 ? 'Numbers that we pay attention to' : 'Metrics' }
+                                            { guide.important_metrics && guide.important_metrics.length > 0 ? '我们关注的数量' : 'Metrics' }
                                         </SectionHeader>
                                         { (guide.important_metrics && guide.important_metrics.length > 0) ? [
                                             <div className="my2">
@@ -522,12 +516,13 @@ export default class ReferenceGettingStartedGuide extends Component {
                                             </div>
                                         ] :
                                             <GuideText>
-                                                Metrics are important numbers your company cares about. They often represent a core indicator of how the business is performing.
+                                                Metrics是你公司要关注的非常重要的指标.
+                                               它们通常能反映出你公司业务执行情况.
                                             </GuideText>
                                         }
                                         <div>
                                             <Link className="Button Button--primary" to={'/reference/metrics'}>
-                                                See all metrics
+                                                查看所有的metrics
                                             </Link>
                                         </div>
                                     </div>
@@ -536,7 +531,7 @@ export default class ReferenceGettingStartedGuide extends Component {
 
                             <div className="mt4 pt4">
                                 <SectionHeader trim={(!has(guide.important_segments) && !has(guide.important_tables))}>
-                                    { Object.keys(segments).length > 0 ? 'Segments and tables' : 'Tables' }
+                                    { Object.keys(segments).length > 0 ? 'Segments 和表' : '表' }
                                 </SectionHeader>
                                 { has(guide.important_segments) || has(guide.important_tables) ?
                                     <div className="my2">
@@ -561,16 +556,16 @@ export default class ReferenceGettingStartedGuide extends Component {
                                     <GuideText>
                                         { Object.keys(segments).length > 0 ? (
                                             <span>
-                                                Segments and tables are the building blocks of your company's data. Tables are collections of the raw information while segments are specific slices with specific meanings, like <b>"Recent orders."</b>
+                                                Segments 和表是组成你公司数据的数据块.表是原始数据的集合. segments是特殊加工后的数据.比如： <b>"近期订单."</b>
                                             </span>
-                                        ) : "Tables are the building blocks of your company's data."
+                                        ) : "表是你公司的数据块."
                                         }
                                     </GuideText>
                                 }
                                 <div>
                                     { Object.keys(segments).length > 0 && (
                                         <Link className="Button Button--purple mr2" to={'/reference/segments'}>
-                                            See all segments
+                                            查看所有segments
                                         </Link>
                                     )}
                                     <Link
@@ -580,28 +575,28 @@ export default class ReferenceGettingStartedGuide extends Component {
                                         )}
                                         to={'/reference/databases'}
                                     >
-                                        See all tables
+                                        查看所有表
                                     </Link>
                                 </div>
                             </div>
 
                             <div className="mt4 pt4">
                                 <SectionHeader trim={!guide.things_to_know}>
-                                    { guide.things_to_know ? 'Other things to know about our data' : 'Find out more' }
+                                    { guide.things_to_know ? '关于我们数据其他需要了解的事情' : '了解更多' }
                                 </SectionHeader>
                                 <GuideText>
-                                    { guide.things_to_know ? guide.things_to_know : "A good way to get to know your data is by spending a bit of time exploring the different tables and other info available to you. It may take a while, but you'll start to recognize names and meanings over time."
+                                    { guide.things_to_know ? guide.things_to_know : "一个好的方法去了解你的数据,是花一点时间浏览不同的表和信息.大概会花点功夫,但是你会明白其中的意义."
                                     }
                                 </GuideText>
                                 <Link className="Button link text-bold" to={'/reference/databases'}>
-                                    Explore our data
+                                    探索我们的数据
                                 </Link>
                             </div>
 
                             <div className="mt4">
                                 { guide.contact && (guide.contact.name || guide.contact.email) && [
                                     <SectionHeader key={'contactTitle'}>
-                                        Have questions?
+                                        有问题?
                                     </SectionHeader>,
                                     <div className="mb4 pb4" key={'contactDetails'}>
                                             { guide.contact.name &&

@@ -18,7 +18,7 @@ const EditButton = ({
     >
         <div className={S.editButtonBody}>
             <Icon name="pencil" size={16} />
-            <span className="ml1">Edit</span>
+            <span className="ml1">编辑</span>
         </div>
     </button>
 

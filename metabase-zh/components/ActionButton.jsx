@@ -48,10 +48,10 @@ export default class ActionButton extends Component {
 
     static defaultProps = {
         className: "Button",
-        normalText: "Save",
-        activeText: "Saving...",
-        failedText: "Save failed",
-        successText: "Saved",
+        normalText: "保存",
+        activeText: "正在保存...",
+        failedText: "保存失败",
+        successText: "已保存",
         forceActiveStyle: false
     };
 

@@ -39,7 +39,7 @@ import * as actions from 'metabase/reference/reference';
 const interestingQuestions = (database, table, field) => {
     return [
         {
-            text: `Number of ${table.display_name} grouped by ${field.display_name}`,
+            text: `个数 ${table.display_name} 按 ${field.display_name} 分组`,
             icon: { name: "bar", scale: 1, viewBox: "8 8 16 16" },
             link: getQuestionUrl({
                 dbId: database.id,
@@ -50,7 +50,7 @@ const interestingQuestions = (database, table, field) => {
             })
         },
         {
-            text: `Number of ${table.display_name} grouped by ${field.display_name}`,
+            text: `个数 ${table.display_name} 按 ${field.display_name} 分组`,
             icon: { name: "pie", scale: 1, viewBox: "8 8 16 16" },
             link: getQuestionUrl({
                 dbId: database.id,
@@ -61,7 +61,7 @@ const interestingQuestions = (database, table, field) => {
             })
         },
         {
-            text: `All distinct values of ${field.display_name}`,
+            text: `所有去重后的值 ${field.display_name}`,
             icon: "table2",
             link: getQuestionUrl({
                 dbId: database.id,
@@ -171,7 +171,7 @@ export default class FieldDetail extends Component {
                     table={table}
                     type="field"
                     headerIcon="field"
-                    name="Details"
+                    name="详情"
                     user={user}
                     isEditing={isEditing}
                     hasSingleSchema={false}
@@ -187,9 +187,9 @@ export default class FieldDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="description"
-                                    name="Description"
+                                    name="描述"
                                     description={entity.description}
-                                    placeholder="No description yet"
+                                    placeholder="暂无描述"
                                     isEditing={isEditing}
                                     field={description}
                                 />
@@ -198,7 +198,7 @@ export default class FieldDetail extends Component {
                                 <li className="relative">
                                     <Detail
                                         id="name"
-                                        name="Actual name in database"
+                                        name="数据库的真实名称"
                                         description={entity.name}
                                         subtitleClass={S.tableActualName}
                                     />
@@ -207,9 +207,9 @@ export default class FieldDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="points_of_interest"
-                                    name={`Why this field is interesting`}
+                                    name={`这个字段为啥有趣?`}
                                     description={entity.points_of_interest}
-                                    placeholder="Nothing interesting yet"
+                                    placeholder="一个有趣的都没有."
                                     isEditing={isEditing}
                                     field={points_of_interest}
                                     />
@@ -217,9 +217,9 @@ export default class FieldDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="caveats"
-                                    name={`Things to be aware of about this field`}
+                                    name={`关于这个字段应该了解的`}
                                     description={entity.caveats}
-                                    placeholder="Nothing to be aware of yet"
+                                    placeholder="什么也不需要知道"
                                     isEditing={isEditing}
                                     field={caveats}
                                 />
@@ -230,7 +230,7 @@ export default class FieldDetail extends Component {
                                 <li className="relative">
                                     <Detail
                                         id="base_type"
-                                        name={`Data type`}
+                                        name={`数据类型`}
                                         description={entity.base_type}
                                     />
                                 </li>

@@ -23,7 +23,7 @@ export default class QueryDefinitionTooltip extends Component {
             <div className="p2" style={{width: 250}}>
                 <div>
                     { type && type === "metric" && !object.is_active ?
-                        "This metric has been retired.  It's no longer available for use."
+                        "这个metric 以及回收了,不能再使用了."
                     :
                         object.description
                     }

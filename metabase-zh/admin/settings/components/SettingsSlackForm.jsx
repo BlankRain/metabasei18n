@@ -63,9 +63,9 @@ export default class SettingsSlackForm extends Component {
 
         switch (validationType) {
             case "email":
-                return !MetabaseUtils.validEmail(value) ? (validationMessage || "That's not a valid email address") : null;
+                return !MetabaseUtils.validEmail(value) ? (validationMessage || "不是有效的邮箱地址") : null;
             case "integer":
-                return isNaN(parseInt(value)) ? (validationMessage || "That's not a valid integer") : null;
+                return isNaN(parseInt(value)) ? (validationMessage || "不是有效的数字") : null;
         }
     }
 
@@ -111,7 +111,7 @@ export default class SettingsSlackForm extends Component {
         if (error.data && error.data.message) {
             formErrors.message = error.data.message;
         } else {
-            formErrors.message = "Looks like we ran into some problems";
+            formErrors.message = "我们好像遇到点小麻烦";
         }
 
         if (error.data && error.data.errors) {
@@ -185,9 +185,9 @@ export default class SettingsSlackForm extends Component {
         });
 
         let saveSettingsButtonStates = {
-            default: "Save changes",
-            working: "Saving...",
-            success: "Changes saved!"
+            default: "保存修改",
+            working: "正在保存...",
+            success: "已保存!"
         };
 
         let disabled = (!valid || submitting !== "default"),
@@ -206,16 +206,16 @@ export default class SettingsSlackForm extends Component {
                         />
                         Slack
                     </h1>
-                    <h3 className="text-grey-1">Answers sent right to your Slack #channels</h3>
+                    <h3 className="text-grey-1">答案发送到你的Slack #channels</h3>
 
                     <div className="pt3">
                         <a href="https://my.slack.com/services/new/bot" target="_blank" className="Button Button--primary" style={{padding:0}}>
-                            <div className="float-left py2 pl2">Create a Slack Bot User for MetaBot</div>
+                            <div className="float-left py2 pl2">创建一个Slack Bot 用户给你的MetaBot</div>
                             <Icon className="float-right p2 text-white cursor-pointer" style={{opacity:0.6}} name="external" size={18}/>
                         </a>
                     </div>
                     <div className="py2">
-                        Once you're there, give it a name and click <strong>"Add bot integration"</strong>. Then copy and paste the Bot API Token into the field below. Once you are done, create a "metabase_files" channel in Slack. Metabase needs this to upload graphs.
+                        一但你这样做了, 给它起个名字,点击 <strong>"Add bot integration"</strong>. 复制粘贴 Bot API Token 到下面的文本框. 完成后,在slack创建个"metabase_files"频道 . Metabase 需要这个去上传图片.
 
                     </div>
                 </div>

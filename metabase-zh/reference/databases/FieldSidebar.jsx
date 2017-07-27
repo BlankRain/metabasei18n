@@ -25,13 +25,13 @@ const FieldSidebar =({
                              [table.name,`/reference/databases/${database.id}/tables/${table.id}`],
                              [field.name]]}
                     inSidebar={true}
-                    placeholder="Data Reference"
+                    placeholder="数据参考"
                 />
             </div>
                 <SidebarItem key={`/reference/databases/${database.id}/tables/${table.id}/fields/${field.id}`} 
                              href={`/reference/databases/${database.id}/tables/${table.id}/fields/${field.id}`} 
                              icon="document" 
-                             name="Details" />
+                             name="详情" />
         </ul>
     </div>
 

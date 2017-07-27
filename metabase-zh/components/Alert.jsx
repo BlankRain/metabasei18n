@@ -6,7 +6,7 @@ const Alert = ({ message, onClose }) =>
     <Modal small isOpen={!!message}>
         <div className="flex flex-column layout-centered p4">
             <h3 className="mb4">{message}</h3>
-            <button className="Button Button--primary" onClick={onClose}>Ok</button>
+            <button className="Button Button--primary" onClick={onClose}>好</button>
         </div>
     </Modal>
 

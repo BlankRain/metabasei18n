@@ -59,7 +59,7 @@ export default class FilterList extends Component {
                 {filters.map((filter, index) =>
                     <FilterWidget
                         key={index}
-                        placeholder="Item"
+                        placeholder="项目"
                         // TODO: update widgets that are still passing tableMetadata instead of query
                         query={query || {
                             table: () => tableMetadata,

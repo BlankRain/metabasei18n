@@ -54,7 +54,7 @@ export const getDashboardActions = (
         // option click to enter fullscreen without making the browser go fullscreen
         buttons.push(
             <Tooltip
-                tooltip={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+                tooltip={isFullscreen ? "退出全屏" : "进入全屏"}
             >
                 <span
                     data-metabase-event={

@@ -19,7 +19,7 @@ export default class SearchBar extends React.Component {
 
     render() {
         return (
-            <input className="SearchBar" type="text" ref="filterTextInput" value={this.props.filter} placeholder="Search for" onChange={this.handleInputChange}/>
+            <input className="SearchBar" type="text" ref="filterTextInput" value={this.props.filter} placeholder="搜索" onChange={this.handleInputChange}/>
         );
     }
 }

@@ -33,7 +33,7 @@ export default class SetupMessage extends Component {
             let adminEmail = Settings.get("admin_email");
             content = (
                 <div className="mb1">
-                    <h4 className="text-grey-4">Your admin's email address:</h4>
+                    <h4 className="text-grey-4">你的管理员邮箱地址:</h4>
                     <a className="h2 link no-decoration" href={"mailto:"+adminEmail}>{adminEmail}</a>
                 </div>
             );

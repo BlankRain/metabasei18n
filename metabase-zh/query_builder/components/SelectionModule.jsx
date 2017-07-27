@@ -145,7 +145,7 @@ export default class SelectionModule extends Component {
                         <Icon name="chevrondown" size={12} />
                         <div>
                             <div className="SelectionModule-display">
-                                {this.props.expandedTitle || "Advanced..."}
+                                {this.props.expandedTitle || "高级..."}
                             </div>
                         </div>
                     </li>
@@ -154,7 +154,7 @@ export default class SelectionModule extends Component {
 
             return items;
         } else {
-            return "Sorry. Something went wrong.";
+            return "不好意思，出错了.";
         }
     }
 

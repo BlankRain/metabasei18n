@@ -38,7 +38,7 @@ const updateDocumentTitle = _.debounce(() => {
 
 const title = (documentTitleOrGetter) => (ComposedComponent) =>
     class extends React.Component {
-        static displayName = "Title["+(ComposedComponent.displayName || ComposedComponent.name)+"]";
+        static displayName = "标题["+(ComposedComponent.displayName || ComposedComponent.name)+"]";
 
         componentWillMount() {
             componentStack.push(this);

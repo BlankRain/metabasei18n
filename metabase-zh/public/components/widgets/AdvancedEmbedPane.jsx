@@ -75,15 +75,15 @@ const AdvancedEmbedPane = ({
                 <div className="mb2 p2 bordered rounded flex align-center flex-no-shrink">
                     <div className="flex-full mr1">
                         { resource.enable_embedding ?
-                            `You’ve made changes that need to be published before they will be reflected in your application embed.` :
-                            `You will need to publish this ${resourceType} before you can embed it in another application.`
+                            `你提交的更改需要发布才能生效.` :
+                            `你需要发布 ${resourceType} 之后才能在其他应用中集成.`
                         }
                     </div>
                     <div className="flex-no-shrink">
                         { resource.enable_embedding && !_.isEqual(resource.embedding_params, embeddingParams) ?
                             <Button className="ml1" medium onClick={onDiscard}>Discard Changes</Button>
                         : null }
-                        <ActionButton className="ml1" success medium actionFn={onSave} activeText="Updating..." successText="Updated" failedText="Failed!">Publish</ActionButton>
+                        <ActionButton className="ml1" success medium actionFn={onSave} activeText="正在更新..." successText="已更新" failedText="失败!">发布</ActionButton>
                     </div>
                 </div>
             : null }

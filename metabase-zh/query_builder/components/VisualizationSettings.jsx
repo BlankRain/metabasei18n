@@ -52,7 +52,7 @@ export default class VisualizationSettings extends React.Component {
                     className="GuiBuilder-section-label pl0 Query-label"
                     style={{ marginLeft: 4 }}
                 >
-                    Visualization
+                    可视化
                 </span>
                 <PopoverWithTrigger
                     id="VisualizationPopover"

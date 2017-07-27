@@ -53,17 +53,16 @@ function AddGroupRow({ text, onCancelClicked, onCreateClicked, onTextChange }) {
 
 function DeleteGroupModal({ group, onConfirm = () => {} , onClose = () => {} }) {
     return (
-        <ModalContent title="Remove this group?" onClose={onClose}>
+        <ModalContent title="移除该组?" onClose={onClose}>
             <p className="px4 pb4">
-                Are you sure? All members of this group will lose any permissions settings the have based on this group.
-                This can't be undone.
+                你确定? 所有的该组成员将会失去该组拥有的权限,并且,这个是不可恢复的.
             </p>
             <div className="Form-actions">
                 <button className="Button Button--danger" onClick={() => { onClose(); onConfirm(group); }}>
-                    Yes
+                    是的
                 </button>
                 <button className="Button ml1" onClick={onClose}>
-                    No
+                    不
                 </button>
             </div>
         </ModalContent>
@@ -75,7 +74,7 @@ function ActionsPopover({ group, onEditGroupClicked, onDeleteGroupClicked }) {
         <PopoverWithTrigger className="block" triggerElement={<Icon className="text-grey-1" name="ellipsis" />}>
             <ul className="UserActionsSelect">
                 <li className="pt1 pb2 px2 bg-brand-hover text-white-hover cursor-pointer" onClick={onEditGroupClicked.bind(null, group)}>
-                    Edit Name
+                    编辑名称
                 </li>
                 <li className="pt1 pb2 px2 bg-brand-hover text-white-hover cursor-pointer text-error">
                     <ModalWithTrigger triggerElement="Remove Group">
@@ -99,10 +98,10 @@ function EditingGroupRow({ group, textHasChanged, onTextChange, onCancelClicked,
             <td />
             <td className="text-right">
                 <span className="link no-decoration cursor-pointer" onClick={onCancelClicked}>
-                    Cancel
+                    取消
                 </span>
                 <button className={cx("Button ml2", {"Button--primary": textIsValid && textHasChanged})} disabled={!textIsValid || !textHasChanged} onClick={onDoneClicked}>
-                    Done
+                    完成
                 </button>
             </td>
         </tr>
@@ -152,7 +151,7 @@ function GroupsTable({ groups, text, groupBeingEdited, showAddGroupRow, onAddGro
                        onEditGroupClicked, onDeleteGroupClicked, onEditGroupTextChange, onEditGroupCancelClicked, onEditGroupDoneClicked }) {
 
     return (
-        <AdminContentTable columnTitles={["Group name", "Members"]}>
+        <AdminContentTable columnTitles={["组名", "成员"]}>
             {showAddGroupRow ? (
                  <AddGroupRow text={text} onCancelClicked={onAddGroupCanceled} onCreateClicked={onAddGroupCreateButtonClicked} onTextChange={onAddGroupTextChanged} />
              ) : null}
@@ -307,10 +306,10 @@ export default class GroupsListing extends Component {
 
         return (
             <AdminPaneLayout
-                title="Groups"
-                buttonText="Create a group"
+                title="组"
+                buttonText="创建个小组"
                 buttonAction={this.state.showAddGroupRow ? null : this.onCreateAGroupButtonClicked.bind(this)}
-                description="You can use groups to control your users' access to your data. Put users in groups and then go to the Permissions section to control each group's access. The Administrators and All Users groups are special default groups that can't be removed."
+                description="你可以使用小组来控制用户权限. 把用户加进小组,然后给小组设置访问权限. 管理员组和所有用户组是特殊的组，不可移除."
             >
                 <GroupsTable
                     groups={groups}

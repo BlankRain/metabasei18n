@@ -22,17 +22,17 @@ const DatabaseSidebar = ({
                     crumbs={[["Databases","/reference/databases"],
                              [database.name]]}
                     inSidebar={true}
-                    placeholder="Data Reference"
+                    placeholder="数据参考"
                 />
             </div>
                 <SidebarItem key={`/reference/databases/${database.id}`} 
                              href={`/reference/databases/${database.id}`} 
                              icon="document" 
-                             name="Details" />
+                             name="详情" />
                 <SidebarItem key={`/reference/databases/${database.id}/tables`} 
                              href={`/reference/databases/${database.id}/tables`} 
                              icon="table2" 
-                             name={`Tables in ${database.name}`} />
+                             name={` ${database.name}中的表`} />
         </ul>
     </div>
 DatabaseSidebar.propTypes = {

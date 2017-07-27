@@ -11,14 +11,14 @@ const GuideHeader = ({
     <div>
         <div className="wrapper wrapper--trim py4 my3">
             <div className="flex align-center">
-                <h1 className="text-dark" style={{fontWeight: 700}}>Start here.</h1>
+                <h1 className="text-dark" style={{fontWeight: 700}}>从这里开始.</h1>
                 { isSuperuser &&
                     <span className="ml-auto">
                         <EditButton startEditing={startEditing}/>
                     </span>
                 }
             </div>
-            <p className="text-paragraph" style={{maxWidth: 620}}>This is the perfect place to start if you’re new to your company’s data, or if you just want to check in on what’s going on.</p>
+            <p className="text-paragraph" style={{maxWidth: 620}}>如果你对你公司数据不是很了解,从这里开始最好了, 或者你想了解一下接下来怎么做.</p>
         </div>
     </div>;
 

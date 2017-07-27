@@ -63,9 +63,9 @@ const AdvancedSettingsPane = ({
         { embedType === "application" &&
             <Section title="Parameters">
                 { resourceParameters.length > 0 ?
-                    <p>Which parameters can users of this embed use?</p>
+                    <p>用户可以使用哪些参数呢?</p>
                 :
-                    <p>This {resourceType} doesn't have any parameters to configure yet.</p>
+                    <p>这个 {resourceType} 没有需要配置的参数.</p>
                 }
                 {resourceParameters.map(parameter =>
                     <div className="flex align-center my1">
@@ -76,9 +76,9 @@ const AdvancedSettingsPane = ({
                             value={embeddingParams[parameter.slug] || "disabled"}
                             onChange={(e) => onChangeEmbeddingParameters({ ...embeddingParams, [parameter.slug] : e.target.value })}
                         >
-                            <Option icon="close" value="disabled">Disabled</Option>
-                            <Option icon="pencil" value="enabled">Editable</Option>
-                            <Option icon="lock" value="locked">Locked</Option>
+                            <Option icon="close" value="disabled">不可用</Option>
+                            <Option icon="pencil" value="enabled">可编辑</Option>
+                            <Option icon="lock" value="locked">锁定</Option>
                         </Select>
                     </div>
                 )}
@@ -86,7 +86,7 @@ const AdvancedSettingsPane = ({
         }
         { embedType === "application" && previewParameters.length > 0 &&
             <Section title="Preview Locked Parameters">
-                <p>Try passing some values to your locked parameters here. Your server will have to provide the actual values in the signed token when using this for real.</p>
+                <p>试着给你锁定的参数传值. 你的服务器会在使用的时候给你传递真正的值.</p>
                 <Parameters
                     className="mt2"
                     vertical
@@ -98,8 +98,8 @@ const AdvancedSettingsPane = ({
         }
         { resource.enable_embedding ?
             <Section title="Danger zone">
-                <p>This will disable embedding for this {resourceType}.</p>
-                <Button medium warning onClick={onUnpublish}>Unpublish</Button>
+                <p>这个将会不启用参数 {resourceType}.</p>
+                <Button medium warning onClick={onUnpublish}>取消发布</Button>
             </Section>
         : null }
     </div>

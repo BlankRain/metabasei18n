@@ -48,7 +48,7 @@ const Field = ({
                     { isEditing ?
                         <Select
                             triggerClasses={F.fieldSelect}
-                            placeholder="Select a field type"
+                            placeholder="选择一个字段类型"
                             value={
                                 MetabaseCore.field_special_types_map[formField.special_type.value] ||
                                 MetabaseCore.field_special_types_map[field.special_type]
@@ -89,7 +89,7 @@ const Field = ({
                         (isFK(field.special_type) && formField.special_type.value === undefined)) &&
                         <Select
                             triggerClasses={F.fieldSelect}
-                            placeholder="Select a field type"
+                            placeholder="选择一个字段类型"
                             value={
                                 foreignKeys[formField.fk_target_field_id.value] ||
                                 foreignKeys[field.fk_target_field_id] ||

@@ -12,10 +12,9 @@ const GoogleNoAccount = () =>
                     <LogoIcon className="Logo my4 sm-my0" width={66} height={85} />
                 </div>
                 <div className="Grid-cell text-centered bordered rounded shadowed p4">
-                    <h3 className="mt4 mb2">No Metabase account exists for this Google account.</h3>
+                    <h3 className="mt4 mb2">这个Google 帐号没有对应的Metabase帐号.</h3>
                     <p className="mb4 ml-auto mr-auto" style={{maxWidth: 360}}>
-                        You'll need an administrator to create a Metabase account before
-                        you can use Google to log in.
+                        你需要管理员先给你创建个Metabase用户,在你使用谷歌登录之前.
                     </p>
 
                     <BackToLogin />

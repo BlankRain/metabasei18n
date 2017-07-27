@@ -44,7 +44,7 @@ export default class NumberPicker extends Component {
     };
 
     static defaultProps = {
-        placeholder: "Enter desired number"
+        placeholder: "输入数字"
     };
 
     _validate(values: Array<number|null>) {

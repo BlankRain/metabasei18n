@@ -27,18 +27,18 @@ export default class RefreshWidget extends Component {
             <PopoverWithTrigger
                 ref="popover"
                 triggerElement={elapsed == null ?
-                    <Tooltip tooltip="Auto-refresh">
+                    <Tooltip tooltip="自动刷新">
                         <ClockIcon width={18} height={18} className={className} />
                     </Tooltip>
                 :
-                    <Tooltip tooltip={"Refreshing in " + Math.floor(remaining / 60) + ":" + (remaining % 60 < 10 ? "0" : "") + Math.round(remaining % 60)}>
+                    <Tooltip tooltip={"即将刷新 " + Math.floor(remaining / 60) + ":" + (remaining % 60 < 10 ? "0" : "") + Math.round(remaining % 60)}>
                         <CountdownIcon width={18} height={18} className="text-green" percent={Math.min(0.95, (period - elapsed) / period)}/>
                     </Tooltip>
                 }
                 targetOffsetY={10}
             >
                 <div className={styles.popover}>
-                    <div className={styles.title}>Auto Refresh</div>
+                    <div className={styles.title}>自动刷新</div>
                     <RefreshOptionList>
                         { OPTIONS.map(option =>
                             <RefreshOption key={option.period} name={option.name} period={option.period} selected={option.period === period} onClick={() => { this.refs.popover.close(); onChangePeriod(option.period) }} />

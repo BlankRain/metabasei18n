@@ -123,7 +123,7 @@ export default class DatabaseDetail extends Component {
                     table={table}
                     type="database"
                     headerIcon="database"
-                    name="Details"
+                    name="详情"
                     user={user}
                     isEditing={isEditing}
                     hasSingleSchema={false}
@@ -139,9 +139,9 @@ export default class DatabaseDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="description"
-                                    name="Description"
+                                    name="描述"
                                     description={entity.description}
-                                    placeholder="No description yet"
+                                    placeholder="暂无描述"
                                     isEditing={isEditing}
                                     field={description}
                                 />
@@ -149,9 +149,9 @@ export default class DatabaseDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="points_of_interest"
-                                    name={`Why this database is interesting`}
+                                    name={`这个数据库为什么有意思?`}
                                     description={entity.points_of_interest}
-                                    placeholder="Nothing interesting yet"
+                                    placeholder="啥有趣的也没有"
                                     isEditing={isEditing}
                                     field={points_of_interest}
                                     />
@@ -159,9 +159,9 @@ export default class DatabaseDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="caveats"
-                                    name={`Things to be aware of about this database`}
+                                    name={`关于这个数据库你应该知道的事情`}
                                     description={entity.caveats}
-                                    placeholder="Nothing to be aware of yet"
+                                    placeholder="啥也不清楚"
                                     isEditing={isEditing}
                                     field={caveats}
                                 />

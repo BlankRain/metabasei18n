@@ -37,7 +37,7 @@ export default class PulseListItem extends Component {
                     </div>
                     { !pulse.read_only &&
                         <div className="flex-align-right">
-                            <Link to={"/pulse/" + pulse.id} className="PulseEditButton PulseButton Button no-decoration text-bold">Edit</Link>
+                            <Link to={"/pulse/" + pulse.id} className="PulseEditButton PulseButton Button no-decoration text-bold">编辑</Link>
                         </div>
                     }
                 </div>

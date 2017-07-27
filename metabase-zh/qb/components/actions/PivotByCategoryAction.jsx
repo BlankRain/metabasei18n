@@ -5,7 +5,7 @@ import { isCategory, isAddress } from "metabase/lib/schema_metadata";
 import PivotByAction from "./PivotByAction";
 
 export default PivotByAction(
-    "Category",
+    "分类",
     "label",
     field => isCategory(field) && !isAddress(field)
 );

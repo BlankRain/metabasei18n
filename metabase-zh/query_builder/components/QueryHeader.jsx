@@ -263,14 +263,14 @@ export default class QueryHeader extends Component {
                         >
                             <span>
                                 <Icon name='check' size={12} />
-                                <span className="ml1">Saved</span>
+                                <span className="ml1">已保存</span>
                             </span>
                         </button>
                     ]);
                 } else {
                     // edit button
                     buttonSections.push([
-                        <Tooltip key="edit" tooltip="Edit question">
+                        <Tooltip key="edit" tooltip="编辑提问">
                             <a className="cursor-pointer text-brand-hover" onClick={this.onBeginEditing}>
                                 <Icon name="pencil" size={16} />
                             </a>
@@ -285,17 +285,17 @@ export default class QueryHeader extends Component {
                         key="save"
                         actionFn={() => this.onSave(this.props.card, false)}
                         className="cursor-pointer text-brand-hover bg-white text-grey-4 text-uppercase"
-                        normalText="SAVE CHANGES"
-                        activeText="Saving…"
-                        failedText="Save failed"
-                        successText="Saved"
+                        normalText="保存提交"
+                        activeText="正在保存…"
+                        failedText="保存失败"
+                        successText="已保存"
                     />
                 ]);
 
                 // cancel button
                 buttonSections.push([
                     <a key="cancel" className="cursor-pointer text-brand-hover text-grey-4 text-uppercase" onClick={this.onCancel}>
-                        CANCEL
+                        取消
                     </a>
                 ]);
 
@@ -335,7 +335,7 @@ export default class QueryHeader extends Component {
                 'text-brand-hover': !this.props.uiControls.isShowingTemplateTagsEditor
             });
             buttonSections.push([
-                <Tooltip key="parameterEdititor" tooltip="Variables">
+                <Tooltip key="parameterEdititor" tooltip="变量">
                     <a className={parametersButtonClasses}>
                         <Icon name="variable" size={16} onClick={this.props.toggleTemplateTagsEditor}></Icon>
                     </a>
@@ -347,7 +347,7 @@ export default class QueryHeader extends Component {
         if (!isNew && !isEditing) {
             // simply adding an existing saved card to a dashboard, so show the modal to do so
             buttonSections.push([
-                <Tooltip key="addtodash" tooltip="Add to dashboard">
+                <Tooltip key="addtodash" tooltip="添加到dashboard">
                     <span data-metabase-event={"QueryBuilder;AddToDash Modal;normal"} className="cursor-pointer text-brand-hover" onClick={() => this.setState({ modal: "add-to-dashboard" })}>
                         <Icon name="addtodash" size={16} />
                     </span>
@@ -356,7 +356,7 @@ export default class QueryHeader extends Component {
         } else if (isNew && isDirty) {
             // this is a new card, so we need the user to save first then they can add to dash
             buttonSections.push([
-                <Tooltip key="addtodashsave" tooltip="Add to dashboard">
+                <Tooltip key="addtodashsave" tooltip="添加到dashboard">
                     <ModalWithTrigger
                         ref="addToDashSaveModal"
                         triggerClasses="h4 text-brand-hover text-uppercase"
@@ -379,7 +379,7 @@ export default class QueryHeader extends Component {
         // history icon on saved cards
         if (!isNew) {
             buttonSections.push([
-                <Tooltip key="history" tooltip="Revision history">
+                <Tooltip key="history" tooltip="修订历史">
                     <ModalWithTrigger
                         ref="cardHistory"
                         triggerElement={<span className="text-brand-hover"><Icon name="history" size={18} /></span>}
@@ -422,7 +422,7 @@ export default class QueryHeader extends Component {
             'text-brand-hover': !this.state.isShowingDataReference
         });
         buttonSections.push([
-            <Tooltip key="dataReference" tooltip="Learn about your data">
+            <Tooltip key="dataReference" tooltip="了解你的数据">
                 <a className={dataReferenceButtonClasses}>
                     <Icon name='reference' size={16} onClick={this.onToggleDataReference}></Icon>
                 </a>
@@ -443,9 +443,9 @@ export default class QueryHeader extends Component {
             <div className="relative">
                 <HeaderBar
                     isEditing={this.props.isEditing}
-                    name={this.props.isNew ? "New question" : this.props.card.name}
+                    name={this.props.isNew ? "新提问" : this.props.card.name}
                     description={this.props.card ? this.props.card.description : null}
-                    breadcrumb={(!this.props.card.id && this.props.originalCard) ? (<span className="pl2">started from <a className="link" onClick={this.onFollowBreadcrumb}>{this.props.originalCard.name}</a></span>) : null }
+                    breadcrumb={(!this.props.card.id && this.props.originalCard) ? (<span className="pl2">开始于 <a className="link" onClick={this.onFollowBreadcrumb}>{this.props.originalCard.name}</a></span>) : null }
                     buttons={this.getHeaderButtons()}
                     setItemAttributeFn={this.props.onSetCardAttribute}
                     badge={this.props.card.collection &&

@@ -39,7 +39,7 @@ import * as actions from 'metabase/reference/reference';
 
 
 const emptyStateData = {
-    message: `Fields in this table will appear here as they're added`,
+    message: `这个表的字段,添加后就会展示`,
     icon: "fields"
 }
 
@@ -129,7 +129,7 @@ export default class SegmentFieldList extends Component {
                 <EditableReferenceHeader 
                     type="segment"
                     headerIcon="segment"
-                    name={`Fields in ${segment.name}`}
+                    name={`${segment.name}的字段`}
                     user={user} 
                     isEditing={isEditing} 
                     startEditing={startEditing} 

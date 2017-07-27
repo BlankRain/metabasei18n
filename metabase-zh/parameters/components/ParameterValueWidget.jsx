@@ -153,7 +153,7 @@ export default class ParameterValueWidget extends Component {
                 </div>
             );
         } else {
-            let placeholderText = isEditing ? "Select a default value…" : (placeholder || "Select…");
+            let placeholderText = isEditing ? "选取默认值…" : (placeholder || "选择...");
 
             return (
                 <PopoverWithTrigger

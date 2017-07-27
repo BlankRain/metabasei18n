@@ -42,13 +42,13 @@ export default class QueryModeButton extends Component {
 
         // maybe switch up the icon based on mode?
         let onClick = null;
-        let tooltip = "Not Supported";
+        let tooltip = "不支持的！";
         if (mode === "query" && allowQueryToNative) {
             onClick = nativeForm ? () => this.setState({isOpen: true}) : () => onSetMode("native");
-            tooltip = nativeForm ? `View the ${nativeQueryName}` : `Switch to ${nativeQueryName}`;
+            tooltip = nativeForm ? `查看 ${nativeQueryName}` : `切换到  ${nativeQueryName}`;
         } else if (mode === "native" && allowNativeToQuery) {
             onClick = () => onSetMode("query");
-            tooltip = "Switch to Builder";
+            tooltip = "切换到构建器";
         }
 
         return (
@@ -79,7 +79,7 @@ export default class QueryModeButton extends Component {
                             <a className="Button Button--primary" onClick={() => {
                                 onSetMode(targetType);
                                 this.setState({isOpen: false});
-                            }}>Convert this question to {nativeQueryName}</a>
+                            }}>转换这个提问到 {nativeQueryName}</a>
                         </div>
                     </div>
                 </Modal>

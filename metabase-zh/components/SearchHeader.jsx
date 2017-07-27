@@ -13,7 +13,7 @@ const SearchHeader = ({ searchText, setSearchText }) =>
         <input
             className={cx("input bg-transparent", S.searchBox)}
             type="text"
-            placeholder="Filter this list..."
+            placeholder="过滤这个列表..."
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
         />

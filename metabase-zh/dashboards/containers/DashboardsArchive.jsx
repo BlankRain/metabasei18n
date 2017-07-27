@@ -82,7 +82,7 @@ export class Dashboards extends Component {
                         {headerWithBackContainer}
                         <div className="full flex justify-center" style={{marginTop: "75px"}}>
                             <EmptyState
-                                message={<span>No dashboards have been<br />archived yet</span>}
+                                message={<span>暂无dashboards <br />打包</span>}
                                 icon="viewArchive"
                             />
                         </div>
@@ -100,9 +100,9 @@ export class Dashboards extends Component {
                                 <EmptyState
                                     message={
                                         <div className="mt4">
-                                            <h3 className="text-grey-5">No results found</h3>
-                                            <p className="text-grey-4">Try adjusting your filter to find what you’re
-                                                looking for.</p>
+                                            <h3 className="text-grey-5">查无结果</h3>
+                                            <p className="text-grey-4">试着调整过滤器,才有可能找到你要找的.
+                                                </p>
                                         </div>
                                     }
                                     image="/app/img/empty_dashboard"

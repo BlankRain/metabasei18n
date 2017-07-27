@@ -201,11 +201,11 @@ export default class PulseEditChannels extends Component {
                         actionFn={this.onTestPulseChannel.bind(this, channel)}
                         className={cx("Button", { disabled: !isValid })}
                         normalText={channelSpec.type === "email" ?
-                            "Send email now" :
-                            "Send to  " + channelSpec.name + " now"}
-                        activeText="Sending…"
-                        failedText="Sending failed"
-                        successText={ this.willPulseSkip() ?  "Didn’t send because the pulse has no results." : "Pulse sent"}
+                            "正在发送邮件" :
+                            "正在发送到  " + channelSpec.name + ""}
+                        activeText="发送中…"
+                        failedText="发送失败"
+                        successText={ this.willPulseSkip() ?  "未发送,因为pulse没结果." : "Pulse已发送"}
                         forceActiveStyle={ this.willPulseSkip() }
                     />
                 </div>
@@ -229,7 +229,7 @@ export default class PulseEditChannels extends Component {
                     <ul className="bg-grey-0 px3">{channels}</ul>
                 : channels.length > 0 && !channelSpec.configured ?
                     <div className="p4 text-centered">
-                        <h3>{channelSpec.name} needs to be set up by an administrator.</h3>
+                        <h3>{channelSpec.name} 需要管理员权限.</h3>
                         <SetupMessage user={user} channels={[channelSpec.name]} />
                     </div>
                 : null
@@ -247,7 +247,7 @@ export default class PulseEditChannels extends Component {
         };
         return (
             <div className="py1 mb4">
-                <h2 className="mb3">Where should this data go?</h2>
+                <h2 className="mb3">这个数据该去哪?</h2>
                 <ul className="bordered rounded">
                     {Object.values(channels).map(channelSpec =>
                         this.renderChannelSection(channelSpec)

@@ -38,7 +38,7 @@ import * as actions from 'metabase/reference/reference';
 const interestingQuestions = (table, field) => {
     return [
         {
-            text: `Number of ${table && table.display_name} grouped by ${field.display_name}`,
+            text: `${table && table.display_name} 的个数 由 ${field.display_name}分组`,
             icon: { name: "number", scale: 1, viewBox: "8 8 16 16" },
             link: getQuestionUrl({
                 dbId: table && table.db_id,
@@ -48,7 +48,7 @@ const interestingQuestions = (table, field) => {
             })
         },
         {
-            text: `All distinct values of ${field.display_name}`,
+            text: `所有去重后的值${field.display_name}`,
             icon: "table2",
             link: getQuestionUrl({
                 dbId: table && table.db_id,
@@ -165,7 +165,7 @@ export default class SegmentFieldDetail extends Component {
                     entity={entity}
                     table={table}
                     headerIcon="field"
-                    name="Details"
+                    name="详情"
                     type="field"
                     user={user}
                     isEditing={isEditing}
@@ -182,9 +182,9 @@ export default class SegmentFieldDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="description"
-                                    name="Description"
+                                    name="描述"
                                     description={entity.description}
-                                    placeholder="No description yet"
+                                    placeholder="暂无描述"
                                     isEditing={isEditing}
                                     field={description}
                                 />
@@ -193,7 +193,7 @@ export default class SegmentFieldDetail extends Component {
                                 <li className="relative">
                                     <Detail
                                         id="name"
-                                        name="Actual name in database"
+                                        name="数据库里的真实名"
                                         description={entity.name}
                                         subtitleClass={S.tableActualName}
                                     />
@@ -202,9 +202,9 @@ export default class SegmentFieldDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="points_of_interest"
-                                    name={`Why this field is interesting`}
+                                    name={`这个字段为什么有意思?`}
                                     description={entity.points_of_interest}
-                                    placeholder="Nothing interesting yet"
+                                    placeholder="一个有趣的都没有"
                                     isEditing={isEditing}
                                     field={points_of_interest}
                                     />
@@ -212,9 +212,9 @@ export default class SegmentFieldDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="caveats"
-                                    name={`Things to be aware of about this field`}
+                                    name={`这个字段你应该了解的事`}
                                     description={entity.caveats}
-                                    placeholder="Nothing to be aware of yet"
+                                    placeholder="什么也不需要懂"
                                     isEditing={isEditing}
                                     field={caveats}
                                 />
@@ -225,7 +225,7 @@ export default class SegmentFieldDetail extends Component {
                                 <li className="relative">
                                     <Detail
                                         id="base_type"
-                                        name={`Data type`}
+                                        name={`数据类型`}
                                         description={entity.base_type}
                                     />
                                 </li>

@@ -35,7 +35,7 @@ import * as metadataActions from "metabase/redux/metadata";
 
 const emptyStateData = (table, segment) =>{  
     return {
-        message: "Questions about this segment will appear here as they're added",
+        message: "有关这个segment的提问会在这里展示 ",
         icon: "all",
         action: "Ask a question",
         link: getQuestionUrl({
@@ -79,7 +79,7 @@ export default class SegmentQuestions extends Component {
         return (
             <div style={style} className="full">
                 <ReferenceHeader 
-                    name={`Questions about ${this.props.segment.name}`}
+                    name={`有关${this.props.segment.name}的提问`}
                     type='questions'
                     headerIcon="segment"
                 />
@@ -95,7 +95,7 @@ export default class SegmentQuestions extends Component {
                                                     id={entity.id}
                                                     index={index}
                                                     name={entity.display_name || entity.name}
-                                                    description={ `Created ${moment(entity.created_at).fromNow()} by ${entity.creator.common_name}` }
+                                                    description={ `创建于 ${moment(entity.created_at).fromNow()} 由 ${entity.creator.common_name}` }
                                                     url={ Urls.question(entity.id) }
                                                     icon={ visualizations.get(entity.display).iconName }
                                                 />

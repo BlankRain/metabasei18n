@@ -90,7 +90,7 @@ const NewCollectionButton = ({ push }) =>
                 />
             </div>
         </div>
-        <h3>New collection</h3>
+        <h3>新集合</h3>
     </div>
 
 export default CollectionButtons;

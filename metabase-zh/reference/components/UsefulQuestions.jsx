@@ -15,7 +15,7 @@ const UsefulQuestions = ({
     <div className={cx(D.detail)}>
         <div className={D.detailBody}>
             <div className={D.detailTitle}>
-                <span className={D.detailName}>Potentially useful questions</span>
+                <span className={D.detailName}>可能有用的提问</span>
             </div>
             <div className={S.usefulQuestions}>
                 { questions.map((question, index, questions) =>

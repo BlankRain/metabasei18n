@@ -11,8 +11,8 @@ const ChartSettingFieldPicker = ({ value, options, onChange, onRemove }) =>
             value={value}
             options={options}
             onChange={onChange}
-            placeholder="Select a field"
-            placeholderNoOptions="No valid fields"
+            placeholder="选择一个字段"
+            placeholderNoOptions="没有有效字段"
             isInitiallyOpen={value === undefined}
         />
         <Icon

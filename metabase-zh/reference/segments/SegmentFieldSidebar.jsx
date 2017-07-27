@@ -24,13 +24,13 @@ const SegmentFieldSidebar = ({
                              [segment.name, `/reference/segments/${segment.id}`],
                              [field.name]]}
                     inSidebar={true}
-                    placeholder="Data Reference"
+                    placeholder="数据参考"
                 />
             </div>
                 <SidebarItem key={`/reference/segments/${segment.id}/fields/${field.id}`} 
                              href={`/reference/segments/${segment.id}/fields/${field.id}`} 
                              icon="document" 
-                             name="Details" />
+                             name="详情" />
         </ul>
     </div>
 

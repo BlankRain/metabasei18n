@@ -23,7 +23,7 @@ export default ({ question }: ClickActionProps): ClickAction[] => {
     return [
         {
             name: "summarize",
-            title: "Summarize this segment",
+            title: "汇总该segment",
             icon: "sum",
             // eslint-disable-next-line react/display-name
             popover: (

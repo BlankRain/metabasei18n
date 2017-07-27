@@ -133,7 +133,7 @@ const GuideDetailEditor = ({
                 }
             </div>
             <div className="ml-auto cursor-pointer text-grey-2">
-                <Tooltip tooltip="Remove item">
+                <Tooltip tooltip="移除项目">
                     <Icon
                         name="close"
                         width={16}
@@ -147,13 +147,13 @@ const GuideDetailEditor = ({
             <div className={cx('mb2', { 'disabled' : disabled })}>
                 <EditLabel>
                     { type === 'dashboard' ?
-                            `Why is this dashboard the most important?` :
-                            `What is useful or interesting about this ${type}?`
+                            `为什么这个是最重要的?` :
+                            `这个${type}有什么有趣或有用的地方吗 ?`
                     }
                 </EditLabel>
                 <textarea
                     className={S.guideDetailEditorTextarea}
-                    placeholder="Write something helpful here"
+                    placeholder="写点有用的东西放这里"
                     {...formField.points_of_interest}
                     disabled={disabled}
                 />
@@ -162,13 +162,13 @@ const GuideDetailEditor = ({
             <div className={cx('mb2', { 'disabled' : disabled })}>
                 <EditLabel>
                     { type === 'dashboard' ?
-                            `Is there anything users of this dashboard should be aware of?` :
-                            `Anything users should be aware of about this ${type}?`
+                            `这个dashboard的用户是不是应该先知道一些什么呢 ?` :
+                            `任何用户都应该清楚 ${type}吗?`
                     }
                 </EditLabel>
                 <textarea
                     className={S.guideDetailEditorTextarea}
-                    placeholder="Write something helpful here"
+                    placeholder="写点有用的在这里"
                     {...formField.caveats}
                     disabled={disabled}
                 />
@@ -176,12 +176,12 @@ const GuideDetailEditor = ({
             { type === 'metric' &&
                 <div className={cx('mb2', { 'disabled' : disabled })}>
                     <EditLabel key="metricFieldsLabel">
-                        Which 2-3 fields do you usually group this metric by?
+                        这个metric 想用哪两三个字段来分组?
                     </EditLabel>
                     <Select
                         options={fieldsByMetric}
                         optionNameFn={option => option.display_name || option.name}
-                        placeholder="Select..."
+                        placeholder="选择..."
                         values={formField.important_fields.value || []}
                         disabledOptionIds={formField.important_fields.value && formField.important_fields.value.length === 3 ?
                             fieldsByMetric

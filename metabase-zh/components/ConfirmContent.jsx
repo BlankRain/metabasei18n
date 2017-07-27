@@ -7,12 +7,12 @@ const nop = () => {};
 const ConfirmContent = ({
     title,
     content,
-    message = "Are you sure you want to do this?",
+    message = "你确定要这样操作?",
     onClose = nop,
     onAction = nop,
     onCancel = nop,
-    confirmButtonText = "Yes",
-    cancelButtonText = "No"
+    confirmButtonText = "是的",
+    cancelButtonText = "不"
 }) =>
     <ModalContent
         title={title}

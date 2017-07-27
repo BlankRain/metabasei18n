@@ -82,7 +82,7 @@ export default class MetricPane extends Component {
                 usefulQuestions={usefulQuestions}
                 extra={metadata &&
                     <div>
-                        <p className="text-bold">Metric Definition</p>
+                        <p className="text-bold">Metric定义</p>
                         <QueryDefinition object={metric} tableMetadata={metadata.tables[metric.table_id]} />
                     </div>
                 }

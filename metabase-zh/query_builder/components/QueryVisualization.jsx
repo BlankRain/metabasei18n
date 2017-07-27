@@ -105,7 +105,7 @@ export default class QueryVisualization extends Component {
 
         let runButtonTooltip;
         if (!isResultDirty && result && result.cached && result.average_execution_time > REFRESH_TOOLTIP_THRESHOLD) {
-            runButtonTooltip = `This question will take approximately ${duration(result.average_execution_time)} to refresh`;
+            runButtonTooltip = `这个查询大概需要 ${duration(result.average_execution_time)} 才能刷新`;
         }
 
         const messages = [];
@@ -114,7 +114,7 @@ export default class QueryVisualization extends Component {
                 icon: "clock",
                 message: (
                     <div>
-                        Updated {moment(result.updated_at).fromNow()}
+                        更新于 {moment(result.updated_at).fromNow()}
                     </div>
                 )
             })
@@ -124,7 +124,7 @@ export default class QueryVisualization extends Component {
                 icon: "table2",
                 message: (
                     <div>
-                        { result.data.rows_truncated != null ? ("Showing first ") : ("Showing ")}
+                        { result.data.rows_truncated != null ? ("展示第一 ") : ("展示 ")}
                         <strong>{formatNumber(result.row_count)}</strong>
                         { " " + inflect("row", result.data.rows.length) }
                     </div>
@@ -231,7 +231,7 @@ export default class QueryVisualization extends Component {
                 { isRunning && (
                     <div className="Loading spread flex flex-column layout-centered text-brand z2">
                         <LoadingSpinner />
-                        <h2 className="Loading-message text-brand text-uppercase my3">Doing science...</h2>
+                        <h2 className="Loading-message text-brand text-uppercase my3">正在研究中...</h2>
                     </div>
                 )}
                 <div className={visualizationClasses}>
@@ -244,6 +244,6 @@ export default class QueryVisualization extends Component {
 
 export const VisualizationEmptyState = ({showTutorialLink}) =>
     <div className="flex full layout-centered text-grey-1 flex-column">
-        <h1>If you give me some data I can show you something cool. Run a Query!</h1>
-        { showTutorialLink && <Link to={Urls.question(null, "?tutorial")} className="link cursor-pointer my2">How do I use this thing?</Link> }
+        <h1>你给我点数据,我能给你提供一些很酷的东西. 运行一个查询!</h1>
+        { showTutorialLink && <Link to={Urls.question(null, "?tutorial")} className="link cursor-pointer my2">我该怎么用这玩意?</Link> }
     </div>;

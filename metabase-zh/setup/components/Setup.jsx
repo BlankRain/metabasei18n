@@ -39,7 +39,7 @@ export default class Setup extends Component {
         const { tag } = MetabaseSettings.get('version');
         return (
             <div className="SetupHelp bordered border-dashed p2 rounded mb4" >
-                If you feel stuck, <a className="link" href={"http://www.metabase.com/docs/"+tag+"/setting-up-metabase"} target="_blank">our getting started guide</a> is just a click away.
+                如果你觉得无聊, <a className="link" href={"http://www.metabase.com/docs/"+tag+"/setting-up-metabase"} target="_blank">我们的引导教程</a> 可一键跳过.
             </div>
         );
     }
@@ -53,9 +53,9 @@ export default class Setup extends Component {
                     <div className="wrapper wrapper--trim text-centered">
                         <LogoIcon className="text-brand mb4" width={89} height={118}></LogoIcon>
                         <div className="relative z2 text-centered ml-auto mr-auto" style={{maxWidth: 550}}>
-                            <h1 style={{fontSize: '2.2rem'}} className="text-brand">Welcome to Metabase</h1>
-                            <p className="text-body">Looks like everything is working. Now let’s get to know you, connect to your data, and start finding you some answers!</p>
-                            <button className="Button Button--primary mt4" onClick={() => (this.completeWelcome())}>Let's get started</button>
+                            <h1 style={{fontSize: '2.2rem'}} className="text-brand">欢迎来到 Metabase</h1>
+                            <p className="text-body">看起来一切正常.现在我们教你如何连数据,并且开始探索你的数据吧!</p>
+                            <button className="Button Button--primary mt4" onClick={() => (this.completeWelcome())}>一起飞!</button>
                         </div>
                         <div className="absolute z1 bottom left right">
                             <div className="inline-block">
@@ -81,12 +81,12 @@ export default class Setup extends Component {
 
                             { setupComplete ?
                                 <section className="SetupStep rounded SetupStep--active flex flex-column layout-centered p4">
-                                    <h1 style={{fontSize: "xx-large"}} className="text-light pt2 pb2">You're all set up!</h1>
+                                    <h1 style={{fontSize: "xx-large"}} className="text-light pt2 pb2">你以及启动了!</h1>
                                     <div className="pt4">
                                         <NewsletterForm initialEmail={userDetails && userDetails.email} />
                                     </div>
                                     <div className="pt4 pb2">
-                                        <Link to="/?new" className="Button Button--primary" onClick={this.completeSetup.bind(this)}>Take me to Metabase</Link>
+                                        <Link to="/?new" className="Button Button--primary" onClick={this.completeSetup.bind(this)}>带我去Metabase</Link>
                                     </div>
                                 </section>
                             : null }

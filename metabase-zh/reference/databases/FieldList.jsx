@@ -39,7 +39,7 @@ import * as actions from 'metabase/reference/reference';
 
 
 const emptyStateData = {
-    message: `Fields in this table will appear here as they're added`,
+    message: `表中的字段添加后就会显示`,
     icon: "fields"
 }
 
@@ -128,7 +128,7 @@ export default class FieldList extends Component {
                 }
                 <EditableReferenceHeader 
                     headerIcon="table2"
-                    name={`Fields in ${table.display_name}`}
+                    name={` ${table.display_name}表里的字段`}
                     user={user} 
                     isEditing={isEditing} 
                     startEditing={startEditing} 

@@ -20,7 +20,7 @@ const FieldToGroupBy = ({
         <a className={Q.queryButton} onClick={onClick}>
             <span className={S.fieldToGroupByText}>
                 <span>
-                    {`${metric.name} by `}
+                    {`${metric.name} 通过 `}
                 </span>
                 <span className="ml1 text-brand">
                     {field.display_name}

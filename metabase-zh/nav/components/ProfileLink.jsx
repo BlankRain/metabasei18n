@@ -80,7 +80,7 @@ export default class ProfileLink extends Component {
                                 { !user.google_auth && !user.ldap_auth ?
                                     <li>
                                         <Link to="/user/edit_current" data-metabase-event={"Navbar;Profile Dropdown;Edit Profile"} onClick={this.closeDropdown} className="Dropdown-item block text-white no-decoration">
-                                            Account Settings
+                                            账户设置
                                         </Link>
                                     </li>
                                 : null }
@@ -88,7 +88,7 @@ export default class ProfileLink extends Component {
                                 { user.is_superuser && context !== 'admin' ?
                                     <li>
                                         <Link to="/admin" data-metabase-event={"Navbar;Profile Dropdown;Enter Admin"} onClick={this.closeDropdown} className="Dropdown-item block text-white no-decoration">
-                                            Admin Panel
+                                            管理面板
                                         </Link>
                                     </li>
                                 : null }
@@ -96,28 +96,28 @@ export default class ProfileLink extends Component {
                                 { user.is_superuser && context === 'admin' ?
                                     <li>
                                         <Link to="/" data-metabase-event={"Navbar;Profile Dropdown;Exit Admin"} onClick={this.closeDropdown} className="Dropdown-item block text-white no-decoration">
-                                            Exit Admin
+                                            退出管理
                                         </Link>
                                     </li>
                                 : null }
 
                                 <li>
                                     <a data-metabase-event={"Navbar;Profile Dropdown;Help "+tag} className="Dropdown-item block text-white no-decoration" href={"http://www.metabase.com/docs/"+tag} target="_blank">
-                                        Help
+                                        帮助
                                     </a>
                                 </li>
 
                                 { user.is_superuser &&
                                     <li>
                                         <a data-metabase-event={"Navbar;Profile Dropdown;Debugging "+tag} onClick={this.openModal.bind(this, "logs")} className="Dropdown-item block text-white no-decoration">
-                                            Logs
+                                            日志
                                         </a>
                                     </li>
                                 }
 
                                 <li>
                                     <a data-metabase-event={"Navbar;Profile Dropdown;About "+tag} onClick={this.openModal.bind(this, "about")} className="Dropdown-item block text-white no-decoration">
-                                        About Metabase
+                                        关于Metabase
                                     </a>
                                 </li>
 
@@ -127,7 +127,7 @@ export default class ProfileLink extends Component {
                                         data-metabase-event={"Navbar;Profile Dropdown;Logout"}
                                         className="Dropdown-item block text-white no-decoration"
                                     >
-                                        Sign out
+                                        注销
                                     </Link>
                                 </li>
                             </ul>
@@ -144,9 +144,9 @@ export default class ProfileLink extends Component {
                             <div className="text-brand pb2">
                                 <LogoIcon width={48} height={48} />
                             </div>
-                            <h2 style={{fontSize: "1.75em"}} className="text-dark">Thanks for using Metabase!</h2>
+                            <h2 style={{fontSize: "1.75em"}} className="text-dark">感谢使用Metabase!</h2>
                             <div className="pt2">
-                                <h3 className="text-dark mb1">You're on version {tag}</h3>
+                                <h3 className="text-dark mb1">你正在使用 version {tag}</h3>
                                 <p className="text-grey-3 text-bold">Built on {date}</p>
                                 { !/^v\d+\.\d+\.\d+$/.test(tag) &&
                                     <div>

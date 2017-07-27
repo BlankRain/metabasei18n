@@ -37,12 +37,12 @@ export default class SaveStatus extends Component {
         if (this.state.saving) {
             return (<div className="SaveStatus mx2 px2 border-right"><LoadingSpinner size={24} /></div>);
         } else if (this.state.error) {
-            return (<div className="SaveStatus mx2 px2 border-right text-error">Error: {String(this.state.error.message || this.state.error)}</div>)
+            return (<div className="SaveStatus mx2 px2 border-right text-error">错误: {String(this.state.error.message || this.state.error)}</div>)
         } else if (this.state.recentlySavedTimeout != null) {
             return (
                 <div className="SaveStatus mx2 px2 border-right flex align-center text-success">
                     <Icon name="check" size={16} />
-                    <div className="ml1 h3 text-bold">Saved</div>
+                    <div className="ml1 h3 text-bold">已保存</div>
                 </div>
             )
         } else {

@@ -24,18 +24,16 @@ const GroupDescription = ({ group }) =>
     isDefaultGroup(group) ?
         <div className="px2 text-measure">
             <p>
-                All users belong to the {group.name} group and can't be removed from it. Setting permissions for this group is a great way to
-                make sure you know what new Metabase users will be able to see.
+                所有属于 {group.name} 组的用户是不能移除的. 给这个组设置权限是一个很棒的方法明确新用户可以看什么.
             </p>
         </div>
     : isAdminGroup(group) ?
         <div className="px2 text-measure">
             <p>
-                This is a special group whose members can see everything in the Metabase instance, and who can access and make changes to the
-                settings in the Admin Panel, including changing permissions! So, add people to this group with care.
+                这是一个可查看所有东西的组, 并且可以修改管理员设置,所以,添加用户到该组的时候要谨慎.
             </p>
             <p>
-                To make sure you don't get locked out of Metabase, there always has to be at least one user in this group.
+                为了确保你能够登录,这个组里至少得有一个用户.
             </p>
         </div>
     :
@@ -147,7 +145,7 @@ const MembersTable = ({
             </AdminContentTable>
             { members.length === 0 && (
                 <div className="mt4 pt4 flex layout-centered">
-                    <AdminEmptyText message="A group is only as good as its members." />
+                    <AdminEmptyText message="这个组空空如也." />
                 </div>
             )}
         </div>
@@ -258,7 +256,7 @@ export default class GroupDetail extends Component {
         return (
             <AdminPaneLayout
                 title={group.name}
-                buttonText="Add members"
+                buttonText="添加成员"
                 buttonAction={canEditMembership(group) ? this.onAddUsersClicked.bind(this) : null}
                 buttonDisabled={addUserVisible}
             >

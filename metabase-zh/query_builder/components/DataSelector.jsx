@@ -295,7 +295,7 @@ export default class DataSelector extends Component {
                             <h3 className="text-default">{header}</h3>
                         </div>
                     </div>
-                    <div className="p4 text-centered">No tables found in this database.</div>
+                    <div className="p4 text-centered">这个数据库里没找到表.</div>
                 </section>
             );
         } else {
@@ -325,8 +325,8 @@ export default class DataSelector extends Component {
                     />
                     { isSavedQuestionList && (
                         <div className="bg-slate-extra-light p2 text-centered">
-                            Is a question missing?
-                            <a href="http://metabase.com/docs/latest/users-guide/04-asking-questions.html#source-data" className="block link">Learn more about nested queries</a>
+                            有遗失的问题?
+                            <a href="http://metabase.com/docs/latest/users-guide/04-asking-questions.html#source-data" className="block link">了解更多关于查询的信息</a>
                         </div>
                     )}
                 </div>
@@ -354,7 +354,7 @@ export default class DataSelector extends Component {
                             <h3 className="text-default">{header}</h3>
                         </div>
                     </div>
-                    <div className="p4 text-centered">No segments were found.</div>
+                    <div className="p4 text-centered">没有找到segments.</div>
                 </section>
             );
         }
@@ -375,7 +375,7 @@ export default class DataSelector extends Component {
                 className="text-brand"
                 sections={sections}
                 searchable={true}
-                searchPlaceholder="Find a segment"
+                searchPlaceholder="搜索segment"
                 onChange={this.onChangeSegment}
                 itemIsSelected={(item) => item.segment ? item.segment.id === this.getSegmentId() : false}
                 itemIsClickable={(item) => item.segment && !item.disabled}
@@ -402,19 +402,19 @@ export default class DataSelector extends Component {
             } else if (segment) {
                 content = <span className="text-grey no-decoration">{segment.name}</span>;
             } else {
-                content = <span className="text-grey-4 no-decoration">Pick a segment or table</span>;
+                content = <span className="text-grey-4 no-decoration">选择一个segment或表</span>;
             }
         } else if (this.props.includeTables) {
             if (table) {
                 content = <span className="text-grey no-decoration">{table.display_name || table.name}</span>;
             } else {
-                content = <span className="text-grey-4 no-decoration">Select a table</span>;
+                content = <span className="text-grey-4 no-decoration">选择一个表</span>;
             }
         } else {
             if (database) {
                 content = <span className="text-grey no-decoration">{database.name}</span>;
             } else {
-                content = <span className="text-grey-4 no-decoration">Select a database</span>;
+                content = <span className="text-grey-4 no-decoration">选择一个数据库</span>;
             }
         }
 

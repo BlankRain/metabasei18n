@@ -30,7 +30,7 @@ export default class ArchiveDashboardModal extends Component {
     render() {
         var formError;
         if (this.state.error) {
-            var errorMessage = "Server error encountered";
+            var errorMessage = "服务端错误";
             if (this.state.error.data &&
                 this.state.error.data.message) {
                 errorMessage = this.state.error.data.message;
@@ -50,12 +50,12 @@ export default class ArchiveDashboardModal extends Component {
                 onClose={this.props.onClose}
             >
                 <div className="Form-inputs mb4">
-                    <p>Are you sure you want to do this?</p>
+                    <p>你确定要这样操作?</p>
                 </div>
 
                 <div className="Form-actions">
-                    <button className="Button Button--danger" onClick={() => this.archiveDashboard()}>Yes</button>
-                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>No</button>
+                    <button className="Button Button--danger" onClick={() => this.archiveDashboard()}>是的</button>
+                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>不</button>
                     {formError}
                 </div>
             </ModalContent>

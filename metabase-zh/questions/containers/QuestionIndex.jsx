@@ -27,24 +27,24 @@ export const CollectionEmptyState = () =>
     <div className="flex align-center p2 mt4 bordered border-med border-brand rounded bg-grey-0 text-brand">
         <Icon name="collection" size={32} className="mr2"/>
         <div className="flex-full">
-            <h3>Create collections for your saved questions</h3>
+            <h3>为你保存的问题创建个集合</h3>
             <div className="mt1">
-                Collections help you organize your questions and allow you to decide who gets to see what.
+                集合可以帮你组织你的提问,并且由你决定谁可以看到它.
                 {" "}
                 <a href="http://www.metabase.com/docs/latest/administration-guide/06-collections.html" target="_blank">
-                    Learn more
+                    了解更多
                 </a>
             </div>
         </div>
         <Link to="/collections/create">
-            <Button primary>Create a collection</Button>
+            <Button primary>创建一个集合</Button>
         </Link>
     </div>;
 
 export const NoSavedQuestionsState = () =>
     <div className="flex-full flex align-center justify-center mb4">
         <EmptyState
-            message={<span>Explore your data, create charts or maps, and save what you find.</span>}
+            message={<span>浏览你的数据, 创建图表, 保存你找到的.</span>}
             image="/app/img/questions_illustration"
             action="Ask a question"
             link="/question"
@@ -60,7 +60,7 @@ export const QuestionIndexHeader = ({questions, collections, isAdmin, onSearch})
     const showSetPermissionsLink = isAdmin && hasCollections;
 
     return (<div className="flex align-center pt4 pb2">
-        <TitleAndDescription title={ hasCollections ? "Collections of Questions" : "Saved Questions" }/>
+        <TitleAndDescription title={ hasCollections ? "集合相关的提问" : "保存的提问" }/>
 
         <div className="flex align-center ml-auto">
             { showSearch &&
@@ -70,11 +70,11 @@ export const QuestionIndexHeader = ({questions, collections, isAdmin, onSearch})
             <CollectionActions>
                 { showSetPermissionsLink &&
                 <Link to="/collections/permissions">
-                    <Icon size={18} name="lock" tooltip="Set permissions for collections"/>
+                    <Icon size={18} name="lock" tooltip="为集合设置权限"/>
                 </Link>
                 }
                 <Link to="/questions/archive">
-                    <Icon size={20} name="viewArchive" tooltip="View the archive"/>
+                    <Icon size={20} name="viewArchive" tooltip="查看打包文件"/>
                 </Link>
             </CollectionActions>
         </div>
@@ -132,7 +132,7 @@ export class QuestionIndex extends Component {
 
                 { showNoSavedQuestionsState && <NoSavedQuestionsState /> }
 
-                { showEverythingElseTitle && <h2 className="mt2 mb2">Everything Else</h2> }
+                { showEverythingElseTitle && <h2 className="mt2 mb2">其他东西</h2> }
 
                 <div className={cx({ "hide": !showEntityList })}>
                     {/* EntityList loads `questions` according to the query specified in the url query string */}

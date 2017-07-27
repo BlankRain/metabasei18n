@@ -13,29 +13,29 @@ import cx from "classnames";
 
 import _ from "underscore";
 
-const PermissionsEditor = ({ title = "Permissions", modal, admin, grid, onUpdatePermission, onSave, onCancel, confirmCancel, isDirty, saveError, diff, location }) => {
+const PermissionsEditor = ({ title = "权限", modal, admin, grid, onUpdatePermission, onSave, onCancel, confirmCancel, isDirty, saveError, diff, location }) => {
     const saveButton =
         <Confirm
-            title="Save permissions?"
+            title="保存权限?"
             action={onSave}
             content={<PermissionsConfirm diff={diff} />}
             triggerClasses={cx({ disabled: !isDirty })}
             key="save"
         >
-            <Button primary small={!modal}>Save Changes</Button>
+            <Button primary small={!modal}>保存修改</Button>
         </Confirm>;
 
     const cancelButton = confirmCancel ?
         <Confirm
-            title="Discard changes?"
+            title="取消修改?"
             action={onCancel}
-            content="No changes to permissions will be made."
+            content="不会有任何修改"
             key="discard"
         >
             <Button small={!modal}>Cancel</Button>
         </Confirm>
     :
-        <Button small={!modal} onClick={onCancel} key="cancel">Cancel</Button>;
+        <Button small={!modal} onClick={onCancel} key="cancel">取消</Button>;
 
     return (
         <LoadingAndErrorWrapper loading={!grid} className="flex-full flex flex-column">
@@ -54,7 +54,7 @@ const PermissionsEditor = ({ title = "Permissions", modal, admin, grid, onUpdate
                 { isDirty &&
                     <EditBar
                         admin={admin}
-                        title="You've made changes to permissions."
+                        title="你已成功修改权限."
                         buttons={[cancelButton, saveButton]}
                     />
                 }

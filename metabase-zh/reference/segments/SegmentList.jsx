@@ -24,9 +24,9 @@ import {
 import * as metadataActions from "metabase/redux/metadata";
 
 const emptyStateData = {
-            title: "Segments are interesting subsets of tables",
-            adminMessage: "Defining common segments for your team makes it even easier to ask questions",
-            message: "Segments will appear here once your admins have created some",
+            title: "Segments是有趣的表的子集",
+            adminMessage: "定义一些常用的Segment会方法提问",
+            message: "你的管理员添加的Segments会在这里展示. ",
             image: "app/assets/img/segments-list",
             adminAction: "Learn how to create segments",
             adminLink: "http://www.metabase.com/docs/latest/administration-guide/06-segments-and-metrics.html"

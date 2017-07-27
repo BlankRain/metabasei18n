@@ -22,7 +22,7 @@ const MetricImportantFieldsDetail = ({
         <div className={D.detailBody}>
             <div className={D.detailTitle}>
                 <span className={D.detailName}>
-                    Which 2-3 fields do you usually group this metric by?
+                    这个metric要用哪两三个字段来分组?
                 </span>
             </div>
             <div className={cx(D.detailSubtitle, { "mt1" : true })}>
@@ -55,7 +55,7 @@ const MetricImportantFieldsDetail = ({
             fields={fields}
             databaseId={table.db_id} 
             metric={metric}
-            title={"Most useful fields to group this metric by"}
+            title={"最有用的字段来分组metric"}
             onChangeLocation={onChangeLocation}
         /> :
         null; 

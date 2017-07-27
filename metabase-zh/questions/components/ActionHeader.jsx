@@ -24,7 +24,7 @@ const ActionHeader = ({ visibleCount, selectedCount, allAreSelected, sectionIsAr
             </span>
         </Tooltip>
         <span className={S.selectedCount}>
-            {selectedCount} selected
+            {selectedCount} 已选择
         </span>
         <span className="flex align-center flex-align-right">
             { !sectionIsArchive && labels.length > 0 ?
@@ -32,7 +32,7 @@ const ActionHeader = ({ visibleCount, selectedCount, allAreSelected, sectionIsAr
                     triggerElement={
                         <span className={S.actionButton}>
                             <Icon name="label" />
-                            Labels
+                            标签
                             <Icon name="chevrondown" size={12} />
                         </span>
                     }
@@ -45,7 +45,7 @@ const ActionHeader = ({ visibleCount, selectedCount, allAreSelected, sectionIsAr
                 triggerElement={
                     <span className={S.actionButton} >
                         <Icon name="move" className="mr1" />
-                        Move
+                        移动
                     </span>
                 }
             >
@@ -53,7 +53,7 @@ const ActionHeader = ({ visibleCount, selectedCount, allAreSelected, sectionIsAr
             </ModalWithTrigger>
             <span className={S.actionButton} onClick={() => setArchived(undefined, !sectionIsArchive, true)}>
                 <Icon name={ sectionIsArchive ? "unarchive" : "archive" }  className="mr1" />
-                { sectionIsArchive ? "Unarchive" : "Archive" }
+                { sectionIsArchive ? "未打包" : "打包" }
             </span>
         </span>
     </div>

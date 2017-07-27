@@ -12,7 +12,7 @@ const DetailPane = ({ name, description, usefulQuestions, useForCurrentQuestion,
         </p>
         { useForCurrentQuestion && useForCurrentQuestion.length > 0 ?
             <div className="py1">
-                <p className="text-bold">Use for current question</p>
+                <p className="text-bold">为当前问题使用</p>
                 <ul className="my2">
                 {useForCurrentQuestion.map((item, index) =>
                     <li className="mt1" key={index}>
@@ -24,7 +24,7 @@ const DetailPane = ({ name, description, usefulQuestions, useForCurrentQuestion,
         : null }
         { usefulQuestions && usefulQuestions.length > 0 ?
             <div className="py1">
-                <p className="text-bold">Potentially useful questions</p>
+                <p className="text-bold">可能有用的提问</p>
                 <ul>
                 {usefulQuestions.map((item, index) =>
                     <li className="border-row-divider" key={index}>

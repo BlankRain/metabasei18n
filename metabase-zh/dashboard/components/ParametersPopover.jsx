@@ -49,7 +49,7 @@ const ParameterOptionsSection = ({ section, onClick }) =>
 
 const ParameterOptionsSectionsPane = ({ sections, onSelectSection }) =>
     <div className="pb2">
-        <h3 className="p2">What do you want to filter?</h3>
+        <h3 className="p2">你想过滤什么?</h3>
         <ul>
             { sections.map(section =>
                 <ParameterOptionsSection section={section} onClick={() => onSelectSection(section) }/>
@@ -65,7 +65,7 @@ const ParameterOptionItem = ({ option, onClick }) =>
 
 const ParameterOptionsPane = ({ options, onSelectOption }) =>
     <div className="pb2">
-        <h3 className="p2">What kind of filter?</h3>
+        <h3 className="p2">哪种类型的过滤器?</h3>
         <ul>
             { options && options.map(option =>
                 <ParameterOptionItem option={option} onClick={() => onSelectOption(option)} />

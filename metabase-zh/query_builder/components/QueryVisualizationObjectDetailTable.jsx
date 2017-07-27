@@ -69,7 +69,7 @@ export default class QueryVisualizationObjectDetailTable extends Component {
 
             var cellValue;
             if (row[1] === null || row[1] === undefined || (typeof row[1] === "string" && row[1].length === 0)) {
-                cellValue = (<span className="text-grey-2">Empty</span>);
+                cellValue = (<span className="text-grey-2">空</span>);
             } else if (isa(row[0].special_type, TYPE.SerializedJSON)) {
                 let formattedJson = JSON.stringify(JSON.parse(row[1]), null, 2);
                 cellValue = (<pre className="ObjectJSON">{formattedJson}</pre>);
@@ -122,7 +122,7 @@ export default class QueryVisualizationObjectDetailTable extends Component {
         });
 
         if (tableForeignKeys.length < 1) {
-            return (<p className="my4 text-centered">No relationships found.</p>);
+            return (<p className="my4 text-centered">没找到关系.</p>);
         }
 
         const fkCountsByTable = foreignKeyCountsByOriginTable(tableForeignKeys);
@@ -154,7 +154,7 @@ export default class QueryVisualizationObjectDetailTable extends Component {
             );
 
             var relationName = inflect(fk.origin.table.display_name, fkCountValue);
-            const via = (fkCountsByTable[fk.origin.table.id] > 1) ? (<span className="text-grey-3 text-normal"> via {fk.origin.display_name}</span>) : null;
+            const via = (fkCountsByTable[fk.origin.table.id] > 1) ? (<span className="text-grey-3 text-normal"> 通过 {fk.origin.display_name}</span>) : null;
 
             var info = (
                 <div>
@@ -226,7 +226,7 @@ export default class QueryVisualizationObjectDetailTable extends Component {
                         <div className="p4 flex align-center text-bold text-grey-3">
                             <Icon name="connections" size={17} />
                             <div className="ml2">
-                                This <span className="text-dark">{tableName}</span> is connected to:
+                                这个 <span className="text-dark">{tableName}</span> 连接到:
                             </div>
                         </div>
                     </div>

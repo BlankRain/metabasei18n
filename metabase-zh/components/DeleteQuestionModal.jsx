@@ -30,7 +30,7 @@ export default class DeleteQuestionModal extends Component {
     render() {
         var formError;
         if (this.state.error) {
-            var errorMessage = "Server error encountered";
+            var errorMessage = "服务端错误";
             if (this.state.error.data &&
                 this.state.error.data.message) {
                 errorMessage = this.error.errors.data.message;
@@ -46,19 +46,19 @@ export default class DeleteQuestionModal extends Component {
 
         return (
             <ModalContent
-                title="Delete Question"
+                title="移除提问"
                 onClose={this.props.onClose}
             >
                 <div className="Form-inputs mb4">
-                    <p>Are you sure you want to do this?</p>
+                    <p>你确定要这么做?</p>
                     { this.props.card.dashboard_count > 0 ?
-                        <p>This question will be deleted from Metabase, and will also be removed from {dashboardCount}.</p>
+                        <p>将会从metabase里移除这个提问, 并且也会从 {dashboardCount} 移除.</p>
                     : null }
                 </div>
 
                 <div className="Form-actions">
-                    <button className="Button Button--danger" onClick={() => this.deleteCard()}>Yes</button>
-                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>No</button>
+                    <button className="Button Button--danger" onClick={() => this.deleteCard()}>是的</button>
+                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>不</button>
                     {formError}
                 </div>
             </ModalContent>

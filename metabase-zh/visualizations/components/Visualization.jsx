@@ -366,16 +366,16 @@ export default class Visualization extends Component {
                     <div className="flex-full p1 text-centered text-brand flex flex-column layout-centered">
                         { isSlow ?
                             <div className="text-slate">
-                                <div className="h4 text-bold mb1">Still Waiting...</div>
+                                <div className="h4 text-bold mb1">依然在等待中...</div>
                                 { isSlow === "usually-slow" ?
                                     <div>
-                                        This usually takes an average of <span style={{whiteSpace: "nowrap"}}>{duration(expectedDuration)}</span>.
+                                        这个平均要花费 <span style={{whiteSpace: "nowrap"}}>{duration(expectedDuration)}</span>.
                                         <br />
-                                        (This is a bit long for a dashboard)
+                                        (对于一个dashboard，这个时间有点长呀.)
                                     </div>
                                 :
                                     <div>
-                                        This is usually pretty fast, but seems to be taking awhile right now.
+                                        这个通常比较快,但是现在可能得一会儿.
                                     </div>
                                 }
                             </div>

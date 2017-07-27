@@ -34,9 +34,9 @@ export default class MetadataSchema extends Component {
                 </div>
                 <div className="mt2 ">
                     <div className="text-uppercase text-grey-3 py1 flex">
-                        <div className="flex-full px1">Column</div>
-                        <div className="flex-half px1">Data Type</div>
-                        <div className="flex-half px1">Additional Info</div>
+                        <div className="flex-full px1">列</div>
+                        <div className="flex-half px1">数据类型</div>
+                        <div className="flex-half px1">附加信息</div>
                     </div>
                     <ol className="border-top border-bottom">
                         {fields}

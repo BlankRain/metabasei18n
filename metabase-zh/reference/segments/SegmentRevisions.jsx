@@ -26,7 +26,7 @@ import EmptyState from "metabase/components/EmptyState.jsx";
 import ReferenceHeader from "../components/ReferenceHeader.jsx";
 
 const emptyStateData =  {
-    message: "There are no revisions for this segment"
+    message: "该segment暂无修订"
 }
 
 const mapStateToProps = (state, props) => {
@@ -82,7 +82,7 @@ export default class SegmentRevisions extends Component {
         return (
             <div style={style} className="full">
                 <ReferenceHeader 
-                    name={`Revision history for ${this.props.segment.name}`}
+                    name={` ${this.props.segment.name}修订历史`}
                     headerIcon="segment"
                 />
                 <LoadingAndErrorWrapper loading={!loadingError && loading} error={loadingError}>

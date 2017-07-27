@@ -90,7 +90,7 @@ const EditableReferenceHeader = ({
                                     data-metabase-event={`Data Reference;Entity -> QB click;${type}`}
                                 >
                                     <div className="flex align-center relative">
-                                        <span className="mr1 flex-no-shrink">See this {type}</span>
+                                        <span className="mr1 flex-no-shrink">查看这个 {type}</span>
                                         <Icon name="chevronright" size={16} />
                                     </div>
                                 </Link>
@@ -105,7 +105,7 @@ const EditableReferenceHeader = ({
         { type === 'segment' && table &&
             <div className={S.subheader}>
                 <div className={cx(S.subheaderBody)}>
-                    A subset of <Link
+                    一个子集 <Link
                         className={S.subheaderLink}
                         to={`/reference/databases/${table.db_id}/tables/${table.id}`}
                     >

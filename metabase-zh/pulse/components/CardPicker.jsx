@@ -63,11 +63,11 @@ export default class CardPicker extends Component {
         let error;
         try {
             if (Query.isBareRows(card.dataset_query.query)) {
-                error = "Raw data cannot be included in pulses";
+                error = "Raw 数据不能添加在 pulses中";
             }
         } catch (e) {}
         if (card.display === "pin_map" || card.display === "state" || card.display === "country") {
-            error = "Maps cannot be included in pulses";
+            error = "地图不能添加在 pulses中";
         }
 
         if (error) {
@@ -132,7 +132,7 @@ export default class CardPicker extends Component {
                 <input
                     ref="input"
                     className="input no-focus full text-bold"
-                    placeholder="Type a question name to filter"
+                    placeholder="输入问题名称去过滤"
                     value={this.inputValue}
                     onFocus={this.onInputFocus}
                     onBlur={this.onInputBlur}

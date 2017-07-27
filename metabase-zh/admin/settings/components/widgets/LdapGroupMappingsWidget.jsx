@@ -109,22 +109,20 @@ export default class LdapGroupMappingsWidget extends React.Component {
             <div className="flex align-center">
                 <SettingToggle {...this.props} />
                 <div className="flex align-center pt1">
-                    <Button type="button" className="ml1" medium onClick={this._showEditModal}>Edit Mappings</Button>
+                    <Button type="button" className="ml1" medium onClick={this._showEditModal}>编辑映射</Button>
                 </div>
                 { showEditModal ? (
                     <Modal wide>
                         <div>
                             <div className="pt4 px4">
-                                <h2>Group Mappings</h2>
+                                <h2>组映射</h2>
                             </div>
                             <div className="px4">
-                                <Button className="float-right" primary onClick={this._showAddRow}>Create a mapping</Button>
+                                <Button className="float-right" primary onClick={this._showAddRow}>创建个映射</Button>
                                 <p className="text-measure">
-                                    Mappings allow Metabase to automatically add and remove users from groups based on the membership information provided by the
-                                    directory server. Membership to the Admin group can be granted through mappings, but will not be automatically removed as a
-                                    failsafe measure.
+                                    映射允许Metabase基于LDAP服务器提供的成员信息,自动添加和移除组里的用户. 管理员组的成员可以通过映射授权,但不会自动移除.
                                 </p>
-                                <AdminContentTable columnTitles={['Distinguished Name', 'Groups', '']}>
+                                <AdminContentTable columnTitles={['去重后的名称', '组', '']}>
                                     { showAddRow ? (
                                         <AddMappingRow mappings={mappings} onCancel={this._hideAddRow} onAdd={this._addMapping} />
                                     ) : null }
@@ -204,8 +202,8 @@ class AddMappingRow extends React.Component {
                             autoFocus
                             onChange={(e) => this.setState({ value: e.target.value })}
                         />
-                        <span className="link no-decoration cursor-pointer" onClick={this._handleCancelClick}>Cancel</span>
-                        <Button className="ml2" primary={!!isValid} disabled={!isValid} onClick={this._handleAddClick}>Add</Button>
+                        <span className="link no-decoration cursor-pointer" onClick={this._handleCancelClick}>取消</span>
+                        <Button className="ml2" primary={!!isValid} disabled={!isValid} onClick={this._handleAddClick}>添加</Button>
                     </div>
                 </td>
             </tr>
@@ -272,7 +270,7 @@ class MappingRow extends React.Component {
                     />
                 </td>
                 <td className="Table-actions">
-                    <Button warning onClick={onDelete}>Remove</Button>
+                    <Button warning onClick={onDelete}>移除</Button>
                 </td>
             </tr>
         );

@@ -35,7 +35,7 @@ import * as actions from 'metabase/reference/reference';
 const interestingQuestions = (table, segment) => {
     return [
         {
-            text: `Number of ${segment.name}`,
+            text: `${segment.name}的个数`,
             icon: { name: "number", scale: 1, viewBox: "8 8 16 16" },
             link: getQuestionUrl({
                 dbId: table && table.db_id,
@@ -45,7 +45,7 @@ const interestingQuestions = (table, segment) => {
             })
         },
         {
-            text: `See all ${segment.name}`,
+            text: `查看全部${segment.name}`,
             icon: "table2",
             link: getQuestionUrl({
                 dbId: table && table.db_id,
@@ -90,7 +90,7 @@ const mapDispatchToProps = {
 };
 
 const validate = (values, props) =>  !values.revision_message ? 
-    { revision_message: "Please enter a revision message" } : {} 
+    { revision_message: "请输入修订信息" } : {} 
 
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -167,7 +167,7 @@ export default class SegmentDetail extends Component {
                     type="segment"
                     headerIcon="segment"
                     headerLink={getQuestionUrl({ dbId: table&&table.db_id, tableId: entity.table_id, segmentId: entity.id})}
-                    name="Details"
+                    name="详情"
                     user={user}
                     isEditing={isEditing}
                     hasSingleSchema={false}
@@ -183,9 +183,9 @@ export default class SegmentDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="description"
-                                    name="Description"
+                                    name="描述"
                                     description={entity.description}
-                                    placeholder="No description yet"
+                                    placeholder="暂无描述"
                                     isEditing={isEditing}
                                     field={description}
                                 />
@@ -193,9 +193,9 @@ export default class SegmentDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="points_of_interest"
-                                    name={`Why this Segment is interesting`}
+                                    name={`为什么这个Segment有趣?`}
                                     description={entity.points_of_interest}
-                                    placeholder="Nothing interesting yet"
+                                    placeholder="一个有趣的都没有"
                                     isEditing={isEditing}
                                     field={points_of_interest}
                                     />
@@ -203,9 +203,9 @@ export default class SegmentDetail extends Component {
                             <li className="relative">
                                 <Detail
                                     id="caveats"
-                                    name={`Things to be aware of about this Segment`}
+                                    name={`关于这个 Segment你应该了解的事情`}
                                     description={entity.caveats}
-                                    placeholder="Nothing to be aware of yet"
+                                    placeholder="什么也不需要知道"
                                     isEditing={isEditing}
                                     field={caveats}
                                 />

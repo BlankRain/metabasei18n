@@ -106,7 +106,7 @@ export default class DatabaseStep extends Component {
         return (
             <label className="Select Form-offset mt1">
                 <select ref="engine" defaultValue={engine} onChange={this.chooseDatabaseEngine.bind(this)}>
-                    <option value="">Select the type of Database you use</option>
+                    <option value="">选择你使用的数据库类型</option>
                     {engineNames.map(opt => <option key={opt} value={opt}>{engines[opt]['driver-name']}</option>)}
                 </select>
             </label>
@@ -118,9 +118,9 @@ export default class DatabaseStep extends Component {
         let { engine, formError } = this.state;
         let engines = MetabaseSettings.get('engines');
 
-        let stepText = 'Add your data';
+        let stepText = '添加你的数据';
         if (activeStep > stepNumber) {
-            stepText = (databaseDetails === null) ? "I'll add my own data later" : 'Connecting to '+databaseDetails.name;
+            stepText = (databaseDetails === null) ? "稍后添加" : '连接到 '+databaseDetails.name;
         }
 
         if (activeStep !== stepNumber) {
@@ -131,7 +131,7 @@ export default class DatabaseStep extends Component {
                     <StepTitle title={stepText} number={stepNumber} />
                     <div className="mb4">
                         <div style={{maxWidth: 600}} className="Form-field Form-offset">
-                            You’ll need some info about your database, like the username and password.  If you don’t have that right now, Metabase also comes with a sample dataset you can get started with.
+                            你需要知道你的数据库的一些信息, 比如用户名和密码.  如果你现在没有, Metabase 会提供你一个示例数据集.
                         </div>
 
                         <FormField fieldName="engine">
@@ -151,7 +151,7 @@ export default class DatabaseStep extends Component {
                           : null }
 
                           <div className="Form-field Form-offset">
-                              <a className="link" onClick={this.skipDatabase.bind(this)}>I'll add my data later</a>
+                              <a className="link" onClick={this.skipDatabase.bind(this)}>我稍后自己添加数据</a>
                           </div>
                     </div>
                 </section>

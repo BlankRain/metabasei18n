@@ -46,7 +46,7 @@ export default class LeafletMap extends Component {
             map.setView([0,0], 8);
 
             const mapTileUrl = MetabaseSettings.get("map_tile_server_url");
-            const mapTileAttribution = mapTileUrl.indexOf("openstreetmap.org") >= 0 ? 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors' : null;
+            const mapTileAttribution = mapTileUrl.indexOf("openstreetmap.org") >= 0 ? '地图数据 © <a href="http://openstreetmap.org">OpenStreetMap</a> 提供' : null;
 
             L.tileLayer(mapTileUrl, { attribution: mapTileAttribution }).addTo(map);
 

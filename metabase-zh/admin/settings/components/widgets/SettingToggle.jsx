@@ -8,7 +8,7 @@ const SettingToggle = ({ setting, updateSetting, disabled }) => {
     return (
         <div className="flex align-center pt1">
             <Toggle value={on} onChange={!disabled ? () => updateSetting(!on) : null}/>
-            <span className="text-bold mx1">{on ? "Enabled" : "Disabled"}</span>
+            <span className="text-bold mx1">{on ? "开启" : "未开启"}</span>
         </div>
     );
 }

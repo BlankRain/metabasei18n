@@ -18,7 +18,7 @@ export default ({ question, clicked }: ClickActionProps): ClickAction[] => {
         {
             name: "timeseries-zoom",
             section: "zoom",
-            title: "Zoom in",
+            title: "缩放",
             question: () => question.pivot(drilldown.breakout, dimensions)
         }
     ];

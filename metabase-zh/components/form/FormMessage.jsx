@@ -12,9 +12,9 @@ export default class FormMessage extends Component {
                 if (formError.data && formError.data.message) {
                     message = formError.data.message;
                 } else if (formError.status >= 400) {
-                    message = "Server error encountered";
+                    message = "服务器错误";
                 } else {
-                    message = "Unknown error encountered";
+                    message = "未知错误";
                 }
             } else if (formSuccess && formSuccess.data.message) {
                 message = formSuccess.data.message;

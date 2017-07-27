@@ -23,7 +23,7 @@ export default class AddToDashboard extends Component {
         const { query, collection } = this.state;
         return (
             <ModalContent
-                title="Add question to dashboard?"
+                title="添加一个提问到dashboard?"
                 className="px4 mb4 scroll-y"
                 onClose={() => this.props.onClose()}
             >
@@ -45,12 +45,12 @@ export default class AddToDashboard extends Component {
                     }
                     { query &&
                         <div className="ml-auto flex align-center">
-                            <h5>Sort by</h5>
+                            <h5>排序</h5>
                             <Button borderless>
-                                Last modified
+                                最后更新
                             </Button>
                             <Button borderless>
-                                Alphabetical order
+                                字母序
                             </Button>
                         </div>
                     }

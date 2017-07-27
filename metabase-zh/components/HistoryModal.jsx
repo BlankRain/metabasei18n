@@ -61,9 +61,9 @@ export default class HistoryModal extends Component {
 
     revisionDescription(revision) {
         if (revision.is_creation) {
-            return "First revision.";
+            return "初次修订.";
         } else if (revision.is_reversion) {
-            return "Reverted to an earlier revision and "+revision.description;
+            return "恢复到早期版本 "+revision.description;
         } else {
             return revision.description;
         }
@@ -73,16 +73,16 @@ export default class HistoryModal extends Component {
         var { revisions } = this.props;
         return (
             <ModalContent
-                title="Revision history"
+                title="修订历史"
                 onClose={() => this.props.onClose()}
             >
                 <LoadingAndErrorWrapper className="flex flex-full flex-basis-auto" loading={!revisions} error={this.state.error}>
                 {() =>
                     <div className="pb4 flex-full">
                         <div className="border-bottom flex px4 py1 text-uppercase text-grey-3 text-bold h5">
-                            <span className="flex-half">When</span>
-                            <span className="flex-half">Who</span>
-                            <span className="flex-full">What</span>
+                            <span className="flex-half">时间</span>
+                            <span className="flex-half">人物</span>
+                            <span className="flex-full">事件</span>
                         </div>
                         <div className="px2 scroll-y">
                             {revisions.map((revision, index) =>
@@ -96,10 +96,10 @@ export default class HistoryModal extends Component {
                                                 <ActionButton
                                                     actionFn={() => this.revert(revision)}
                                                     className="Button Button--small Button--danger text-uppercase"
-                                                    normalText="Revert"
-                                                    activeText="Reverting…"
-                                                    failedText="Revert failed"
-                                                    successText="Reverted"
+                                                    normalText="修订"
+                                                    activeText="正在修订…"
+                                                    failedText="修订失败"
+                                                    successText="已修订"
                                                 />
                                             </div>
                                         : null}

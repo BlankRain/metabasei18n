@@ -127,7 +127,7 @@ export default class CustomGeoJSONWidget extends Component {
                                 geoJsonError: null,
                             })}
                         >
-                            Add a map
+                            添加个地图
                         </button>
                     }
                 </div>
@@ -171,7 +171,7 @@ const ListMaps = ({ maps, onEditMap, onDeleteMap }) =>
         <table className="ContentTable">
             <thead>
                 <tr>
-                    <th>Name</th>
+                    <th>名称</th>
                     <th>URL</th>
                 </tr>
             </thead>
@@ -185,8 +185,8 @@ const ListMaps = ({ maps, onEditMap, onDeleteMap }) =>
                         <Ellipsified style={{ maxWidth: 600 }}>{map.url}</Ellipsified>
                     </td>
                     <td className="Table-actions">
-                        <Confirm action={() => onDeleteMap(map)} title="Delete custom map">
-                            <button className="Button Button--danger">Remove</button>
+                        <Confirm action={() => onDeleteMap(map)} title="删除自定义地图">
+                            <button className="Button Button--danger">移除</button>
                         </Confirm>
                     </td>
                 </tr>
@@ -236,8 +236,8 @@ const SettingContainer = ({ name, description, className="py1", children }) =>
 const EditMap = ({ map, onMapChange, originalMap, geoJson, geoJsonLoading, geoJsonError, onLoadGeoJson, onCancel, onSave }) =>
     <div className="flex">
         <div className="flex-no-shrink">
-            <h2>{ !originalMap ? "Add a new map" : "Edit map" }</h2>
-            <SettingContainer description="What do you want to call this map?">
+            <h2>{ !originalMap ? "添加新地图" : "编辑地图" }</h2>
+            <SettingContainer description="你想怎么称呼这个地图?">
                 <div className="flex">
                     <input
                         type="text"
@@ -253,7 +253,7 @@ const EditMap = ({ map, onMapChange, originalMap, geoJson, geoJsonLoading, geoJs
                     <input
                         type="text"
                         className="SettingsInput AdminInput bordered rounded h3"
-                        placeholder="Like https://my-mb-server.com/maps/my-map.json"
+                        placeholder="比如 https://my-mb-server.com/maps/my-map.json"
                         value={map.url}
                         onChange={(e) => onMapChange({ ...map, "url": e.target.value })}
                     />
@@ -261,14 +261,14 @@ const EditMap = ({ map, onMapChange, originalMap, geoJson, geoJsonLoading, geoJs
                 </div>
             </SettingContainer>
             <div className={cx({ "disabled": !geoJson })}>
-                <SettingContainer description="Which property specifies the region’s identifier?">
+                <SettingContainer description="哪个属性作为区域的标识符呢?">
                     <GeoJsonPropertySelect
                         value={map.region_key}
                         onChange={(value) => onMapChange({ ...map, "region_key": value })}
                         geoJson={geoJson}
                     />
                 </SettingContainer>
-                <SettingContainer description="Which property specifies the region’s display name?">
+                <SettingContainer description="哪个属性作为区域的显示名?">
                     <GeoJsonPropertySelect
                         value={map.region_name}
                         onChange={(value) => onMapChange({ ...map, "region_name": value })}
@@ -279,7 +279,7 @@ const EditMap = ({ map, onMapChange, originalMap, geoJson, geoJsonLoading, geoJs
             <div className="py1">
                 <button className={cx("Button Button--borderless")} onClick={onCancel}>Cancel</button>
                 <button className={cx("Button Button--primary ml1", { "disabled" : !map.name || !map.url || !map.region_name || !map.region_key })} onClick={onSave}>
-                    {originalMap ? "Save map" : "Add map"}
+                    {originalMap ? "保存地图" : "添加地图"}
                 </button>
             </div>
         </div>
@@ -294,7 +294,7 @@ const EditMap = ({ map, onMapChange, originalMap, geoJson, geoJsonLoading, geoJs
             </LoadingAndErrorWrapper>
         :
             <div className="flex-full flex layout-centered text-bold text-grey-1 text-centered">
-                Load a GeoJSON file to see a preview
+                加载GeoJSON文件来查看预览
             </div>
         }
         </div>

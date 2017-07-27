@@ -23,27 +23,27 @@ const SegmentSidebar = ({
                     crumbs={[["Segments","/reference/segments"],
                              [segment.name]]}
                     inSidebar={true}
-                    placeholder="Data Reference"
+                    placeholder="数据参考"
                 />
             </div>
                 <SidebarItem key={`/reference/segments/${segment.id}`} 
                              href={`/reference/segments/${segment.id}`} 
                              icon="document" 
-                             name="Details" />
+                             name="详情" />
                 <SidebarItem key={`/reference/segments/${segment.id}/fields`} 
                              href={`/reference/segments/${segment.id}/fields`} 
                              icon="fields" 
-                             name="Fields in this segment" />
+                             name="segment的字段" />
                 <SidebarItem key={`/reference/segments/${segment.id}/questions`} 
                              href={`/reference/segments/${segment.id}/questions`} 
                              icon="all" 
-                             name={`Questions about this segment`} />
+                             name={`segment的提问`} />
              { user && user.is_superuser &&
 
                 <SidebarItem key={`/reference/segments/${segment.id}/revisions`}
                              href={`/reference/segments/${segment.id}/revisions`}
                              icon="history" 
-                             name={`Revision history`} />
+                             name={`修订历史`} />
              }
         </ul>
     </div>

@@ -87,13 +87,13 @@ export default class PulseListChannel extends Component {
                     <div className="flex-align-right">
                         { subscribed ?
                             <div className="flex align-center rounded bg-green text-white text-bold">
-                                <div className="pl2">You get this {channel.channel_type}</div>
+                                <div className="pl2">你拥有这个 {channel.channel_type}</div>
                                 <Icon className="p2 text-grey-1 text-white-hover cursor-pointer" name="close" size={12} onClick={this.unsubscribe}/>
                             </div>
                         : !pulse.read_only ?
                             <div className="flex align-center rounded bordered bg-white text-default text-bold cursor-pointer" onClick={this.subscribe}>
                                 <Icon className="p2" name="add" size={12}/>
-                                <div className="pr2">Get this {channel.channel_type}</div>
+                                <div className="pr2">获取这个{channel.channel_type}</div>
                             </div>
                         : null }
                     </div>

@@ -35,7 +35,7 @@ export default class DeleteDatabaseModal extends Component {
 
         var formError;
         if (this.state.error) {
-            var errorMessage = "Server error encountered";
+            var errorMessage = "服务器后台错误";
             if (this.state.error.data &&
                 this.state.error.data.message) {
                 errorMessage = this.state.error.data.message;
@@ -49,26 +49,26 @@ export default class DeleteDatabaseModal extends Component {
             );
         }
 
-        let confirmed = this.state.confirmValue.toUpperCase() === "DELETE";
+        let confirmed = this.state.confirmValue.toUpperCase() === "DELETE" || this.state.confirmValue.toUpperCase() === "删除";
 
         return (
             <ModalContent
-                title="Delete Database"
+                title="删除数据库"
                 onClose={this.props.onClose}
             >
                 <div className="Form-inputs mb4">
                     { database.is_sample &&
-                        <p><strong>Just a heads up:</strong> without the Sample Dataset, the Query Builder tutorial won't work. You can always restore the Sample Dataset, though.</p>
+                        <p><strong>友情提醒一下:</strong> 没有示例数据集,查询构建器探索教程就不能工作. 当然,你总是可以重建示例数据集.</p>
                     }
                     <p>
-                        Are you sure you want to delete this database? All saved questions that rely on this database will be lost. <strong>This cannot be undone</strong>. If you're sure, please type <strong>DELETE</strong> in this box:
+                        你确定要删除该数据库? 所有保存的依赖于此数据库的问题都会丢失. <strong>这操作是不可恢复的</strong>. 如果你确定,请输入 <strong>DELETE</strong> 在下面的盒子里:
                     </p>
                     <input className="Form-input" type="text" onChange={(e) => this.setState({ confirmValue: e.target.value })} autoFocus />
                 </div>
 
                 <div className="Form-actions">
-                    <button className={cx("Button Button--danger", { "disabled": !confirmed })} onClick={() => this.deleteDatabase()}>Delete</button>
-                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>Cancel</button>
+                    <button className={cx("Button Button--danger", { "disabled": !confirmed })} onClick={() => this.deleteDatabase()}>删除</button>
+                    <button className="Button Button--primary ml1" onClick={this.props.onClose}>取消</button>
                     {formError}
                 </div>
             </ModalContent>
